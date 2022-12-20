@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+
+<IRS5471 documentId = "IRS547169420">
+    <TaxYearBeginDt>2021-01-01</TaxYearBeginDt>
+    <TaxYearEndDt>2021-12-31</TaxYearEndDt>
+    <PersonFilingThisReturn>
+        <BusinessName>
+            <BusinessNameLine1Txt>Acme Corp</BusinessNameLine1Txt>
+        </BusinessName>
+        <USAddress>
+            <AddressLine1Txt>52 Hoover St</AddressLine1Txt>
+            <AddressLine2Txt> apt 2</AddressLine2Txt>
+            <CityNm>Los Angeles</CityNm>
+        </USAddress>
+    </PersonFilingThisReturn>
+    <FilerTaxYearBeginDt>2021-01-01</FilerTaxYearBeginDt>
+    <FilerTaxTearEndDt>2021-12-31</FilerTaxTearEndDt>
+    <EIN>69694206969</EIN>
+    <CategoryOfFiler1aInd>X</CategoryOfFiler1aInd>
+    <CategoryOfFiler4Ind>X</CategoryOfFiler4Ind>
+    <CategoryOfFiler5aInd>X</CategoryOfFiler5aInd>
+    <VotingStockOwnedPct>1.00000</VotingStockOwnedPct>
+</IRS5471>
+
