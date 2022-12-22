@@ -16,7 +16,10 @@ class Account:
         child.parent = self
     
     def consolidate(self):
-        self.amount = self.getChildrenValue()
+
+        if len(self.children) > 0:
+            self.amount = self.getChildrenValue()
+        
 
     def getChildrenValue(self):
         value = 0

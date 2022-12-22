@@ -33,11 +33,11 @@ class TrialBalance:
 
         self.__common_stock = Account("Common Stock" , 0, period)
         self.__retained_earnings = Account("Retained Earnings",0, period)
-        self.__other = Account("Other Equity",0,period)
+        self.__other_equity = Account("Other Equity",0,period)
 
         self.__equity.set_child(self.__common_stock)
         self.__equity.set_child(self.__retained_earnings)
-        self.__equity.set_child(self.__other)
+        self.__equity.set_child(self.__other_equity)
 
         # Tier 3
 
@@ -49,11 +49,11 @@ class TrialBalance:
 
         self.__ppe = Account("PPE",0, period)
         self.__intangible = Account("Intangible", 0, period)
-        self.__other = Account("Other Non Current Assets" ,0, period)
+        self.__other_assets = Account("Other Non Current Assets" ,0, period)
 
         self.__non_current_assets.set_child(self.__ppe)
         self.__non_current_assets.set_child(self.__intangible)
-        self.__non_current_assets.set_child(self.__other)
+        self.__non_current_assets.set_child(self.__other_assets)
 
         self.__re_begin = Account("Retained Earnings Beginning",0,period)
         self.__net_income = Account("Net Income",0,period)
@@ -86,6 +86,43 @@ class TrialBalance:
         self.__net_income.set_child(self.__interest_expense)
         self.__net_income.set_child(self.__tax)
         self.__net_income.set_child(self.__other_expense)
+
+        self.__tier1 = {
+            "Assets":self.__assets,
+            "Liabilities":self.__liabs,
+            "Equity":self.__equity
+        }
+        self.__tier2 = {
+            "Current Assets":self.__current_assets,
+            "Non Current Assets":self.__non_current_assets,
+            "Current Liabilities":self.__current_liab,
+            "Non Current Liabilities":self.__non_current_liab,
+            "Common Stock":self.__common_stock,
+            "Retained Earnings":self.__retained_earnings,
+            "Equity":self.__equity
+        }
+        self.__tier3 = {
+            "Cash":self.__cash,
+            "Non Cash": self.__non_cash,
+            "PPE": self.__ppe,
+            "Intangible":self.__intangible,
+            "Other Non Current Assets":self.__other_assets,
+            "Retained Earnings Beginning":self.__re_begin,
+            "Net Income":self.__net_income,
+            "Dividends":self.__dividends
+        }
+        self.__tier4 = {
+            "Sales":self.__sales,
+            "COGS":self.__cogs,
+            "Other Income":self.__other_income,
+            "Interest Income":self.__interest_income,
+            "Dividend Income":self.__dividend_income,
+            "Depreciation":self.__depreciation,
+            "Amortization":self.__amortization,
+            "Interest Expense":self.__interest_expense,
+            "Income Tax Expense":self.__tax,
+            "Other Expense":self.__other_expense
+        }
 
 
     def __str__(self):
