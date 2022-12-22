@@ -15,6 +15,8 @@ class Account:
         self.children.append(child)
         child.parent = self
     
+    def consolidate(self):
+        self.amount = self.getChildrenValue()
 
     def getChildrenValue(self):
         value = 0
@@ -38,6 +40,25 @@ class Account:
         
         return current.account_name
     
+    def parse_tree(self):
+        to_return = ""
+        current = self
+        lines = []
+        self.__parse_tree_helper(current,lines,0)
+
+        for x in lines:
+            to_return += x
+
+        return to_return
+    
+    def __parse_tree_helper(self, node, lines, num_tabs):
+        
+        line = node.__str__() +"\n" +(num_tabs*"\t")
+        lines.append(line)
+        for x in node.children:
+            self.__parse_tree_helper(x,lines,num_tabs+1)
+        
+        
 
     def __str__(self):
         to_return = "Account Name: " + self.account_name + ", Period: " + self.account_period.__str__() + \

@@ -20,8 +20,3 @@ class Period:
         to_return = self.period_type + str(
             self.period_year) + ", Begin: " + self.begin_date.__str__() + ", End: " + self.end_date.__str__()
         return to_return
-
-
-p = Period("CYE","2022", "01-01-2022", "12-31-2022")
-
-print(p)
