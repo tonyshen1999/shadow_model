@@ -1,5 +1,6 @@
 import copy
 import random
+
 class Account:
     def __init__(self, account_name, amount, account_period, currency="USD"):
         self.account_name = account_name
