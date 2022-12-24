@@ -99,7 +99,7 @@ class TrialBalance:
             "Non Current Liabilities":self.__non_current_liab,
             "Common Stock":self.__common_stock,
             "Retained Earnings":self.__retained_earnings,
-            "Equity":self.__equity
+            "Other Equity":self.__other_equity
         }
         self.__tier3 = {
             "Cash":self.__cash,
@@ -123,7 +123,12 @@ class TrialBalance:
             "Income Tax Expense":self.__tax,
             "Other Expense":self.__other_expense
         }
+        
 
+    def getRatioMap(self):
+
+        return self.__ratio_map
+    
 
     def __str__(self):
 
@@ -154,8 +159,39 @@ class TrialBalance:
         response = requests.get(api_url)
         return response.json()[0]
 
+    def set_ratios(self):
+        ratios = [
+            "debtRatio",
+            "debtToAsset",
+            "currentRatio",
+            "commonToRetainedEarnings",
+            "returnOnAssets",
+            "payoutRatio",
+            "returnOnIntangibleAssets",
+            "cashRatio",
+            "fixedAssetTurnover",
+            "netProfitMargin",
+            "ebitPerRevenue",
+            "otherExpenseIncome",
+            "otherIncome",
+            "netDebitToEbitda",
+            "amortizationRatio",
+            "interestCoverage"
+        ]
+        
+        self.__ratio_map = {}
 
+        for x in ratios:
+            self.__ratio_map[x] = random.random()
+        
+        generated_ratios = self.generate_ratios("AAPL")
+        gen_keys = generated_ratios.keys()
+        for x in self.__ratio_map.keys():
+            if x in gen_keys:
+                self.__ratio_map[x]=generated_ratios[x]
 
 p = Period("CYE","2022", "01-01-2022", "12-31-2022")
 tb = TrialBalance(p)
-print(tb)
+print(tb.generate_ratios("AAPL"))
+print("-----------------")
+print(tb.getRatioMap())
