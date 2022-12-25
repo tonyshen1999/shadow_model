@@ -8,6 +8,7 @@ import json
 from collections import defaultdict
 from Account import Account
 from Period import Period
+import itertools
 
 class TrialBalance:
     def __init__(self, period):
@@ -15,8 +16,8 @@ class TrialBalance:
 
         # Tier 1
         self.__assets = Account("Asset",0,period)
-        self.__liabs = Account("Liability",0,period)
-        self.__equity = Account("Equity",0,period)
+        self.__liabs = Account("Liability",0,period,sign = False)
+        self.__equity = Account("Equity",0,period,sign = False)
 
         # Tier 2
         self.__current_assets = Account("Current Asset",0,period)
@@ -240,9 +241,47 @@ class TrialBalance:
             if x in gen_keys:
                 self.__ratio_map[x]=generated_ratios[x]
 
+    def to_csv(self, fname):
+
+        account_names = []
+        account_amount = []
+        account_id = []
+        account_description = []
+        
+        self.parse_accounts_helper(account_names,account_amount,account_id,account_description, self.__assets)
+        self.parse_accounts_helper(account_names,account_amount,account_id,account_description, self.__liabs)
+        self.parse_accounts_helper(account_names,account_amount,account_id,account_description, self.__equity)
+
+        d = {"Account ID":account_id,'Account Names':account_names,"Account Amount":account_amount,"Account Description":account_description}
+        df = pd.DataFrame(data = d)
+        df.to_csv(fname)
+
+
+
+
+    def parse_accounts_helper(self, account_names,account_amount,account_id,account_description, node):
+        
+        if len(node.children) == 0:
+            account_names.append(node.account_name)
+            account_amount.append(node.getAmount())
+            account_description.append(node.parent.account_name)
+            account_id.append(1)
+        else:
+            for x in node.children:
+                self.parse_accounts_helper(account_names,account_amount,account_id,account_description,x)
+
+
+
+    
+
+
 p = Period("CYE","2022", "01-01-2022", "12-31-2022")
 tb = TrialBalance(p)
+
+
+
 # print(tb.generate_ratios("AAPL"))
 # print("-----------------")
 tb.generate_random_tb()
+tb.to_csv("test1")
 print(tb)

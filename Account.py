@@ -2,25 +2,37 @@ import copy
 import random
 
 class Account:
-    def __init__(self, account_name, amount, account_period, currency="USD"):
+
+    # signage: True = debit, False = credit
+    def __init__(self, account_name, amount, account_period, currency="USD", sign = True):
         self.account_name = account_name
         self.amount = amount
         self.account_period = account_period
         self.currency = currency
         self.children = []
         self.parent = None
+        self.sign = sign
+
+        
     
     def set_child(self,child):
 
         self.children.append(child)
         child.parent = self
+        child.sign = self.sign
     
     def consolidate(self):
 
         if len(self.children) > 0:
             self.amount = self.getChildrenValue()
         
+    def getAmount(self):
 
+        if self.sign == True:
+            return self.amount
+        else:
+            return self.amount * -1
+    
     def getChildrenValue(self):
         value = 0
         for x in self.children:
@@ -56,16 +68,19 @@ class Account:
     
     def __parse_tree_helper(self, node, lines, num_tabs):
         
-        line = (num_tabs*"\t") + node.account_name + ": " + str(node.amount) + " " + self.currency +"\n"
+        line = (num_tabs*"\t") + node.account_name + ": " + self.__convert_comma(node.amount) + " " + self.currency +"\n"
         lines.append(line)
         for x in node.children:
             self.__parse_tree_helper(x,lines,num_tabs+1)
         
-        
+    def __convert_comma(self, num):
+
+        return "{:,}".format(num)
+
 
     def __str__(self):
         to_return = "Account Name: " + self.account_name + ", Period: " + self.account_period.__str__() + \
-                    ", Amount: " + str(self.amount) + self.currency
+                    ", Amount: " + self.__convert_comma(self.amount) + self.currency
         return to_return
 
     def split_ratio(self, ratio, name_a, name_b):
@@ -83,7 +98,7 @@ class Account:
 
         return to_return
 
-    def split_random(self, new_name="", num_accounts=random.randrange(3, 20)):
+    def split_random(self, new_name="", num_accounts=random.randrange(3, 10)):
         accounts = []
         if self.amount != 0:
             if new_name == "":
