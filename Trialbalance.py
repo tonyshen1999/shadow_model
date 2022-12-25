@@ -41,7 +41,6 @@ class TrialBalance:
         self.__header = Account("Header",0,self.__period)
         self.config(config_tree.getroot(),self.__header)
 
-        # self.buildXML(header)
         
     def buildXML(self,root):
         tree = ET.parse('tb_config.xml')
