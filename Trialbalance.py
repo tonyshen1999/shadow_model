@@ -129,7 +129,6 @@ class TrialBalance:
 
     def push_random_tb(self, starting_asset):
 
-        # print("pushing accounts...")
 
         self.__assets.amount = round(starting_asset)
         self.__liabs.amount = round(self.__ratio_map["debtRatio"]*self.__assets.amount)
@@ -229,7 +228,6 @@ class TrialBalance:
                 self.__random_ratios.append(x)
 
     def randomize_ratios(self):
-        print("generating random ratios:")
         for x in self.__random_ratios:
             self.__ratio_map[x] = random.random()
         
@@ -314,13 +312,13 @@ class TrialBalance:
         for x in node.children:
             self.__update_currency_helper(currency,x)
 
-p = Period("CYE","2022", "01-01-2022", "12-31-2022")
-tb = TrialBalance(p)
+# p = Period("CYE","2022", "01-01-2022", "12-31-2022")
+# tb = TrialBalance(p)
 
-# print(tb.generate_ratios("AAPL"))
-# print("-----------------")
-for x in range(0,1):
-    tb.generate_random_tb()
+# # print(tb.generate_ratios("AAPL"))
+# # print("-----------------")
 
-    tb.to_csv("test1.csv")
-    print(tb)
+# tb.generate_random_tb()
+
+# tb.to_csv("test1.csv")
+# print(tb)

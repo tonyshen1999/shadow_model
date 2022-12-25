@@ -1,15 +1,17 @@
 ﻿Account Types
 Sales
 COGS
-Interest Expense (Third Party)
-Interest Expense (Intercompany)
-Interest Income (Third Party)
-Interest Income (Intercompany)
-Other Income (Third Party)
-Other Income (Intercompany)
-Income Taxes
-Non-income Taxes
+InterestExpense(ThirdParty)
+InterestExpense(Intercompany)
+InterestIncome(ThirdParty)
+InterestIncome(Intercompany)
+OtherIncome(ThirdParty)
+OtherIncome(Intercompany)
+IncomeTaxes
+Non-incomeTaxes
 SGA
-Other Deductions
+OtherDeductions
 Depreciation
 Amortization
+DividendIncome
+QBAI

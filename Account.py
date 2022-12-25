@@ -148,6 +148,7 @@ class Account:
         return to_convert
 # figure out how to make account list global. Otherwise we are wasting memory
 class ShadowAccount(Account):
+
     def __init__(self, account_name, amount, account_period, currency="USD", sign = True, account_collection = "TBFC", account_class = "", account_data_type = ""):
         self.__account_list = self.__import__account_list()
         
@@ -163,7 +164,10 @@ class ShadowAccount(Account):
         df = pd.read_csv("shadow_accounts.csv")
         return df["Account Types"].to_numpy()
     
-    
+    def __str__(self):
+        to_return = self.account_name + ",\t" + self.account_collection +",\t" + self.currency + ",\t" + self.account_class +",\t" + str(self.amount) + ",\t" + self.account_period.period_type+self.account_period.period_year
+
+        return to_return
 
 
 # p = Period("CYE","2022", "01-01-2022", "12-31-2022")
