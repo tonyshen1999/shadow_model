@@ -56,7 +56,7 @@ class Account:
     
     def __parse_tree_helper(self, node, lines, num_tabs):
         
-        line = node.__str__() +"\n" +(num_tabs*"\t")
+        line = (num_tabs*"\t") + node.account_name + ": " + str(node.amount) + " " + self.currency +"\n"
         lines.append(line)
         for x in node.children:
             self.__parse_tree_helper(x,lines,num_tabs+1)
@@ -84,24 +84,26 @@ class Account:
         return to_return
 
     def split_random(self, new_name="", num_accounts=random.randrange(3, 20)):
-
-        if new_name == "":
-            new_name = self.account_name
-        print(new_name)
-        total_amount = self.amount
         accounts = []
-        base_amount = total_amount/num_accounts
-        current_sum = 0
-        for i in range(0, num_accounts-1):
-            new_account = copy.deepcopy(self)
-            new_account.amount = round(base_amount * random.random(),2)
-            current_sum += new_account.amount
-            new_account.account_name = new_name
-            accounts.append(new_account)
+        if self.amount != 0:
+            if new_name == "":
+                new_name = self.account_name
+            print(new_name)
+            total_amount = self.amount
+            
 
-        plug_account = copy.deepcopy(self)
-        plug_account.amount = total_amount - current_sum
-        plug_account.account_name = new_name
-        accounts.append(plug_account)
+            base_amount = total_amount/num_accounts
+            current_sum = 0
+            for i in range(0, num_accounts-1):
+                new_account = copy.deepcopy(self)
+                new_account.amount = round(base_amount * random.random())
+                current_sum += new_account.amount
+                new_account.account_name = new_name + str(i)
+                accounts.append(new_account)
+
+            plug_account = copy.deepcopy(self)
+            plug_account.amount = total_amount - current_sum
+            plug_account.account_name = new_name + str(num_accounts)
+            accounts.append(plug_account)
 
         return accounts

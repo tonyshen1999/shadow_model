@@ -144,22 +144,71 @@ class TrialBalance:
     
 
   
-    # def generate_random_tb(self, starting_asset = 1000000.00):
-    #     asset = Account("Asset", starting_asset, self.__period)
-    #     debt_equity = asset.split_ratio(self.__ratios['debtRatio'], "Liability", "Equity")
-    #     liability = debt_equity[0]
-    #     equity = debt_equity[1]
-    #     del debt_equity
+    def generate_random_tb(self, starting_asset = 1000000000.00, ticker = "AAPL"):
 
-    #     self.__accounts.append(asset)
-    #     self.__accounts.append(liability)
-    #     self.__accounts.append(equity)
+        self.set_ratios(ticker)
+
+        self.__assets.amount = round(starting_asset)
+        self.__liabs.amount = round(self.__ratio_map["debtRatio"]*self.__assets.amount)
+        self.__equity.amount = round(self.__assets.amount - self.__liabs.amount)
+        self.__non_current_liab.amount = round(self.__ratio_map["debtToAsset"]*self.__assets.amount)
+        self.__current_liab.amount = self.__liabs.amount - self.__non_current_liab.amount
+        self.__current_assets.amount = round(self.__non_current_liab.amount * self.__ratio_map["currentRatio"])
+        self.__non_current_assets.amount = self.__assets.amount - self.__current_assets.amount
+        self.__common_stock.amount = round(self.__equity.amount*self.__ratio_map["commonToRetainedEarnings"])
+        self.__retained_earnings.amount = round(self.__equity.amount - self.__retained_earnings.amount - self.__other_equity.amount)
+        self.__other_equity.amount = 0
+        self.__net_income.amount = round(self.__assets.amount * self.__ratio_map["returnOnAssets"])
+        self.__dividends.amount = round(self.__net_income.amount * self.__ratio_map["payoutRatio"])
+        self.__re_begin.amount = round(self.__retained_earnings.amount - self.__net_income.amount - self.__dividends.amount)
+        self.__cash.amount = round(self.__current_liab.amount * self.__ratio_map["cashRatio"])
+        self.__non_cash.amount = round(self.__current_assets.amount - self.__cash.amount)
+        self.__sales.amount = round(self.__net_income.amount * self.__ratio_map["netProfitMargin"])
+        self.__ppe.amount = round(self.__sales.amount/self.__ratio_map["fixedAssetTurnover"])
+        self.__intangible.amount = round(self.__assets.amount-(self.__net_income.amount/self.__ratio_map["returnOnTangibleAssets"]))
+        self.__other_assets.amount = self.__non_current_assets.amount - self.__ppe.amount - self.__intangible.amount
+
+        if self.__non_current_assets.amount - self.__ppe.amount - self.__intangible.amount < 0:
+            self.__intangible.amount = self.__non_current_assets.amount - self.__ppe.amount
+
+        self.__cogs.amount = round(self.__sales.amount - (self.__ratio_map["grossProfitMargin"]*self.__sales.amount))
+        ebit = round(self.__ratio_map["ebitPerRevenue"]*self.__sales.amount)
+        self.__other_expense.amount = round((self.__net_income.amount - ebit) * self.__ratio_map["otherExpenseIncome"])
+        self.__other_income.amount = round(self.__net_income.amount - ebit - self.__other_expense.amount)
+        self.__interest_income.amount = round(self.__other_income.amount * self.__ratio_map["otherIncome"])
+        self.__dividend_income.amount = 0
+        # da = (self.__liabs.amount - self.__cash.amount)/self.__ratio_map["netDebtToEbitda"] - ebit
+        # self.__amortization.amount = round(da * self.__ratio_map["amortizationRatio"])
+        # self.__depreciation.amount = round(da - self.__amortization.amount)
+        self.__interest_expense.amount = round((ebit/self.__ratio_map["interestCoverage"]))
+        self.__tax.amount = self.__net_income.amount - ebit - self.__interest_expense.amount
+        self.split_leaf_accounts()
+
+    def split_leaf_accounts(self):
+        self.split_leaf_helper(self.__assets)
+        self.split_leaf_helper(self.__liabs)
+        self.split_leaf_helper(self.__equity)
+        
+    
+    def split_leaf_helper(self, node):
+
+        if len(node.children) == 0:
+            new_leaves = node.split_random()
+            for x in new_leaves:
+                node.set_child(x)
+        else:
+            for x in node.children:
+                self.split_leaf_helper(x)
+    
+
     def generate_ratios(self,ticker):
         api_url = "https://financialmodelingprep.com/api/v3/ratios/"+ticker+"?limit=1000&apikey=e68f6ad070640ca92dbae4f9ce317086"
         response = requests.get(api_url)
         return response.json()[0]
 
-    def set_ratios(self):
+    def set_ratios(self, ticker):
+
+
         ratios = [
             "debtRatio",
             "debtToAsset",
@@ -167,24 +216,25 @@ class TrialBalance:
             "commonToRetainedEarnings",
             "returnOnAssets",
             "payoutRatio",
-            "returnOnIntangibleAssets",
+            "returnOnTangibleAssets",
             "cashRatio",
             "fixedAssetTurnover",
             "netProfitMargin",
+            "grossProfitMargin",
             "ebitPerRevenue",
             "otherExpenseIncome",
             "otherIncome",
-            "netDebitToEbitda",
+            "netDebtToEbitda",
             "amortizationRatio",
             "interestCoverage"
         ]
-        
+
         self.__ratio_map = {}
 
         for x in ratios:
             self.__ratio_map[x] = random.random()
         
-        generated_ratios = self.generate_ratios("AAPL")
+        generated_ratios = self.generate_ratios(ticker)
         gen_keys = generated_ratios.keys()
         for x in self.__ratio_map.keys():
             if x in gen_keys:
@@ -192,6 +242,7 @@ class TrialBalance:
 
 p = Period("CYE","2022", "01-01-2022", "12-31-2022")
 tb = TrialBalance(p)
-print(tb.generate_ratios("AAPL"))
-print("-----------------")
-print(tb.getRatioMap())
+# print(tb.generate_ratios("AAPL"))
+# print("-----------------")
+tb.generate_random_tb()
+print(tb)
