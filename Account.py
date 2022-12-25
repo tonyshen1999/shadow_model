@@ -19,7 +19,6 @@ class Account:
 
         self.children.append(child)
         child.parent = self
-        child.sign = self.sign
     
     def consolidate(self):
 

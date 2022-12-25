@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<Header debit= "True">
+    <Asset debit= "True">
+        <CurrentAsset debit= "True">
+            <Cash debit= "True"/>
+            <NonCash debit= "True"/>
+        </CurrentAsset>
+        <NonCurrentAsset debit= "True">
+            <PPE debit= "True"/>
+            <Intangible debit="True"/>
+            <OtherNonCurrentAssets debit= "True"/>
+        </NonCurrentAsset>
+    </Asset>
+    <Liability debit= "False">
+        <CurrentLiability debit= "False"/>
+        <NonCurrentLiability debit= "False" />
+    </Liability>
+    <Equity debit= "False">
+        <CommonStock debit= "False" />
+        <RetainedEarnings debit= "False">
+            <RetainedEarningsBeginning debit= "False" />
+            <NetIncome debit= "False">
+                <Sales debit= "False" />
+                <COGS debit= "True"/>
+                <OtherIncome debit= "False" />
+                <InterestIncome debit= "False" />
+                <DividendIncome debit= "False" />
+                <Depreciation debit= "True"/>
+                <Amortization debit= "True"/>
+                <InterestExpense debit= "True"/>
+                <IncomeTaxExpense debit= "True"/>
+                <OtherExpense debit= "True"/>
+            </NetIncome>
+            <Dividends debit= "True"/>
+        </RetainedEarnings>
+        <OtherEquity debit= "False" />
+    </Equity>
+</Header>

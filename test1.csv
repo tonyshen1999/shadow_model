@@ -1,0 +1,22 @@
+,Account ID,Account Names,Account Amount,Account Description
+0,1,Cash,80762818,CurrentAsset
+1,1,NonCash,209801612,CurrentAsset
+2,1,PPE,7648147,NonCurrentAsset
+3,1,Intangible,332566781,NonCurrentAsset
+4,1,OtherNonCurrentAssets,369220642,NonCurrentAsset
+5,1,CurrentLiability,-525924905,Liability
+6,1,NonCurrentLiability,-330428655,Liability
+7,1,CommonStock,-136192837,Equity
+8,1,RetainedEarningsBeginning,233399113,RetainedEarnings
+9,1,Sales,-71607151,NetIncome
+10,1,COGS,40594358,NetIncome
+11,1,OtherIncome,-256722307,NetIncome
+12,1,InterestIncome,-150946551,NetIncome
+13,1,DividendIncome,0,NetIncome
+14,1,Depreciation,0,NetIncome
+15,1,Amortization,0,NetIncome
+16,1,InterestExpense,532249,NetIncome
+17,1,IncomeTaxExpense,150711798,NetIncome
+18,1,OtherExpense,4513195,NetIncome
+19,1,Dividends,42071693,RetainedEarnings
+20,1,OtherEquity,0,Equity
