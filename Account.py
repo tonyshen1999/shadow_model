@@ -1,6 +1,7 @@
 import copy
 import random
-
+from Period import Period
+import pandas as pd
 class Account:
 
     # signage: True = debit, False = credit
@@ -12,8 +13,6 @@ class Account:
         self.children = []
         self.parent = None
         self.sign = sign
-
-        
     
     def set_child(self,child):
 
@@ -21,10 +20,32 @@ class Account:
         child.parent = self
     
     def consolidate(self):
-
-        if len(self.children) > 0:
-            self.amount = self.getChildrenValue()
+        current_amount = self.getAmount()
+        children_amount = 0
+        for x in self.children:
+            children_amount += x.getAmount()
+            del x
+        self.children = []
+        self.amount = children_amount
+        return current_amount - children_amount
         
+
+
+    
+    def remove_all_children(self):
+        for x in self.children:
+            del x
+        self.children = []
+
+    def remove_child(self,account_name):
+
+        for x in self.children:
+            if x.account_name == account_name:
+                self.children.remove(x)
+                del x
+                return True
+        return False
+
     def getAmount(self):
 
         if self.sign == True:
@@ -121,3 +142,29 @@ class Account:
             accounts.append(plug_account)
 
         return accounts
+
+    def convert_shadow_account(self,account_collection = "TBFC", account_class = "", account_data_type = ""):
+        to_convert = ShadowAccount(self.account_name,self.amount,self.account_period,self.currency,self.sign,account_collection,account_class,account_data_type)
+        return to_convert
+# figure out how to make account list global. Otherwise we are wasting memory
+class ShadowAccount(Account):
+    def __init__(self, account_name, amount, account_period, currency="USD", sign = True, account_collection = "TBFC", account_class = "", account_data_type = ""):
+        self.__account_list = self.__import__account_list()
+        
+        if account_name not in self.__account_list:
+            raise Exception("'" + account_name + "'" + " is not a valid account")
+
+        Account.__init__(self,account_name, amount, account_period, currency="USD", sign = True)
+        self.account_collection = account_collection
+        self.account_class = account_class
+        self.account_data_type = account_data_type
+    
+    def __import__account_list(self):
+        df = pd.read_csv("shadow_accounts.csv")
+        return df["Account Types"].to_numpy()
+    
+    
+
+
+# p = Period("CYE","2022", "01-01-2022", "12-31-2022")
+# a = ShadowAccount("Interest Income (Third Party)", 0.00, p)

@@ -57,6 +57,8 @@ class TrialBalance:
 
         return self.__ratio_map
     
+    def get_header_node(self):
+        return self.__header
 
     def __str__(self):
 
@@ -154,16 +156,16 @@ class TrialBalance:
 
         self.__cogs.amount = round(self.__sales.amount - (self.__ratio_map["grossProfitMargin"]*self.__sales.amount))
         ebit = round(self.__ratio_map["ebitPerRevenue"]*self.__sales.amount)
-        self.__other_expense.amount = round((self.__sales.amount-self.__cogs.amount-ebit) * self.__ratio_map["otherExpenseIncome"])
+        total_other_expense = (self.__sales.amount-self.__cogs.amount-ebit) * self.__ratio_map["otherExpenseIncome"]
+        self.__other_expense.amount = round(total_other_expense*self.__ratio_map["daRatio"])
         self.__other_income.amount = round(self.__net_income.amount - ebit - self.__other_expense.amount)
         self.__interest_income.amount = round(self.__other_income.amount * self.__ratio_map["otherIncome"])
         self.__dividend_income.amount = 0
-        # da = (self.__liabs.amount - self.__cash.amount)/self.__ratio_map["netDebtToEbitda"] - ebit
-        # self.__amortization.amount = round(da * self.__ratio_map["amortizationRatio"])
-        # self.__depreciation.amount = round(da - self.__amortization.amount)
+        da = round(total_other_expense * (1-self.__ratio_map["daRatio"]))
+        self.__amortization.amount = round(da * self.__ratio_map["amortizationRatio"])
+        self.__depreciation.amount = round(da - self.__amortization.amount)
         self.__interest_expense.amount = round((ebit/self.__ratio_map["interestCoverage"]))
-        self.__tax.amount = -self.__net_income.amount + (self.__sales.amount - self.__cogs.amount - self.__other_expense.amount + self.__other_income.amount + self.__dividend_income.amount - self.__interest_expense.amount + self.__interest_income.amount)
-        # self.split_leaf_accounts()
+        self.__tax.amount = -self.__net_income.amount + (self.__sales.amount - self.__cogs.amount - self.__other_expense.amount + self.__other_income.amount + self.__dividend_income.amount - self.__interest_expense.amount + self.__interest_income.amount - self.__amortization.amount - self.__depreciation.amount)
 
     def split_leaf_accounts(self):
         self.__split_leaf_helper(self.__assets)
@@ -207,7 +209,8 @@ class TrialBalance:
             "otherIncome",
             "netDebtToEbitda",
             "amortizationRatio",
-            "interestCoverage"
+            "interestCoverage",
+            "daRatio"
         ]
 
         self.__ratio_map = {}
