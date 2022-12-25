@@ -13,9 +13,8 @@ import xml.etree.ElementTree as ET
 
 class TrialBalance:
 
-    def config(self,xml_node,account_node, currency = "USD"):
+    def __config(self,xml_node,account_node):
 
-        print(xml_node.tag + ": " + xml_node.attrib['debit'])
         account_node.account_name = xml_node.tag
         parent_debit = xml_node.attrib['debit']
         if parent_debit == "False":
@@ -32,27 +31,27 @@ class TrialBalance:
                 child_debit = True
             account_child = Account(x.tag,0,self.__period, sign = child_debit)
             account_node.set_child(account_child)
-            self.config(x,account_child)
+            self.__config(x,account_child)
 
-    def __init__(self, period):
+    def __init__(self, period, currency = "USD"):
         self.__period = period
 
         config_tree = ET.parse('tb_config.xml')
         self.__header = Account("Header",0,self.__period)
-        self.config(config_tree.getroot(),self.__header)
-
+        self.__config(config_tree.getroot(),self.__header)
+        self.update_currency(currency)
         
     def buildXML(self,root):
         tree = ET.parse('tb_config.xml')
-        self.buildXMLHelper(root,tree.getroot())
+        self.__buildXMLHelper(root,tree.getroot())
         tree.write("tb_config.xml")
 
-    def buildXMLHelper(self,account_node,xml_node):
+    def __buildXMLHelper(self,account_node,xml_node):
 
         xml_node.tag = account_node.account_name
         for x in account_node.children:
             xml_node_child = ET.SubElement(xml_node,x.account_name)
-            self.buildXMLHelper(x,xml_node_child)
+            self.__buildXMLHelper(x,xml_node_child)
 
     def getRatioMap(self):
 
@@ -72,15 +71,15 @@ class TrialBalance:
     
     def find_account(self,account_node,account_name):
         results = []
-        self.find_account_helper(account_node,account_name,results)
+        self.__find_account_helper(account_node,account_name,results)
         return results
 
-    def find_account_helper(self, account_node,account_name,results):
+    def __find_account_helper(self, account_node,account_name,results):
 
         if account_node.account_name == account_name:
             results.append(account_node)
         for x in account_node.children:
-            self.find_account_helper(x,account_name, results)
+            self.__find_account_helper(x,account_name, results)
 
     def define_accounts(self):
 
@@ -167,12 +166,12 @@ class TrialBalance:
         # self.split_leaf_accounts()
 
     def split_leaf_accounts(self):
-        self.split_leaf_helper(self.__assets)
-        self.split_leaf_helper(self.__liabs)
-        self.split_leaf_helper(self.__equity)
+        self.__split_leaf_helper(self.__assets)
+        self.__split_leaf_helper(self.__liabs)
+        self.__split_leaf_helper(self.__equity)
         
     
-    def split_leaf_helper(self, node):
+    def __split_leaf_helper(self, node):
 
         if len(node.children) == 0:
             new_leaves = node.split_random()
@@ -180,7 +179,7 @@ class TrialBalance:
                 node.set_child(x)
         else:
             for x in node.children:
-                self.split_leaf_helper(x)
+                self.__split_leaf_helper(x)
     
 
     def generate_ratios(self,ticker):
@@ -262,9 +261,9 @@ class TrialBalance:
         account_id = []
         account_description = []
         
-        self.parse_accounts_helper(account_names,account_amount,account_id,account_description, self.__assets)
-        self.parse_accounts_helper(account_names,account_amount,account_id,account_description, self.__liabs)
-        self.parse_accounts_helper(account_names,account_amount,account_id,account_description, self.__equity)
+        self.__parse_accounts_helper(account_names,account_amount,account_id,account_description, self.__assets)
+        self.__parse_accounts_helper(account_names,account_amount,account_id,account_description, self.__liabs)
+        self.__parse_accounts_helper(account_names,account_amount,account_id,account_description, self.__equity)
 
         d = {"Account ID":account_id,'Account Names':account_names,"Account Amount":account_amount,"Account Description":account_description}
         df = pd.DataFrame(data = d)
@@ -272,8 +271,7 @@ class TrialBalance:
 
         print("saved to " + fname)
 
-
-    def parse_accounts_helper(self, account_names,account_amount,account_id,account_description, node):
+    def __parse_accounts_helper(self, account_names,account_amount,account_id,account_description, node):
         
         if len(node.children) == 0:
             account_names.append(node.account_name)
@@ -282,17 +280,39 @@ class TrialBalance:
             account_id.append(1)
         else:
             for x in node.children:
-                self.parse_accounts_helper(account_names,account_amount,account_id,account_description,x)
+                self.__parse_accounts_helper(account_names,account_amount,account_id,account_description,x)
 
+    def check_difference(self, acceptable_diff = 2.0):
 
+        results = {}
+        self.__check_difference_helper(self.__header,results, acceptable_diff)
+        return results
 
-    
+    def __check_difference_helper(self, node, results, acceptable_diff):
 
+        if len(node.children) > 0:
+            children_total = 0
+            for x in node.children:
+                children_total += x.getAmount()
+            
+            if abs(children_total-node.getAmount()>acceptable_diff):
+                results[node] = children_total-node.getAmount()
+            
+            for x in node.children:
+                self.__check_difference_helper(x, results, acceptable_diff)
+
+    def update_currency(self, currency):
+        self.__update_currency_helper(currency,self.__header)
+
+    def __update_currency_helper(self, currency, node):
+
+        node.currency = currency
+
+        for x in node.children:
+            self.__update_currency_helper(currency,x)
 
 p = Period("CYE","2022", "01-01-2022", "12-31-2022")
 tb = TrialBalance(p)
-
-
 
 # print(tb.generate_ratios("AAPL"))
 # print("-----------------")
