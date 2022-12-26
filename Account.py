@@ -144,7 +144,7 @@ class Account:
         return accounts
 
     def convert_shadow_account(self,account_collection = "TBFC", account_class = "", account_data_type = ""):
-        to_convert = ShadowAccount(self.account_name,self.amount,self.account_period,self.currency,self.sign,account_collection,account_class,account_data_type)
+        to_convert = ShadowAccount(self.account_name,self.getAmount(),self.account_period,self.currency,self.sign,account_collection,account_class,account_data_type)
         return to_convert
 # figure out how to make account list global. Otherwise we are wasting memory
 class ShadowAccount(Account):

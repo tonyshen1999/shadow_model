@@ -1,0 +1,90 @@
+,Account ID,Account Names,Account Amount,Account Description
+0,1,Cash0,20796328,Cash
+1,1,Cash1,23331448,Cash
+2,1,Cash2,5677650,Cash
+3,1,Cash3,13970063,Cash
+4,1,Cash5,57205976,Cash
+5,1,Non Cash0,-9953951,Non Cash
+6,1,Non Cash1,-5099863,Non Cash
+7,1,Non Cash2,-5219337,Non Cash
+8,1,Non Cash3,-677690,Non Cash
+9,1,Non Cash5,-39771780,Non Cash
+10,1,PPE0,663248,PPE
+11,1,PPE1,92009,PPE
+12,1,PPE2,8229,PPE
+13,1,PPE3,1111872,PPE
+14,1,PPE5,5772789,PPE
+15,1,Intangible0,35467315,Intangible
+16,1,Intangible1,74480518,Intangible
+17,1,Intangible2,20664121,Intangible
+18,1,Intangible3,21242287,Intangible
+19,1,Intangible5,297651912,Intangible
+20,1,Other Non Current Assets0,76706223,Other Non Current Assets
+21,1,Other Non Current Assets1,44857096,Other Non Current Assets
+22,1,Other Non Current Assets2,78997580,Other Non Current Assets
+23,1,Other Non Current Assets3,72359745,Other Non Current Assets
+24,1,Other Non Current Assets5,209666212,Other Non Current Assets
+25,1,Current Liability0,-112696157,Current Liability
+26,1,Current Liability1,-20535561,Current Liability
+27,1,Current Liability2,-140072542,Current Liability
+28,1,Current Liability3,-20241562,Current Liability
+29,1,Current Liability5,-494281633,Current Liability
+30,1,Non Current Liability0,-4789295,Non Current Liability
+31,1,Non Current Liability1,-8647155,Non Current Liability
+32,1,Non Current Liability2,-10799660,Non Current Liability
+33,1,Non Current Liability3,-4471570,Non Current Liability
+34,1,Non Current Liability5,-39818425,Non Current Liability
+35,1,Common Stock0,-75676,Common Stock
+36,1,Common Stock1,-67917,Common Stock
+37,1,Common Stock2,-7246,Common Stock
+38,1,Common Stock3,-44060,Common Stock
+39,1,Common Stock5,-283921,Common Stock
+40,1,Retained Earnings Beginning0,-30951511,Retained Earnings Beginning
+41,1,Retained Earnings Beginning1,-31174425,Retained Earnings Beginning
+42,1,Retained Earnings Beginning2,-11950704,Retained Earnings Beginning
+43,1,Retained Earnings Beginning3,-5983174,Retained Earnings Beginning
+44,1,Retained Earnings Beginning5,-101289848,Retained Earnings Beginning
+45,1,Sales0,-2920242,Sales
+46,1,Sales1,-5005320,Sales
+47,1,Sales2,-13667016,Sales
+48,1,Sales3,-10985914,Sales
+49,1,Sales5,-39028659,Sales
+50,1,COGS0,8024948,COGS
+51,1,COGS1,5870357,COGS
+52,1,COGS2,760890,COGS
+53,1,COGS3,5029902,COGS
+54,1,COGS5,20908261,COGS
+55,1,Other Income0,-6696378,Other Income
+56,1,Other Income1,-6145607,Other Income
+57,1,Other Income2,-4231252,Other Income
+58,1,Other Income3,-1861754,Other Income
+59,1,Other Income5,-15015589,Other Income
+60,1,Interest Income0,-1242420,Interest Income
+61,1,Interest Income1,-350258,Interest Income
+62,1,Interest Income2,-4059599,Interest Income
+63,1,Interest Income3,-3875694,Interest Income
+64,1,Interest Income5,-10908895,Interest Income
+65,1,Dividend Income,0,Net Income
+66,1,Depreciation,0,Net Income
+67,1,Amoritization,0,Net Income
+68,1,Interest Expense0,68593,Interest Expense
+69,1,Interest Expense1,92373,Interest Expense
+70,1,Interest Expense2,71074,Interest Expense
+71,1,Interest Expense3,50379,Interest Expense
+72,1,Interest Expense5,249830,Interest Expense
+73,1,Income Tax Expense0,1073756,Income Tax Expense
+74,1,Income Tax Expense1,43101855,Income Tax Expense
+75,1,Income Tax Expense2,18258136,Income Tax Expense
+76,1,Income Tax Expense3,19595256,Income Tax Expense
+77,1,Income Tax Expense5,178674250,Income Tax Expense
+78,1,Other Expense0,19684334,Other Expense
+79,1,Other Expense1,9927934,Other Expense
+80,1,Other Expense2,8663526,Other Expense
+81,1,Other Expense3,8086940,Other Expense
+82,1,Other Expense5,180922188,Other Expense
+83,1,Dividends0,-4121434,Dividends
+84,1,Dividends1,-6326328,Dividends
+85,1,Dividends2,-1164739,Dividends
+86,1,Dividends3,-5559382,Dividends
+87,1,Dividends5,-24899810,Dividends
+88,1,Other Equity,0,Equity

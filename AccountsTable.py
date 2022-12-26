@@ -5,7 +5,7 @@ import copy
 import random
 class AccountsTable:
     def __init__(self):
-        self.__accounts = []
+        self.accounts = []
 
     # Update this to be able to identify third party and intercompany from TB. This is only done this way for TESTING PURPOSES
     def pull_tb(self, tb, split_party = True):
@@ -29,28 +29,28 @@ class AccountsTable:
                 thirdp.account_name += "(ThirdParty)"
                 interco.amount = round(og_amount * split_ratio)
                 thirdp.amount = round(og_amount - interco.amount)
-                self.__accounts.append(thirdp.convert_shadow_account())
-                self.__accounts.append(interco.convert_shadow_account())
+                self.accounts.append(thirdp.convert_shadow_account())
+                self.accounts.append(interco.convert_shadow_account())
             elif x.account_name == "IncomeTaxExpense":
                 tax = copy.deepcopy(x)
                 tax.account_name = "IncomeTaxes"
-                self.__accounts.append(tax.convert_shadow_account())
+                self.accounts.append(tax.convert_shadow_account())
             elif x.account_name == "OtherExpense":
                 tax = copy.deepcopy(x)
                 tax.account_name = "OtherDeductions"
-                self.__accounts.append(tax.convert_shadow_account())                
+                self.accounts.append(tax.convert_shadow_account())                
             else:
-                self.__accounts.append(x.convert_shadow_account())
+                self.accounts.append(x.convert_shadow_account())
         
         qbai = ppe_node[0]
         qbai.account_name = "QBAI"
-        self.__accounts.append(qbai.convert_shadow_account())
+        self.accounts.append(qbai.convert_shadow_account())
 
     def __str__(self):
 
         to_return = "Name,\tCollection,\tCurrency,\tClass,\tAmount,\tPeriod\n"
 
-        for x in self.__accounts:
+        for x in self.accounts:
             to_return += x.__str__() + "\n"
 
         return to_return
@@ -58,11 +58,11 @@ class AccountsTable:
 
     def add_account(self, account):
         if isinstance(account, ShadowAccount):
-            self.__accounts.append(account)
+            self.accounts.append(account)
         else:
             raise Exception("Added wrong account type")
     def get_accounts(self):
-        return self.__accounts
+        return self.accounts
 
 
 p = Period("CYE","2022", "01-01-2022", "12-31-2022")
