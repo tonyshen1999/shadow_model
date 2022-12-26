@@ -7,6 +7,7 @@ class AccountsTable:
     def __init__(self):
         self.__accounts = []
 
+    # Update this to be able to identify third party and intercompany from TB. This is only done this way for TESTING PURPOSES
     def pull_tb(self, tb, split_party = True):
 
         if isinstance(tb, TrialBalance) == False:
