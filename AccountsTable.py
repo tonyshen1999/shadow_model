@@ -71,7 +71,13 @@ class AccountsTable:
     def get_accounts(self):
         return self.accounts
 
+    def find_account(self,account):
 
+        if isinstance(account, str):
+            for x in self.accounts:
+                if x.account_name == account:
+                    return x
+        return None
 p = Period("CYE","2022", "01-01-2022", "12-31-2022")
 tb = TrialBalance(p)
 tb.generate_random_tb()
