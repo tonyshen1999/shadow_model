@@ -1,17 +1,17 @@
-﻿Account Types
-Sales
-COGS
-InterestExpense(ThirdParty)
-InterestExpense(Intercompany)
-InterestIncome(ThirdParty)
-InterestIncome(Intercompany)
-OtherIncome(ThirdParty)
-OtherIncome(Intercompany)
-IncomeTaxes
-Non-incomeTaxes
-SGA
-OtherDeductions
-Depreciation
-Amortization
-DividendIncome
-QBAI
+﻿Account Types,Sign
+Sales,False
+COGS,True
+InterestExpenseThirdParty,True
+InterestExpenseIntercompany,True
+InterestIncomeThirdParty,False
+InterestIncomeIntercompany,False
+OtherIncomeThirdParty,False
+OtherIncomeIntercompany,False
+IncomeTaxes,True
+Non-incomeTaxes,True
+SGA,True
+OtherDeductions,True
+Depreciation,True
+Amortization,True
+DividendIncome,False
+QBAI,True

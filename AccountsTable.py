@@ -3,9 +3,16 @@ from Account import ShadowAccount, Account
 from Period import Period
 import copy
 import random
+import pandas as pd
 class AccountsTable:
     def __init__(self):
         self.accounts = []
+    #  def __init__(self, account_name, amount, account_period, currency="USD", sign = True, account_collection = "TBFC", account_class = "", account_data_type = "", adjustment = None):
+    def default_tables(self, account_collection, period, currency = "USD"):
+        acc_df = pd.read_csv("shadow_accounts.csv")
+        for index, row in acc_df.iterrows():
+            to_add = ShadowAccount(account_name = row['Account Types'],amount = 0.00, account_period = period, currency = currency,sign = row['Sign'],account_collection = account_collection)
+            self.accounts.append(to_add)
 
     # Update this to be able to identify third party and intercompany from TB. This is only done this way for TESTING PURPOSES
     def pull_tb(self, tb, split_party = True):
@@ -24,9 +31,9 @@ class AccountsTable:
             if x.account_name == "InterestExpense" or x.account_name == "InterestIncome" or x.account_name == "OtherIncome":
                 og_amount = x.amount
                 interco = copy.deepcopy(x)
-                interco.account_name += "(Intercompany)"
+                interco.account_name += "Intercompany"
                 thirdp = copy.deepcopy(x)
-                thirdp.account_name += "(ThirdParty)"
+                thirdp.account_name += "ThirdParty"
                 interco.amount = round(og_amount * split_ratio)
                 thirdp.amount = round(og_amount - interco.amount)
                 self.accounts.append(thirdp.convert_shadow_account())

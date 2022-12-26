@@ -29,8 +29,15 @@ class Account:
         self.amount = children_amount
         return current_amount - children_amount
         
-
-
+    def __add__(self,other):
+        return self.getAmount() + other.getAmount()
+    
+    def __sub__(self,other):
+        return self.getAmount() - other.getAmount()
+    def __truediv__(self,other):
+        return self.getAmount() / other.getAmount()
+    def __mul__(self,other):
+        return self.getAmount() * other.getAmount()
     
     def remove_all_children(self):
         for x in self.children:
@@ -149,7 +156,7 @@ class Account:
 # figure out how to make account list global. Otherwise we are wasting memory
 class ShadowAccount(Account):
 
-    def __init__(self, account_name, amount, account_period, currency="USD", sign = True, account_collection = "TBFC", account_class = "", account_data_type = ""):
+    def __init__(self, account_name, amount, account_period, currency="USD", sign = True, account_collection = "TBFC", account_class = "", account_data_type = "", adjustment = None):
         self.__account_list = self.__import__account_list()
         
         if account_name not in self.__account_list:
@@ -159,6 +166,8 @@ class ShadowAccount(Account):
         self.account_collection = account_collection
         self.account_class = account_class
         self.account_data_type = account_data_type
+        self.adjustment = adjustment
+
     
     def __import__account_list(self):
         df = pd.read_csv("shadow_accounts.csv")
@@ -168,7 +177,11 @@ class ShadowAccount(Account):
         to_return = self.account_name + ",\t" + self.account_collection +",\t" + self.currency + ",\t" + self.account_class +",\t" + str(self.amount) + ",\t" + self.account_period.period_type+self.account_period.period_year
 
         return to_return
-
+    def set_child(self,child):
+    
+        self.children.append(child)
+        if isinstance(child, Account):
+            child.parent = self
 
 # p = Period("CYE","2022", "01-01-2022", "12-31-2022")
 # a = ShadowAccount("Interest Income (Third Party)", 0.00, p)
