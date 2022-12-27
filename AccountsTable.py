@@ -7,7 +7,8 @@ import pandas as pd
 class AccountsTable:
     def __init__(self):
         self.accounts = []
-    #  def __init__(self, account_name, amount, account_period, currency="USD", sign = True, account_collection = "TBFC", account_class = "", account_data_type = "", adjustment = None):
+    
+    
     def default_tables(self, account_collection, period, currency = "USD"):
         acc_df = pd.read_csv("shadow_accounts.csv")
         for index, row in acc_df.iterrows():
@@ -64,10 +65,9 @@ class AccountsTable:
 
 
     def add_account(self, account):
-        if isinstance(account, ShadowAccount):
-            self.accounts.append(account)
-        else:
-            raise Exception("Added wrong account type")
+       
+        self.accounts.append(account)
+       
     def get_accounts(self):
         return self.accounts
 
@@ -78,10 +78,10 @@ class AccountsTable:
                 if x.account_name == account:
                     return x
         return None
-p = Period("CYE","2022", "01-01-2022", "12-31-2022")
-tb = TrialBalance(p)
-tb.generate_random_tb()
+# p = Period("CYE","2022", "01-01-2022", "12-31-2022")
+# tb = TrialBalance(p)
+# tb.generate_random_tb()
 
-at = AccountsTable()
-at.pull_tb(tb)
-print(at)
+# at = AccountsTable()
+# at.pull_tb(tb)
+# print(at)

@@ -8,10 +8,11 @@ InterestIncomeIntercompany,False
 OtherIncomeThirdParty,False
 OtherIncomeIntercompany,False
 IncomeTaxes,True
-Non-incomeTaxes,True
+NonIncomeTaxes,True
 SGA,True
 OtherDeductions,True
 Depreciation,True
 Amortization,True
 DividendIncome,False
 QBAI,True
+PBT,

@@ -30,13 +30,22 @@ class Account:
         return current_amount - children_amount
         
     def __add__(self,other):
+        if isinstance(other,int) or isinstance(other, float):
+            return self.getAmount() + other
+
         return self.getAmount() + other.getAmount()
     
     def __sub__(self,other):
+        if isinstance(other,int) or isinstance(other, float):
+            return self.getAmount() - other
         return self.getAmount() - other.getAmount()
     def __truediv__(self,other):
+        if isinstance(other,int) or isinstance(other, float):
+            return self.getAmount() / other
         return self.getAmount() / other.getAmount()
     def __mul__(self,other):
+        if isinstance(other,int) or isinstance(other, float):
+            return self.getAmount() * other
         return self.getAmount() * other.getAmount()
     
     def remove_all_children(self):
@@ -167,6 +176,7 @@ class ShadowAccount(Account):
         self.account_class = account_class
         self.account_data_type = account_data_type
         self.adjustment = adjustment
+        self.post_fix_children = []
 
     
     def __import__account_list(self):
@@ -182,6 +192,64 @@ class ShadowAccount(Account):
         self.children.append(child)
         if isinstance(child, Account):
             child.parent = self
+    
+    def __to_post_fix(self):
+        operators = set(['+', '-', '*', '/', '(', ')', '^'])
+        priority = {'+':1, '-':1, '*':2, '/':2, '^':3}
+        stack = []
+        output = []
+
+        for c in self.children:
+            if c not in operators:
+                output.append(c)
+            elif c == '(':
+                stack.append('(')
+            elif c == ')':
+                while stack and stack[-1]!='(':
+                    output.append(stack.pop())
+                stack.pop()
+            else:
+                while stack and stack[-1]!='(' and priority[c]<=priority[stack[-1]]:
+        
+                    output+=stack.pop()
+
+                stack.append(c)
+        while stack:
+            output+=stack.pop()
+
+        self.post_fix_children = output
+    
+    def compile_post_fix(self):
+
+        self.__to_post_fix()
+        stack = []
+
+        for x in self.post_fix_children:
+            if isinstance(x,ShadowAccount):
+                stack.append(x)
+                
+            else:
+                a = stack.pop()
+                b = stack.pop()
+                if isinstance(a,Account):
+                    a = a.getAmount()
+                if isinstance(b,Account):
+                    b = b.getAmount()
+                if x == '+':
+                    stack.append(b + a)
+                elif x == '-':
+                    stack.append(b - a)
+                elif x == '*':
+                    stack.append(b * a)
+                elif x == '/':
+                    stack.append(b / a)
+        
+        self.amount = stack.pop()
+
+
+
+
+
 
 # p = Period("CYE","2022", "01-01-2022", "12-31-2022")
 # a = ShadowAccount("Interest Income (Third Party)", 0.00, p)

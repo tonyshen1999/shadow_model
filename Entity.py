@@ -9,7 +9,7 @@ class Entity:
     
     # Create an Attributes Class for each Entity type (CFC, DRE, USSH). Load Attributes pushes appropriate attribute type based on Entity type
     #
-    def __init__(self, name,country, currency, period, entity_type, tb = None):
+    def __init__(self, name,country, currency, period, entity_type, tb = None, accounts_table = None):
 
         self.name = name
         self.country = country
@@ -20,15 +20,17 @@ class Entity:
         self.children = []
         self.parent = None
         self.percent_owned = 100
+        self.__accounts_table = accounts_table
 
         if tb == None:
             self.__tb = TrialBalance(self.period,currency=self.currency)
         else:
             self.__tb = tb
         
-        self.__accounts_table = AccountsTable()
-        self.__accounts_table.pull_tb(self.__tb)
-
+        if self.__accounts_table == None:
+            self.__accounts_table = AccountsTable()
+            self.__accounts_table.pull_tb(self.__tb)
+    
     def get_accounts_table(self):
         return self.__accounts_table
     def get_tb(self):
