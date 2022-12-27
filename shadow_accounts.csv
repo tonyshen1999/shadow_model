@@ -17,4 +17,6 @@ DividendIncome,False
 QBAI,True
 PBT,
 ETR,
-GrossProfit
+GrossProfit,
+TaxLiability,
+[USTaxRate]

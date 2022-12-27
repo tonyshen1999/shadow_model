@@ -1,3 +1,4 @@
 PBT=Sales+COGS+InterestExpenseThirdParty+InterestExpenseIntercompany+InterestIncomeThirdParty+InterestIncomeIntercompany+OtherIncomeThirdParty+OtherIncomeIntercompany+NonIncomeTaxes+SGA+OtherDeductions+Depreciation+Amortization+DividendIncome
 GrossProfit=Sales+COGS
 ETR=IncomeTaxes/PBT
+TaxLiability=[USTaxRate]*PBT
