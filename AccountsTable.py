@@ -8,12 +8,54 @@ class AccountsTable:
     def __init__(self):
         self.accounts = []
     
-    
-    def default_tables(self, account_collection, period, currency = "USD"):
-        acc_df = pd.read_csv("shadow_accounts.csv")
+    def __iter__(self):
+        self.n = 0
+        return self
+
+    def __next__(self):
+        if self.n < len(self.accounts):
+            self.n += 1
+            return self.accounts[self.n-1]
+        else:
+            raise StopIteration
+
+    def import_tables(self, account_collection, period, fName = "shadow_accounts.csv", currency = "USD"):
+        acc_df = pd.read_csv(fName)
         for index, row in acc_df.iterrows():
             to_add = ShadowAccount(account_name = row['Account Types'],amount = 0.00, account_period = period, currency = currency,sign = row['Sign'],account_collection = account_collection)
             self.accounts.append(to_add)
+
+    def export(self, fName):
+        account_names = []
+        account_amount = []
+        account_currency = []
+        account_collection = []
+        account_class = []
+        account_data_type = []
+        account_period = []
+
+        for x in self.accounts:
+           
+            account_names.append(x.account_name)
+            account_amount.append(x.getAmount())
+            account_currency.append(x.currency)
+            account_collection.append(x.account_collection)
+            account_class.append(x.account_class)
+            account_data_type.append(x.account_data_type)
+            account_period.append(x.account_period.period_type + x.account_period.period_year)
+        
+        accounts_dict = {
+            "Account Name":account_names,
+            "Amount":account_amount,
+            "ISO Currency Code":account_currency,
+            "Period":account_period,
+            "Collection":account_collection,
+            "Class":account_class,
+            "Data Type":account_data_type
+        }
+
+        df = pd.DataFrame(accounts_dict)
+        df.to_csv(fName)
 
     # Update this to be able to identify third party and intercompany from TB. This is only done this way for TESTING PURPOSES
     def pull_tb(self, tb, split_party = True):

@@ -193,58 +193,68 @@ class ShadowAccount(Account):
         if isinstance(child, Account):
             child.parent = self
     
-    def __to_post_fix(self):
-        operators = set(['+', '-', '*', '/', '(', ')', '^'])
-        priority = {'+':1, '-':1, '*':2, '/':2, '^':3}
-        stack = []
-        output = []
+    def has_children(self):
+        if len(self.children)>0:
+            return True
+        else:
+            return False
 
-        for c in self.children:
-            if c not in operators:
-                output.append(c)
-            elif c == '(':
-                stack.append('(')
-            elif c == ')':
-                while stack and stack[-1]!='(':
-                    output.append(stack.pop())
-                stack.pop()
-            else:
-                while stack and stack[-1]!='(' and priority[c]<=priority[stack[-1]]:
-        
-                    output+=stack.pop()
+    def to_post_fix(self):
 
-                stack.append(c)
-        while stack:
-            output+=stack.pop()
+        if self.has_children() == True:
+            operators = set(['+', '-', '*', '/', '(', ')', '^'])
+            priority = {'+':1, '-':1, '*':2, '/':2, '^':3}
+            stack = []
+            output = []
 
-        self.post_fix_children = output
+            for c in self.children:
+                if c not in operators:
+                    output.append(c)
+                elif c == '(':
+                    stack.append('(')
+                elif c == ')':
+                    while stack and stack[-1]!='(':
+                        output.append(stack.pop())
+                    stack.pop()
+                else:
+                    while stack and stack[-1]!='(' and priority[c]<=priority[stack[-1]]:
+            
+                        output+=stack.pop()
+
+                    stack.append(c)
+            while stack:
+                output+=stack.pop()
+
+            self.post_fix_children = output
+            
     
     def compile_post_fix(self):
 
-        self.__to_post_fix()
-        stack = []
-
-        for x in self.post_fix_children:
-            if isinstance(x,ShadowAccount):
-                stack.append(x)
-                
-            else:
-                a = stack.pop()
-                b = stack.pop()
-                if isinstance(a,Account):
-                    a = a.getAmount()
-                if isinstance(b,Account):
-                    b = b.getAmount()
-                if x == '+':
-                    stack.append(b + a)
-                elif x == '-':
-                    stack.append(b - a)
-                elif x == '*':
-                    stack.append(b * a)
-                elif x == '/':
-                    stack.append(b / a)
-        
-        self.amount = stack.pop()
+        if self.has_children() == True:
+            self.to_post_fix()
+            stack = []
+            # print(self.post_fix_children)
+            for x in self.post_fix_children:
+                if isinstance(x,ShadowAccount):
+                    stack.append(x)
+                    
+                else:
+                    a = stack.pop()
+                    b = stack.pop()
+                    if isinstance(a,Account):
+                        a = a.getAmount()
+                    if isinstance(b,Account):
+                        b = b.getAmount()
+                    if x == '+':
+                        stack.append(b + a)
+                    elif x == '-':
+                        stack.append(b - a)
+                    elif x == '*':
+                        stack.append(b * a)
+                    elif x == '/':
+                        stack.append(b / a)
+            
+            self.amount = stack.pop()
 
 
 

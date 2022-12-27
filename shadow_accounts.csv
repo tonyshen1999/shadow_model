@@ -16,3 +16,5 @@ Amortization,True
 DividendIncome,False
 QBAI,True
 PBT,
+ETR,
+GrossProfit
