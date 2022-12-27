@@ -35,7 +35,7 @@ class Calc:
 
         for x in self.accounts:
             x.compile_post_fix()
-            print(x)
+            # print(x)
 
         # a = self.accounts.find_account("PBT")
         # a.to_post_fix()
