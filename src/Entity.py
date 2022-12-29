@@ -33,6 +33,8 @@ class Entity:
     
     def get_accounts_table(self):
         return self.__accounts_table
+    def set_accounts_table(self,acc_tbl):
+        self.__accounts_table = acc_tbl
     def get_tb(self):
         return self.__tb
     def set_tb(self,tb):

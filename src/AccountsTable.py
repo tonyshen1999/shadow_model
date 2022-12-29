@@ -5,9 +5,9 @@ import copy
 import random
 import pandas as pd
 class AccountsTable:
-    def __init__(self):
+    def __init__(self,period = None):
         self.accounts = []
-    
+        self.period  = period
     def __iter__(self):
         self.n = 0
         return self
@@ -56,7 +56,23 @@ class AccountsTable:
 
         df = pd.DataFrame(accounts_dict)
         df.to_csv(fName)
+    
+    def pull_accounts_by_period(self, period):
 
+        to_return = AccountsTable()
+
+        for x in self.accounts:
+            if x.account_period == period:
+                to_return.add_account(x)
+
+        return to_return
+
+    def __getitem__(self,key):
+        for x in self.accounts:
+            if x.account_name == key:
+                return x
+        a = Account(account_name=key,amount=0,account_period=self.period)
+        return a
     # Update this to be able to identify third party and intercompany from TB. This is only done this way for TESTING PURPOSES
     def pull_tb(self, tb, split_party = True):
 

@@ -1,3 +1,6 @@
+# REVISIT AFTER TEST MODEL WORKS TO IMPLEMENT OWN COMPILER FOR CALC SCRIPTS
+
+
 from Account import Account,ShadowAccount
 import pandas as pd
 import copy as copy
