@@ -36,15 +36,15 @@ class TrialBalance:
     def __init__(self, period, currency = "USD"):
         self.__period = period
 
-        config_tree = ET.parse('tb_config.xml')
+        config_tree = ET.parse('config//tb_config.xml')
         self.__header = Account("Header",0,self.__period)
         self.__config(config_tree.getroot(),self.__header)
         self.update_currency(currency)
         
     def buildXML(self,root):
-        tree = ET.parse('tb_config.xml')
+        tree = ET.parse('config//tb_config.xml')
         self.__buildXMLHelper(root,tree.getroot())
-        tree.write("tb_config.xml")
+        tree.write("config//tb_config.xml")
 
     def __buildXMLHelper(self,account_node,xml_node):
 

@@ -180,7 +180,7 @@ class ShadowAccount(Account):
 
     
     def __import__account_list(self):
-        df = pd.read_csv("shadow_accounts.csv")
+        df = pd.read_csv("config//shadow_accounts.csv")
         return df["Account Types"].to_numpy()
     
     def __str__(self):
