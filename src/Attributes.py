@@ -3,7 +3,7 @@ from Account import Account,ShadowAccount
 # Turn attributestable into a set. Figure out hashing in Python lol
 
 class AttributesTable:
-    def __init__(self, period, fName):
+    def __init__(self, period, fName=""):
         
         self.period = period
         self.attributes = []
@@ -11,7 +11,8 @@ class AttributesTable:
         
         self.add_atr("DefaultAttributes.csv")
         
-        self.add_atr(fName)
+        if fName != "":
+            self.add_atr(fName)
 
     def add_atr(self, fName):
         atr_df = pd.read_csv("Attributes//"+fName)
@@ -64,6 +65,14 @@ class Attribute:
             return (self.atr_name) == (other.atr_name)
         return False
     
+    def get_value(self):
+        val = self.atr_value
+        
+        if isinstance(val,str) and val.replace("-","").replace(".","").replace("0","").isnumeric():
+            print("found it")
+            return float(val)
+        return float(val)
+        
 # atr = AttributesTable("CFCAttributes.csv")
 # print(atr["USTaxRate"])
 # # print(atr)

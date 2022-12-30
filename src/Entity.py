@@ -22,12 +22,13 @@ class Entity:
         self.percent_owned = 100
         self.__accounts_table = accounts_table
 
-        if tb == None:
-            self.__tb = TrialBalance(self.period,currency=self.currency)
-        else:
-            self.__tb = tb
+        # if tb == None:
+        #     self.__tb = TrialBalance(self.period,currency=self.currency)
+        # else:
+        #     self.__tb = tb
         
         if self.__accounts_table == None:
+            self.__tb = TrialBalance(self.period,currency=self.currency)
             self.__accounts_table = AccountsTable()
             self.__accounts_table.pull_tb(self.__tb)
     
@@ -63,7 +64,7 @@ class Entity:
             account_collection.append(x.account_collection)
             account_class.append(x.account_class)
             account_data_type.append(x.account_data_type)
-            account_period.append(x.account_period.period_type + x.account_period.period_year)
+            account_period.append(x.account_period.period_type + str(x.account_period.period_year))
         
         accounts_dict = {
             "Entity":entity,
@@ -80,9 +81,9 @@ class Entity:
         df.to_csv(fName)
 
 
-p = Period("CYE","2022", "01-01-2022", "12-31-2022")
-tb = TrialBalance(p)
-tb.generate_random_tb()
-e = Entity("Acme Corp","ME","EUR",p,"CFC",tb)
+# p = Period("CYE","2022", "01-01-2022", "12-31-2022")
+# tb = TrialBalance(p)
+# tb.generate_random_tb()
+# e = Entity("Acme Corp","ME","EUR",p,"CFC",tb)
 
-e.pull_accounts_csv("accounts.csv")
+# e.pull_accounts_csv("tests//Misc//accounts.csv")

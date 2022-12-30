@@ -4,6 +4,9 @@ from Period import Period
 import copy
 import random
 import pandas as pd
+import random as random
+from Adjustment import Adjustment
+
 class AccountsTable:
     def __init__(self,period = None):
         self.accounts = []
@@ -71,6 +74,7 @@ class AccountsTable:
         for x in self.accounts:
             if x.account_name == key:
                 return x
+        print("*****WARNING*****: " + key + " wasn't found!")
         a = Account(account_name=key,amount=0,account_period=self.period)
         return a
     # Update this to be able to identify third party and intercompany from TB. This is only done this way for TESTING PURPOSES
@@ -136,6 +140,94 @@ class AccountsTable:
                 if x.account_name == account:
                     return x
         return None
+    
+    def search_collection(self, colct):
+
+        acc_tbl = AccountsTable()
+        for x in self.accounts:
+            if x.account_collection == colct:
+                acc_tbl.add_account(x)
+        return acc_tbl
+    
+    def search_period(self, pd):
+        acc_tbl = AccountsTable()
+        for x in self.accounts:
+            if x.account_period == pd:
+                acc_tbl.add_account(x)
+        return acc_tbl
+    #get_adjustment_amount(self,colct,adj_cls,adj_type,pd)
+    def apply_adjustments(self,acct_name, acct_colct,adj_colct,adj_cls,adj_type,pd,currency = "USD"):
+        
+        if self.find_account(acct_name)==None:
+            amount = 0
+            for x in self.accounts:
+                amount += x.get_adjustment_amount(colct=adj_colct,adj_cls=adj_cls,adj_type=adj_type,pd=pd)
+            
+            a = ShadowAccount(account_name=acct_name,amount=amount,account_period=pd,currency=currency,account_collection=acct_colct)
+            self.accounts.append(a)
+
+    def print_adj(self):
+        to_return = "Account Name,\tType,\tCollection\t,Class\t,Amount,\tCurrency,\tPercentage,\tPeriod\n"
+        for x in self.accounts:
+            # print(x)
+            for y in x.adjustments:
+                to_return += x.account_name+",\t"+y.adj_type+",\t"+y.adj_collection+",\t"+y.adj_class+",\t"+str(y.adj_amount)+",\t"+y.currency+",\t"+str(y.adj_perc)+",\t"+y.adj_period.get_pd()+"\n"
+        print(to_return)
+        return to_return
+    
+    def append_adj(self,account,adj_amount,adj_type,adj_perc,adj_class,adj_collection,adj_period,adj_currency):
+        adj = Adjustment(adj_amount=adj_amount,adj_type = adj_type,adj_class=adj_class,adj_collection=adj_collection,adj_period=adj_period,currency=adj_currency)
+        account.adjustments.append(adj)
+
+    # USE FOR TESTING ONLY
+    def generate_random_adjustments(self,acct_names):
+        sign = bool(random.getrandbits(1))
+        for x in acct_names:
+            # print(x)
+
+            
+            acct = self.find_account(x)
+            amt = acct.amount*random.random()
+            if sign == True:
+                amt *= -1
+            # print(acct)
+            self.append_adj(account=acct,adj_currency=acct.currency,adj_amount=amt,adj_type = "ForeignSchM-1Adj",adj_perc=0,adj_class="ForeignSchM-1Adj",adj_collection="",adj_period=acct.account_period)
+
+    def export_adjustments(self, fName):
+        acct_names = []
+        types = []
+        colcts = []
+        classes = []
+        amts = []
+        percs = []
+        pds = []
+        currency = []
+        for x in self.accounts:
+            for y in x.adjustments:
+                acct_names.append(x.account_name)
+                types.append(y.adj_type)
+                colcts.append(y.adj_collection)
+                classes.append(y.adj_class)
+                amts.append(y.adj_amount)
+                percs.append(y.adj_perc)
+                pds.append(y.adj_period.get_pd())
+                currency.append(y.currency)
+        adj_set = {
+            "Account Name":acct_names,
+            "Adjustment Type":types,
+            "Adjustment Collection":colcts,
+            "Adjustment Class":classes,
+            "Adjustment Amount":amts,
+            "ISO Currency Code":currency,
+            "Adjustment Period":pds,
+            "Adjustment Percentage":percs
+        }
+
+        adj_df = pd.DataFrame(adj_set)
+
+        adj_df.to_csv("tests//Misc//"+fName)
+    def import_adjustments(self, fName):
+        pass
 # p = Period("CYE","2022", "01-01-2022", "12-31-2022")
 # tb = TrialBalance(p)
 # tb.generate_random_tb()

@@ -2,10 +2,11 @@ import copy
 import random
 from Period import Period
 import pandas as pd
+from Adjustment import Adjustment
 class Account:
 
     # signage: True = debit, False = credit
-    def __init__(self, account_name, amount, account_period, currency="USD", sign = True):
+    def __init__(self, account_name, amount, account_period, currency="USD", sign = True, adjustments = None):
         self.account_name = account_name
         self.amount = amount
         self.account_period = account_period
@@ -13,7 +14,11 @@ class Account:
         self.children = []
         self.parent = None
         self.sign = sign
-    
+        self.adjustments = adjustments
+
+        if self.adjustments == None:
+            self.adjustments = []
+        
     def set_child(self,child):
 
         self.children.append(child)
@@ -28,7 +33,8 @@ class Account:
         self.children = []
         self.amount = children_amount
         return current_amount - children_amount
-        
+    
+
     def __add__(self,other):
         if isinstance(other,int) or isinstance(other, float):
             return self.getAmount() + other
@@ -162,6 +168,14 @@ class Account:
     def convert_shadow_account(self,account_collection = "TBFC", account_class = "", account_data_type = ""):
         to_convert = ShadowAccount(self.account_name,self.getAmount(),self.account_period,self.currency,self.sign,account_collection,account_class,account_data_type)
         return to_convert
+    def get_adjustment_amount(self,colct,adj_cls,adj_type,pd):
+        adj = Adjustment(0,adj_class=adj_cls,adj_collection=colct,adj_type=adj_type,adj_period=pd)
+        for x in self.adjustments:
+            if x.apply_adj(adj) == True:
+                print("apply this adj")
+                print(x)
+                return x.adj_amount
+        return 0
 # figure out how to make account list global. Otherwise we are wasting memory
 class ShadowAccount(Account):
 
@@ -184,7 +198,7 @@ class ShadowAccount(Account):
         return df["Account Types"].to_numpy()
     
     def __str__(self):
-        to_return = self.account_name + ",\t" + self.account_collection +",\t" + self.currency + ",\t" + self.account_class +",\t" + str(self.amount) + ",\t" + self.account_period.period_type+self.account_period.period_year
+        to_return = self.account_name + ",\t" + self.account_collection +",\t" + self.currency + ",\t" + self.account_class +",\t" + str(self.amount) + ",\t" + self.account_period.period_type+str(self.account_period.period_year)
 
         return to_return
     def set_child(self,child):
