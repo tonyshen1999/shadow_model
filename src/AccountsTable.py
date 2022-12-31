@@ -45,7 +45,7 @@ class AccountsTable:
             account_collection.append(x.account_collection)
             account_class.append(x.account_class)
             account_data_type.append(x.account_data_type)
-            account_period.append(x.account_period.period_type + x.account_period.period_year)
+            account_period.append(x.account_period.period_type + str(x.account_period.period_year))
         
         accounts_dict = {
             "Account Name":account_names,
@@ -172,7 +172,7 @@ class AccountsTable:
             # print(x)
             for y in x.adjustments:
                 to_return += x.account_name+",\t"+y.adj_type+",\t"+y.adj_collection+",\t"+y.adj_class+",\t"+str(y.adj_amount)+",\t"+y.currency+",\t"+str(y.adj_perc)+",\t"+y.adj_period.get_pd()+"\n"
-        print(to_return)
+        # print(to_return)
         return to_return
     
     def append_adj(self,account,adj_amount,adj_type,adj_perc,adj_class,adj_collection,adj_period,adj_currency):
@@ -225,9 +225,16 @@ class AccountsTable:
 
         adj_df = pd.DataFrame(adj_set)
 
-        adj_df.to_csv("tests//Misc//"+fName)
+        adj_df.to_csv(fName)
     def import_adjustments(self, fName):
-        pass
+        
+        adj_df = pd.read_csv(fName)
+
+        for index, row in adj_df.iterrows():
+            acc = self.__getitem__(key=row["Account Name"])
+            adj = Adjustment(adj_amount=float(row["Adjustment Amount"]),adj_class=str(row["Adjustment Class"]),adj_collection=str(row["Adjustment Collection"]), adj_period=acc.account_period,adj_type=str(row["Adjustment Type"]),adj_perc=float(row["Adjustment Percentage"]),currency=str(row["ISO Currency Code"]))
+            # print(adj.adj_class)
+            acc.adjustments.append(adj)
 # p = Period("CYE","2022", "01-01-2022", "12-31-2022")
 # tb = TrialBalance(p)
 # tb.generate_random_tb()

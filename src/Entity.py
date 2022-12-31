@@ -19,7 +19,7 @@ class Entity:
 
         self.children = []
         self.parent = None
-        self.percent_owned = 100
+        self.percent_owned = 1
         self.__accounts_table = accounts_table
 
         # if tb == None:
@@ -31,7 +31,14 @@ class Entity:
             self.__tb = TrialBalance(self.period,currency=self.currency)
             self.__accounts_table = AccountsTable()
             self.__accounts_table.pull_tb(self.__tb)
-    
+    def __str__(self):
+        parent = self.parent
+        if parent == None:
+            parent = "None"
+        else:
+            parent = parent.name
+        to_return = self.name + ", Type: " + self.type + ", Country: " + self.country + ", Parent: " + parent +", Percent Owned: " + str(self.percent_owned*100) + "%"
+        return to_return
     def get_accounts_table(self):
         return self.__accounts_table
     def set_accounts_table(self,acc_tbl):
@@ -45,6 +52,9 @@ class Entity:
         child.percent_owned = percent_owned
         self.children.append(child)
     
+    
+
+
     def pull_accounts_csv(self, fName):
         
         entity = []

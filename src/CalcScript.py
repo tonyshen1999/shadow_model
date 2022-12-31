@@ -19,6 +19,8 @@ class Calculation:
         
 
         self.calculate()
+    def __validation(self):
+        return True
     def calculate(self):
         pass
     
@@ -38,6 +40,7 @@ class Calculation:
 
 
 class EBIT(Calculation):
+
     def calculate(self):
         if self.contains("EBIT") == False:
             a = self._create_account("EBIT")
@@ -100,9 +103,12 @@ class Sec163j(Calculation):
             self.accounts_tbl.add_account(disallowed_int_exp)
 
 class CFCTestedIncome(Calculation):
+    def __validation(self):
+        if self.entity.type == "CFC":
+            return True
 
     def calculate(self):
-        if self.contains("TentativeTestedIncome") == False:
+        if self.contains("TentativeTestedIncome") == False and self.__validation() == True:
             Sec163j(self.period,self.entity)
             tent_tested_income_amt = self.accounts_tbl["TI_EBIT"].getAmount()+self.accounts_tbl["InterestExpenseUtilized"].getAmount()
             +self.accounts_tbl["InterestExpenseIntercompany"].getAmount()+self.accounts_tbl["InterestIncomeThirdParty"].getAmount()
@@ -129,7 +135,20 @@ class CFCTestedIncome(Calculation):
                     tested_loss.amount = 0
             self.accounts_tbl.add_account(tested_income)
             self.accounts_tbl.add_account(tested_loss)
-                
+            
+            self.accounts_tbl.add_account(self._create_account("TestedIncome_ETR",tested_income_etr_amt*-1))
+
+class USSH951AInclusion(Calculation):
+    def __validation(self):
+        if self.entity.type == "USSH":
+            return True
+    def calculate(self):
+        cfcs = self.entity.children
+        cfc_atr = AttributesTable(p,"CFCAttributes.csv")
+        ussh_atr = AttributesTable(p)
+        
+        for x in cfcs:
+            CFCTestedIncome(self.period,x,cfc_atr)
 
             
 
@@ -149,7 +168,7 @@ e = Entity(name = "Foo", country = "Canada",currency = "CA",period = p,entity_ty
 # print(e.get_accounts_table())
 atr = AttributesTable(p,"CFCAttributes.csv")
 c = CFCTestedIncome(p,e,atr)
-c.calculate()
+# c.calculate()
 # print("-------------------")
 print(e.get_accounts_table())
 e.pull_accounts_csv("tests//Misc//163jCalc.csv")
