@@ -192,7 +192,10 @@ class ShadowAccount(Account):
         self.adjustment = adjustment
         self.post_fix_children = []
 
-    
+    def __eq__(self, other):
+        if isinstance(other,ShadowAccount):
+            return (self.account_name,self.account_class,self.account_collection,self.account_period,self.account_data_type) == (other.account_name,other.account_class,other.account_collection,other.account_period,other.account_data_type)
+        return False
     def __import__account_list(self):
         df = pd.read_csv("config//shadow_accounts.csv")
         return df["Account Types"].to_numpy()

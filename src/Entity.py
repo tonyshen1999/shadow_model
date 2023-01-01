@@ -3,6 +3,8 @@ from Trialbalance import TrialBalance
 from Period import Period
 from AccountsTable import AccountsTable
 import pandas as pd
+import copy
+
 class Entity:
 
 
@@ -52,8 +54,16 @@ class Entity:
         child.percent_owned = percent_owned
         self.children.append(child)
     
-    
-
+    def __getitem__(self,key):
+        
+        for x in self.children:
+            if x.name == key:
+                return x
+        
+        to_return = copy.deepcopy(self)
+        to_return.name = key
+        print("*****WARNING*****\n" + key + " DOES NOT EXIST")
+        return to_return
 
     def pull_accounts_csv(self, fName):
         

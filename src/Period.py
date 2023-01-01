@@ -1,12 +1,16 @@
 import pandas as pd
 import  copy as copy
 class Period:
-    def __init__(self, period_type, period_year, begin_date, end_date):
+    def __init__(self, period_type, period_year, begin_date="", end_date=""):
 
-        self.period_year = int(period_year)
-        self.period_type = period_type
-        self.begin_date = pd.to_datetime(begin_date)
-        self.end_date = pd.to_datetime(end_date)
+        if isinstance(period_year,str) and period_type == "":
+            self.period_year = period_year.replace("CYE","").replace("FYE","")
+            self.period_type=period_year.replace(self.period_year,"")
+        else:
+            self.period_year = int(period_year)
+            self.period_type = period_type
+            self.begin_date = pd.to_datetime(begin_date)
+            self.end_date = pd.to_datetime(end_date)
         # self.prior_period = Period(self.period_type, self.period_year - 1, begin_date - pd.DateOffset(years=1),
         #                            end_date - pd.DateOffset(years=1))
         # self.future_period = Period(self.period_type, self.period_year - 1, begin_date + pd.DateOffset(years=1),

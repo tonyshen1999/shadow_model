@@ -29,35 +29,7 @@ class AccountsTable:
             self.accounts.append(to_add)
 
     def export(self, fName):
-        account_names = []
-        account_amount = []
-        account_currency = []
-        account_collection = []
-        account_class = []
-        account_data_type = []
-        account_period = []
-
-        for x in self.accounts:
-           
-            account_names.append(x.account_name)
-            account_amount.append(x.getAmount())
-            account_currency.append(x.currency)
-            account_collection.append(x.account_collection)
-            account_class.append(x.account_class)
-            account_data_type.append(x.account_data_type)
-            account_period.append(x.account_period.period_type + str(x.account_period.period_year))
-        
-        accounts_dict = {
-            "Account Name":account_names,
-            "Amount":account_amount,
-            "ISO Currency Code":account_currency,
-            "Period":account_period,
-            "Collection":account_collection,
-            "Class":account_class,
-            "Data Type":account_data_type
-        }
-
-        df = pd.DataFrame(accounts_dict)
+        df = self.get_accounts_df()
         df.to_csv(fName)
     
     def pull_accounts_by_period(self, period):
@@ -179,6 +151,40 @@ class AccountsTable:
         adj = Adjustment(adj_amount=adj_amount,adj_type = adj_type,adj_class=adj_class,adj_collection=adj_collection,adj_period=adj_period,currency=adj_currency)
         account.adjustments.append(adj)
 
+    def get_accounts_df(self):
+
+        account_names = []
+        account_amount = []
+        account_currency = []
+        account_collection = []
+        account_class = []
+        account_data_type = []
+        account_period = []
+
+        for x in self.accounts:
+           
+            account_names.append(x.account_name)
+            account_amount.append(x.getAmount())
+            account_currency.append(x.currency)
+            account_collection.append(x.account_collection)
+            account_class.append(x.account_class)
+            account_data_type.append(x.account_data_type)
+            account_period.append(x.account_period.period_type + str(x.account_period.period_year))
+        
+        accounts_dict = {
+            "Account Name":account_names,
+            "Amount":account_amount,
+            "ISO Currency Code":account_currency,
+            "Period":account_period,
+            "Collection":account_collection,
+            "Class":account_class,
+            "Data Type":account_data_type
+        }
+
+        df = pd.DataFrame(accounts_dict)
+
+        return df
+
     # USE FOR TESTING ONLY
     def generate_random_adjustments(self,acct_names):
         sign = bool(random.getrandbits(1))
@@ -192,8 +198,7 @@ class AccountsTable:
                 amt *= -1
             # print(acct)
             self.append_adj(account=acct,adj_currency=acct.currency,adj_amount=amt,adj_type = "ForeignSchM-1Adj",adj_perc=0,adj_class="ForeignSchM-1Adj",adj_collection="",adj_period=acct.account_period)
-
-    def export_adjustments(self, fName):
+    def get_adjustments_df(self):
         acct_names = []
         types = []
         colcts = []
@@ -225,6 +230,10 @@ class AccountsTable:
 
         adj_df = pd.DataFrame(adj_set)
 
+        return adj_df
+    def export_adjustments(self, fName):
+        
+        adj_df = self.get_adjustments_df()
         adj_df.to_csv(fName)
     def import_adjustments(self, fName):
         
@@ -235,6 +244,12 @@ class AccountsTable:
             adj = Adjustment(adj_amount=float(row["Adjustment Amount"]),adj_class=str(row["Adjustment Class"]),adj_collection=str(row["Adjustment Collection"]), adj_period=acc.account_period,adj_type=str(row["Adjustment Type"]),adj_perc=float(row["Adjustment Percentage"]),currency=str(row["ISO Currency Code"]))
             # print(adj.adj_class)
             acc.adjustments.append(adj)
+    def import_accounts(self, fName):
+        acc_df = pd.read_csv(fName)
+
+        for index, row in acc_df.iterrows():
+            acc = ShadowAccount(account_name=row["Account Name"],amount=float(row["Amount"]),account_period=Period(period_type="",period_year=row["Period"]),currency=str(row["ISO Currency Code"]),account_collection=str(row["Collection"]),account_class=str(row["Class"]),account_data_type=str(row["Data Type"]))
+            self.accounts.append(acc)
 # p = Period("CYE","2022", "01-01-2022", "12-31-2022")
 # tb = TrialBalance(p)
 # tb.generate_random_tb()
