@@ -10,7 +10,7 @@ class Calculation:
         self.period = period
         self.entity = entity
         self.accounts_tbl = self.entity.get_accounts_table()
-
+        self.ownership = entity.percent_owned
         self.atr_tb = atr_tb
 
         if self.atr_tb == None:
@@ -47,7 +47,7 @@ class EBIT(Calculation):
 
             amount = (self.accounts_tbl["Sales"].getAmount()+self.accounts_tbl["COGS"].getAmount()+self.accounts_tbl["OtherIncomeThirdParty"].getAmount()
             +self.accounts_tbl["OtherIncomeIntercompany"].getAmount()+self.accounts_tbl["SGA"].getAmount()+self.accounts_tbl["OtherDeductions"].getAmount()
-            +self.accounts_tbl["DividendIncome"].getAmount()+self.accounts_tbl["NonIncomeTaxes"].getAmount())
+            +self.accounts_tbl["DividendIncome"].getAmount()+self.accounts_tbl["NonIncomeTaxes"].getAmount()+self.accounts_tbl["Depreciation"].getAmount()+self.accounts_tbl["Amortization"].getAmount()+self.accounts_tbl["InterestIncomeIntercompany"].getAmount()+self.accounts_tbl["InterestExpenseIntercompany"].getAmount())
             a.amount = amount
 
             a.account_collection = "EBIT"
@@ -103,18 +103,30 @@ class Sec163j(Calculation):
             self.accounts_tbl.add_account(disallowed_int_exp)
 
 class CFCTestedIncome(Calculation):
+    def __init__(self, period, entity, atr_tb = None,sec163j = True):
+        self.period = period
+        self.entity = entity
+        self.accounts_tbl = self.entity.get_accounts_table()
+
+        self.atr_tb = atr_tb
+        self.sec163j_calc = sec163j
+        
+        if self.atr_tb == None:
+            self.atr_tb = AttributesTable(self.period)
+        self.ownership = self.entity.percent_owned
+        self.calculate()
     def __validation(self):
         if self.entity.type == "CFC":
             return True
 
     def calculate(self):
-        if self.contains("TentativeTestedIncome") == False and self.__validation() == True:
-            Sec163j(self.period,self.entity)
-            tent_tested_income_amt = self.accounts_tbl["TI_EBIT"].getAmount()+self.accounts_tbl["InterestExpenseUtilized"].getAmount()
-            +self.accounts_tbl["InterestExpenseIntercompany"].getAmount()+self.accounts_tbl["InterestIncomeThirdParty"].getAmount()
-            +self.accounts_tbl["InterestIncomeIntercompany"].getAmount()-self.accounts_tbl["SubpartF_Income"].getAmount()
+        if self.contains("TentativeTestedIncomeBeforeTaxes") == False and self.__validation() == True:
+            if self.sec163j_calc == True:
+                # print("get calc")
+                Sec163j(self.period,self.entity)
+            tent_tested_income_amt = self.accounts_tbl["TI_EBIT"].getAmount()+self.accounts_tbl["InterestExpenseUtilized"].getAmount()+self.accounts_tbl["InterestIncomeThirdParty"].getAmount()-self.accounts_tbl["SubpartF_Income"].getAmount()
 
-            tent_tested_income = self._create_account("TentativeTestedIncome",tent_tested_income_amt)
+            tent_tested_income = self._create_account("TentativeTestedIncomeBeforeTaxes",tent_tested_income_amt)
             colct = "TestedIncome"
             tent_tested_income.account_collection=colct
             self.accounts_tbl.add_account(tent_tested_income)
@@ -125,8 +137,11 @@ class CFCTestedIncome(Calculation):
             tested_loss = self._create_account("TestedLoss",0)
             tested_income.account_collection = colct
             tested_loss.account_collection = colct
-            print(tested_income_etr_amt)
-            if hte == False or (tested_income_etr_amt*-1) < (self.atr_tb["HTETaxPercentage"].get_value()*self.atr_tb["USTaxRate"].get_value()):
+
+            hte_met = (tested_income_etr_amt*-1) > (self.atr_tb["HTETaxPercentage"].get_value()*self.atr_tb["USTaxRate"].get_value())
+            # print(tested_income_etr_amt)
+
+            if hte == False or hte_met == False:
                 if tent_tested_income_amt > 0:
                     tested_loss.amount = tent_tested_income_amt
                     tested_income.amount = 0
@@ -135,8 +150,70 @@ class CFCTestedIncome(Calculation):
                     tested_loss.amount = 0
             self.accounts_tbl.add_account(tested_income)
             self.accounts_tbl.add_account(tested_loss)
+
+            pro_rata_tested_income = self._create_account("ProRataTestedIncome",tested_income.getAmount() * self.ownership)
+            pro_rata_tested_loss = self._create_account("ProRataTestedLoss",tested_loss.getAmount() * self.ownership)
+
+            pro_rata_tested_income.account_collection=colct
+            pro_rata_tested_loss.account_collection=colct
+
+            self.accounts_tbl.add_account(pro_rata_tested_income)
+            self.accounts_tbl.add_account(pro_rata_tested_loss)
+
+
+            qbai_amount = 0
+            if tested_income.getAmount() <0 and hte_met == False:
+                qbai_amount = self.accounts_tbl["QBAI"].getAmount()
+            pro_rata_qbai = self._create_account("ProRataQBAI",qbai_amount*self.ownership)
+            pro_rata_qbai.account_collection=colct
+            self.accounts_tbl.add_account(pro_rata_qbai)
             
-            self.accounts_tbl.add_account(self._create_account("TestedIncome_ETR",tested_income_etr_amt*-1))
+
+            tested_loss_qbai_amt = 0
+            if tested_loss.getAmount()>0:
+                tested_loss_qbai_amt = self.accounts_tbl["QBAI"].getAmount()*self.ownership*self.atr_tb["TestedLossQBAIAmount"].get_value()
+            tested_loss_qbai = self._create_account("TestedLossQBAI",tested_loss_qbai_amt)
+            tested_loss_qbai.account_collection=colct
+
+            self.accounts_tbl.add_account(tested_loss_qbai)
+            
+            etr = self._create_account("TestedIncome_ETR",tested_income_etr_amt*-1)
+            etr.account_collection = colct
+            self.accounts_tbl.add_account(etr)
+
+            tested_interest_expense_amt = self.accounts_tbl["InterestExpenseUtilized"].getAmount()
+            tested_interest_income_amt = self.accounts_tbl["InterestIncomeThirdParty"].getAmount()
+            # print(hte_met)
+            if hte_met == True:
+                
+                tested_interest_expense_amt = 0
+                tested_interest_income_amt = 0
+
+            tested_interest_expense_amt = max(tested_interest_expense_amt-tested_loss_qbai_amt,0)*self.ownership
+
+            tested_interest_income = self._create_account("TestedInterestIncome",tested_interest_income_amt)
+            tested_interest_expense = self._create_account("TestedInterestExpense",tested_interest_expense_amt)
+
+            tested_interest_income.account_collection=colct
+            tested_interest_expense.account_collection=colct
+
+            self.accounts_tbl.add_account(tested_interest_expense)
+            self.accounts_tbl.add_account(tested_interest_income)
+
+            tested_income_taxes_amt = self.accounts_tbl["IncomeTaxes"].getAmount()*self.ownership
+            
+            if hte_met:
+                tested_income_taxes_amt = 0
+            
+            tested_income_taxes = self._create_account("TestedIncomeTaxes",tested_income_taxes_amt)
+            tested_income_taxes.account_collection = colct
+
+            self.accounts_tbl.add_account(tested_income_taxes)
+
+            
+            
+
+            
 
 class USSH951AInclusion(Calculation):
     def __validation(self):
@@ -144,31 +221,31 @@ class USSH951AInclusion(Calculation):
             return True
     def calculate(self):
         cfcs = self.entity.children
-        cfc_atr = AttributesTable(p,"CFCAttributes.csv")
-        ussh_atr = AttributesTable(p)
-        
-        for x in cfcs:
-            CFCTestedIncome(self.period,x,cfc_atr)
+        # cfc_atr = AttributesTable(p,"CFCAttributes.csv")
+        # ussh_atr = AttributesTable(p)
+
+        # for x in cfcs:
+        #     CFCTestedIncome(self.period,x,cfc_atr)
 
             
 
 
 
 
-p = Period("CYE",2022, "01-01-2022", "12-31-2022")
-t = TrialBalance(p)
-t.generate_random_tb()
-a = AccountsTable()
-a.pull_tb(t)
-a.generate_random_adjustments(["OtherDeductions"])
-a.print_adj()
-a.export_adjustments("test_adj.csv")
-e = Entity(name = "Foo", country = "Canada",currency = "CA",period = p,entity_type="CFC",accounts_table=a)
-# e.pull_accounts_csv("testing_ties.csv")
+# p = Period("CYE",2022, "01-01-2022", "12-31-2022")
+# t = TrialBalance(p)
+# t.generate_random_tb()
+# a = AccountsTable()
+# a.pull_tb(t)
+# a.generate_random_adjustments(["OtherDeductions"])
+# a.print_adj()
+# a.export_adjustments("test_adj.csv")
+# e = Entity(name = "Foo", country = "Canada",currency = "CA",period = p,entity_type="CFC",accounts_table=a)
+# # e.pull_accounts_csv("testing_ties.csv")
+# # print(e.get_accounts_table())
+# atr = AttributesTable(p,"CFCAttributes.csv")
+# c = CFCTestedIncome(p,e,atr)
+# # c.calculate()
+# # print("-------------------")
 # print(e.get_accounts_table())
-atr = AttributesTable(p,"CFCAttributes.csv")
-c = CFCTestedIncome(p,e,atr)
-# c.calculate()
-# print("-------------------")
-print(e.get_accounts_table())
-e.pull_accounts_csv("tests//Misc//163jCalc.csv")
+# e.pull_accounts_csv("tests//Misc//163jCalc.csv")

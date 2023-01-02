@@ -42,13 +42,23 @@ class AccountsTable:
 
         return to_return
 
+    def __len__(self):
+        return len(self.accounts)
+
     def __getitem__(self,key):
+
+        acc_tbl = AccountsTable()
+
         for x in self.accounts:
             if x.account_name == key:
-                return x
-        print("*****WARNING*****: " + key + " wasn't found!")
-        a = Account(account_name=key,amount=0,account_period=self.period)
-        return a
+                acc_tbl.add_account(x)
+        if len(acc_tbl) == 1:
+            return acc_tbl.accounts[0]
+        elif len(acc_tbl) == 0:
+            print("*****WARNING*****: " + key + " wasn't found!")
+            return Account(account_name=key,amount=0,account_period=self.period)
+        return acc_tbl
+    
     # Update this to be able to identify third party and intercompany from TB. This is only done this way for TESTING PURPOSES
     def pull_tb(self, tb, split_party = True):
 
@@ -121,6 +131,7 @@ class AccountsTable:
                 acc_tbl.add_account(x)
         return acc_tbl
     
+    ## THIS IS DOING THE SAME THING AS PULL ACCOUNTS BY PERIOD
     def search_period(self, pd):
         acc_tbl = AccountsTable()
         for x in self.accounts:
@@ -134,7 +145,9 @@ class AccountsTable:
             amount = 0
             for x in self.accounts:
                 amount += x.get_adjustment_amount(colct=adj_colct,adj_cls=adj_cls,adj_type=adj_type,pd=pd)
-            
+            # print("adj amount")
+            # print(amount)
+
             a = ShadowAccount(account_name=acct_name,amount=amount,account_period=pd,currency=currency,account_collection=acct_colct)
             self.accounts.append(a)
 

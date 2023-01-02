@@ -6,6 +6,8 @@ from Entity import Entity
 import pandas as pd
 import random
 import os
+from CalcScript import CFCTestedIncome
+from Attributes import AttributesTable,Attribute
 
 def generate_csv(p):
     names = []
@@ -56,8 +58,8 @@ def generate_csv(p):
         a.generate_random_adjustments(["OtherDeductions"])
         a.print_adj()
         e = Entity(name = names[x], country = "Canada",currency = "CA",period = p,entity_type="CFC",accounts_table=a)
-        a.export_adjustments("tests//USSH_GILTI//Entity_Files//"+e.name+"_adjustments.csv")
-        a.export("tests//USSH_GILTI//Entity_Files//"+e.name+"_accounts.csv")
+        a.export_adjustments("tests//USSH_GILTI//Entity_Files_v2//"+e.name+"_adjustments.csv")
+        a.export("tests//USSH_GILTI//Entity_Files_v2//"+e.name+"_accounts.csv")
         x_acc_df = a.get_accounts_df()
         x_acc_df.insert(0,'Entity',e.name)
         acc_df = pd.concat([acc_df,x_acc_df])
@@ -66,11 +68,30 @@ def generate_csv(p):
         adj_df = pd.concat([adj_df,x_adj_df])
         # ussh.set_child(e,ownership_percs[x])
         print(e)
-    acc_df.to_csv("tests//USSH_GILTI//combined_accounts_table.csv")
-    adj_df.to_csv("tests//USSH_GILTI//combined_adjustments_table.csv")
+    acc_df.to_csv("tests//USSH_GILTI//Entity_Files_v2//combined_accounts_table.csv")
+    adj_df.to_csv("tests//USSH_GILTI//Entity_Files_v2//combined_adjustments_table.csv")
 
 
+def pull_accounts(ussh, fName):
+    acc_df = pd.DataFrame({
+        'Account Name': pd.Series(dtype='str'),
+        'Amount': pd.Series(dtype='float'),
+        'ISO Currency Code': pd.Series(dtype='str'),
+        'Period': pd.Series(dtype='str'),
+        'Collection': pd.Series(dtype='str'),
+        'Class': pd.Series(dtype='str'),
+        'Data Type': pd.Series(dtype='float')})
 
+    x_acc_df = ussh.get_accounts_table().get_accounts_df()
+    x_acc_df.insert(0,'Entity',ussh.name)
+    acc_df = pd.concat([acc_df,x_acc_df])
+
+    for x in ussh.children:
+        x_acc_df = x.get_accounts_table().get_accounts_df()
+        x_acc_df.insert(0,'Entity',x.name)
+        acc_df = pd.concat([acc_df,x_acc_df])
+    
+    acc_df.to_csv(fName)
 
 def read_csv(p,ussh):
 
@@ -104,15 +125,22 @@ def read_csv(p,ussh):
 
 p = Period("CYE",2022, "01-01-2022", "12-31-2022")
 ussh = Entity(name="USSH",country="US",currency = "USD",period=p,entity_type="USSH")
-generate_csv(p)
+# generate_csv(p)
 read_csv(p,ussh)
-ctr = 1
-for x in ussh.children:
-    print(str(ctr) + ":---------")
-    print(x)
-    print("----------ACCOUNTS-----------")
-    print(x.get_accounts_table())
-    print("----------ADJUSTMENTS-----------")
-    print(x.get_accounts_table().print_adj())
-    ctr +=1
 
+atr = AttributesTable(p,"CFCAttributes.csv")
+
+for x in ussh.children:
+    CFCTestedIncome(p,x,atr)
+
+# ctr = 1
+# for x in ussh.children:
+#     print(str(ctr) + ":---------")
+#     print(x)
+#     print("----------ACCOUNTS-----------")
+#     print(x.get_accounts_table())
+#     print("----------ADJUSTMENTS-----------")
+#     print(x.get_accounts_table().print_adj())
+#     ctr +=1
+
+pull_accounts(ussh,"tests//USSH_GILTI//accounts_output.csv")

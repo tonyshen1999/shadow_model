@@ -69,7 +69,7 @@ class Attribute:
         val = self.atr_value
         
         if isinstance(val,str) and val.replace("-","").replace(".","").replace("0","").isnumeric():
-            print("found it")
+            # print("found it")
             return float(val)
         return float(val)
         

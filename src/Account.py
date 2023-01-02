@@ -172,8 +172,8 @@ class Account:
         adj = Adjustment(0,adj_class=adj_cls,adj_collection=colct,adj_type=adj_type,adj_period=pd)
         for x in self.adjustments:
             if x.apply_adj(adj) == True:
-                print("apply this adj")
-                print(x)
+                # print("apply this adj")
+                # print(x) 
                 return x.adj_amount
         return 0
 # figure out how to make account list global. Otherwise we are wasting memory

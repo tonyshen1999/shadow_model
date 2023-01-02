@@ -1,3 +1,4 @@
 ﻿AttributeName,AttributeValue,AttributeStartDate,AttributeEndDate
 Section951AHighTaxElection,Yes,12-31-2017,
 HTETaxPercentage,0.90,12-31-2017,
+TestedLossQBAIAmount,0.10,12-31-2017,
