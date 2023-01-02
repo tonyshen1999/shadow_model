@@ -6,7 +6,7 @@ from Entity import Entity
 import pandas as pd
 import random
 import os
-from CalcScript import CFCTestedIncome
+from CalcScript import CFCTestedIncome,USSH951AInclusion
 from Attributes import AttributesTable,Attribute
 
 def generate_csv(p):
@@ -133,6 +133,7 @@ atr = AttributesTable(p,"CFCAttributes.csv")
 for x in ussh.children:
     CFCTestedIncome(p,x,atr)
 
+USSH951AInclusion(p,ussh)
 # ctr = 1
 # for x in ussh.children:
 #     print(str(ctr) + ":---------")

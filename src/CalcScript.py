@@ -118,7 +118,7 @@ class CFCTestedIncome(Calculation):
     def __validation(self):
         if self.entity.type == "CFC":
             return True
-
+        return False
     def calculate(self):
         if self.contains("TentativeTestedIncomeBeforeTaxes") == False and self.__validation() == True:
             if self.sec163j_calc == True:
@@ -219,18 +219,75 @@ class USSH951AInclusion(Calculation):
     def __validation(self):
         if self.entity.type == "USSH":
             return True
+        return False
     def calculate(self):
-        cfcs = self.entity.children
-        # cfc_atr = AttributesTable(p,"CFCAttributes.csv")
-        # ussh_atr = AttributesTable(p)
-
-        # for x in cfcs:
-        #     CFCTestedIncome(self.period,x,cfc_atr)
-
+        if self.__validation():
+            cfcs = self.entity.children
+            cfc_atr = AttributesTable(self.period,"CFCAttributes.csv")
+            # ussh_atr = AttributesTable(self.period)
+            agg_cfc_tested_income_amt = 0
+            agg_cfc_tested_loss_amt = 0
+            qbai_amt = 0
+            agg_tested_interest_inc_amt = 0
+            agg_tested_interest_exp_amt = 0
+            agg_tested_income_tax_amt = 0
+            qbai_perc = cfc_atr["QBAIPerc"].get_value()
+            colct = "USSH951A"
+            for x in cfcs:
+                CFCTestedIncome(self.period,x,cfc_atr)
+                cfc_acc_tbl = x.get_accounts_table()
+                agg_cfc_tested_income_amt += cfc_acc_tbl["ProRataTestedIncome"].getAmount()
+                agg_cfc_tested_loss_amt += cfc_acc_tbl["ProRataTestedLoss"].getAmount()
+                net_cfc_tested_income_amt = agg_cfc_tested_income_amt+agg_cfc_tested_loss_amt
+                qbai_amt += cfc_acc_tbl["ProRataQBAI"].getAmount()
+                agg_tested_interest_inc_amt += cfc_acc_tbl["TestedInterestIncome"].getAmount()
+                agg_tested_interest_exp_amt += cfc_acc_tbl["TestedInterestExpense"].getAmount()
+                agg_tested_income_tax_amt += cfc_acc_tbl["TestedIncomeTaxes"].getAmount()
             
 
+            agg_cfc_tested_income = self._create_account("AggregateCFCTestedIncome",agg_cfc_tested_income_amt)
+            agg_cfc_tested_loss = self._create_account("AggregateCFCTestedLoss",agg_cfc_tested_loss_amt)
+            net_cfc_tested_income = self._create_account("NetCFCTestedIncome",net_cfc_tested_income_amt)
+            qbai = self._create_account("AggregateQBAI",qbai_amt)
+            agg_tested_interest_inc = self._create_account("AggregateTestedInterestIncome",agg_tested_interest_inc_amt)
+            agg_tested_interest_exp = self._create_account("AggregateTestedInterestExpnese",agg_tested_interest_exp_amt)
+            agg_tested_income_tax = self._create_account("AggregateTestedIncomeTax",agg_tested_income_tax_amt)
 
 
+
+            specified_interest_exp_amt = max(agg_tested_interest_inc+agg_tested_interest_exp,0)
+            dtir = max((qbai*qbai_perc)-specified_interest_exp_amt,0)
+            gilti_amt = (-1*net_cfc_tested_income_amt)-dtir
+            gilti = self._create_account("GILTI",gilti_amt)
+            specified_interest_exp = self._create_account("SpecifiedInterestExpense",specified_interest_exp_amt)
+
+            inclusion_perc = self._create_account("GILTIInclusionPercentage",(gilti_amt/net_cfc_tested_income_amt))
+            sec78grossup = self._create_account("Sec78GrossUpOnGILTI",((gilti_amt/net_cfc_tested_income_amt)*agg_tested_income_tax_amt))
+
+
+            agg_cfc_tested_income.account_collection = colct
+            agg_cfc_tested_loss.account_collection = colct
+            net_cfc_tested_income.account_collection = colct
+            qbai.account_collection = colct
+            agg_tested_interest_inc.account_collection = colct
+            agg_tested_interest_exp.account_collection = colct
+            agg_tested_income_tax.account_collection = colct
+            inclusion_perc.account_collection = colct
+            sec78grossup.account_collection = colct
+            gilti.account_collection = colct
+            specified_interest_exp.account_collection = colct
+
+            self.accounts_tbl.add_account(agg_cfc_tested_income)
+            self.accounts_tbl.add_account(agg_cfc_tested_loss)
+            self.accounts_tbl.add_account(qbai)
+            self.accounts_tbl.add_account(net_cfc_tested_income)
+            self.accounts_tbl.add_account(agg_tested_interest_inc)
+            self.accounts_tbl.add_account(agg_tested_interest_exp)
+            self.accounts_tbl.add_account(agg_tested_income_tax)
+            self.accounts_tbl.add_account(inclusion_perc)
+            self.accounts_tbl.add_account(sec78grossup)
+            self.accounts_tbl.add_account(gilti)
+            self.accounts_tbl.add_account(specified_interest_exp)
 
 # p = Period("CYE",2022, "01-01-2022", "12-31-2022")
 # t = TrialBalance(p)
