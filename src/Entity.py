@@ -19,9 +19,9 @@ class Entity:
         self.currency = currency
         self.period = period
 
-        self.children = []
-        self.parent = None
-        self.percent_owned = 1
+        self.children = {}
+        self.parents = {}
+        
         self.__accounts_table = accounts_table
 
         # if tb == None:
@@ -34,12 +34,12 @@ class Entity:
             self.__accounts_table = AccountsTable()
             self.__accounts_table.pull_tb(self.__tb)
     def __str__(self):
-        parent = self.parent
-        if parent == None:
-            parent = "None"
-        else:
-            parent = parent.name
-        to_return = self.name + ", Type: " + self.type + ", Country: " + self.country + ", Parent: " + parent +", Percent Owned: " + str(self.percent_owned*100) + "%"
+        # parent = self.parent
+        # if parent == None:
+        #     parent = "None"
+        # else:
+        #     parent = parent.name
+        to_return = self.name + ", Type: " + self.type + ", Country: " + self.country #+ ", Parent: " + parent +", Percent Owned: " + str(self.percent_owned*100) + "%"
         return to_return
     def get_accounts_table(self):
         return self.__accounts_table
@@ -50,13 +50,15 @@ class Entity:
     def set_tb(self,tb):
         self.__tb = tb
     def set_child(self,child, percent_owned):
-        child.parent = self
-        child.percent_owned = percent_owned
-        self.children.append(child)
-    
+        self.children[child] = percent_owned
+        child.parents[self] = percent_owned
+    def __eq__(self,other):
+        return (self.name,self.type) == (other.name,other.type)
+    def __hash__(self):
+        return hash(self.name) ^ hash(self.type)
     def __getitem__(self,key):
         
-        for x in self.children:
+        for x in self.children.keys():
             if x.name == key:
                 return x
         

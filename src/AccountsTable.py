@@ -58,6 +58,21 @@ class AccountsTable:
             print("*****WARNING*****: " + key + " wasn't found!")
             return Account(account_name=key,amount=0,account_period=self.period)
         return acc_tbl
+    def force163j(self):
+        self.__getitem__("InterestExpenseThirdParty").amount *= 100
+    # Used mainly for testing
+    def convert_loss(self):
+        for x in self.accounts:
+            if x.account_name == "Sales":
+                x.amount = 0
+            elif x.account_name == "OtherIncomeThirdParty":
+                x.amount = 0
+            elif x.account_name == "OtherIncomeIntercompany":
+                x.amount = 0
+            elif x.account_name == "InterestIncomeIntercompany":
+                x.amount = 0
+            elif x.account_name == "IncomeTaxes":
+                x.amount = 0
     
     # Update this to be able to identify third party and intercompany from TB. This is only done this way for TESTING PURPOSES
     def pull_tb(self, tb, split_party = True):

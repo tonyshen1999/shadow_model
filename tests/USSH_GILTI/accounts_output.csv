@@ -13,494 +13,464 @@
 11,IncomeTaxes,0.0,USD,CYE2022,TBFC,,,USSH
 12,OtherDeductions,0.0,USD,CYE2022,TBFC,,,USSH
 13,QBAI,0.0,USD,CYE2022,TBFC,,,USSH
-14,AggregateCFCTestedIncome,-536151.5876252061,USD,CYE2022,USSH951A,,,USSH
-15,AggregateCFCTestedLoss,0.0,USD,CYE2022,USSH951A,,,USSH
-16,AggregateQBAI,15252.0,USD,CYE2022,USSH951A,,,USSH
-17,NetCFCTestedIncome,-536151.5876252061,USD,CYE2022,USSH951A,,,USSH
-18,AggregateTestedInterestIncome,-32717.0,USD,CYE2022,USSH951A,,,USSH
-19,AggregateTestedInterestExpnese,998.0,USD,CYE2022,USSH951A,,,USSH
-20,AggregateTestedIncomeTax,71971.0,USD,CYE2022,USSH951A,,,USSH
-21,GILTIInclusionPercentage,-0.9971552821343763,USD,CYE2022,USSH951A,,,USSH
-22,Sec78GrossUpOnGILTI,-71766.2628104932,USD,CYE2022,USSH951A,,,USSH
-23,GILTI,534626.3876252061,USD,CYE2022,USSH951A,,,USSH
+14,AggregateCFCTestedIncome,-187781.80347926935,USD,CYE2022,USSH951A,,,USSH
+15,AggregateCFCTestedLoss,41333.89105036936,USD,CYE2022,USSH951A,,,USSH
+16,AggregateQBAI,9736.5069,USD,CYE2022,USSH951A,,,USSH
+17,NetCFCTestedIncome,-146447.9124289,USD,CYE2022,USSH951A,,,USSH
+18,AggregateTestedInterestIncome,-78809.6966,USD,CYE2022,USSH951A,,,USSH
+19,AggregateTestedInterestExpnese,8144.74,USD,CYE2022,USSH951A,,,USSH
+20,AggregateTestedIncomeTax,28925.066999999995,USD,CYE2022,USSH951A,,,USSH
+21,GILTIInclusionPercentage,-0.7746983948578382,USD,CYE2022,USSH951A,,,USSH
+22,Sec78GrossUpOnGILTI,-22408.20297605542,USD,CYE2022,USSH951A,,,USSH
+23,GILTI,145474.26173889998,USD,CYE2022,USSH951A,,,USSH
 24,SpecifiedInterestExpense,0.0,USD,CYE2022,USSH951A,,,USSH
 0,Sales,-73142.0,USD,CYE2022,TBFC,nan,nan,"Pacocha, Kemmer and Orn"
 1,COGS,23112.0,USD,CYE2022,TBFC,nan,nan,"Pacocha, Kemmer and Orn"
-2,OtherIncomeThirdParty,-27782.0,USD,CYE2022,TBFC,nan,nan,"Pacocha, Kemmer and Orn"
-3,OtherIncomeIntercompany,-130599.0,USD,CYE2022,TBFC,nan,nan,"Pacocha, Kemmer and Orn"
-4,InterestIncomeThirdParty,-26482.0,USD,CYE2022,TBFC,nan,nan,"Pacocha, Kemmer and Orn"
-5,InterestIncomeIntercompany,-124489.0,USD,CYE2022,TBFC,nan,nan,"Pacocha, Kemmer and Orn"
+2,OtherIncomeThirdParty,-142682.0,USD,CYE2022,TBFC,nan,nan,"Pacocha, Kemmer and Orn"
+3,OtherIncomeIntercompany,-25059.0,USD,CYE2022,TBFC,nan,nan,"Pacocha, Kemmer and Orn"
+4,InterestIncomeThirdParty,-37830.0,USD,CYE2022,TBFC,nan,nan,"Pacocha, Kemmer and Orn"
+5,InterestIncomeIntercompany,-6644.0,USD,CYE2022,TBFC,nan,nan,"Pacocha, Kemmer and Orn"
 6,DividendIncome,0.0,USD,CYE2022,TBFC,nan,nan,"Pacocha, Kemmer and Orn"
-7,Depreciation,326.0,USD,CYE2022,TBFC,nan,nan,"Pacocha, Kemmer and Orn"
-8,Amortization,1131.0,USD,CYE2022,TBFC,nan,nan,"Pacocha, Kemmer and Orn"
-9,InterestExpenseThirdParty,133.0,USD,CYE2022,TBFC,nan,nan,"Pacocha, Kemmer and Orn"
-10,InterestExpenseIntercompany,628.0,USD,CYE2022,TBFC,nan,nan,"Pacocha, Kemmer and Orn"
-11,IncomeTaxes,147565.0,USD,CYE2022,TBFC,nan,nan,"Pacocha, Kemmer and Orn"
-12,OtherDeductions,10229.0,USD,CYE2022,TBFC,nan,nan,"Pacocha, Kemmer and Orn"
+7,Depreciation,4129.0,USD,CYE2022,TBFC,nan,nan,"Pacocha, Kemmer and Orn"
+8,Amortization,427.0,USD,CYE2022,TBFC,nan,nan,"Pacocha, Kemmer and Orn"
+9,InterestExpenseThirdParty,647.0,USD,CYE2022,TBFC,nan,nan,"Pacocha, Kemmer and Orn"
+10,InterestExpenseIntercompany,114.0,USD,CYE2022,TBFC,nan,nan,"Pacocha, Kemmer and Orn"
+11,IncomeTaxes,56689.0,USD,CYE2022,TBFC,nan,nan,"Pacocha, Kemmer and Orn"
+12,OtherDeductions,869.0,USD,CYE2022,TBFC,nan,nan,"Pacocha, Kemmer and Orn"
 13,QBAI,32296.0,USD,CYE2022,TBFC,nan,nan,"Pacocha, Kemmer and Orn"
-14,EBIT,-320586.0,USD,CYE2022,EBIT,,,"Pacocha, Kemmer and Orn"
-15,M1Adjustments,1481.6501845182872,USD,CYE2022,ForeignSchM-1Adj,,,"Pacocha, Kemmer and Orn"
-16,TI_EBIT,-319104.3498154817,USD,CYE2022,TI_EBIT,,,"Pacocha, Kemmer and Orn"
-17,ATI,-320561.3498154817,USD,CYE2022,Sec163j,,,"Pacocha, Kemmer and Orn"
-18,Section163jLimitation,122650.4049446445,USD,CYE2022,Sec163j,,,"Pacocha, Kemmer and Orn"
-19,InterestExpenseUtilized,133.0,USD,CYE2022,Sec163j,,,"Pacocha, Kemmer and Orn"
+14,EBIT,-218876.0,USD,CYE2022,EBIT,,,"Pacocha, Kemmer and Orn"
+15,M1Adjustments,388.2130037025393,USD,CYE2022,ForeignSchM-1Adj,,,"Pacocha, Kemmer and Orn"
+16,TI_EBIT,-218487.78699629745,USD,CYE2022,TI_EBIT,,,"Pacocha, Kemmer and Orn"
+17,ATI,-223043.78699629745,USD,CYE2022,Sec163j,,,"Pacocha, Kemmer and Orn"
+18,Section163jLimitation,104743.13609888923,USD,CYE2022,Sec163j,,,"Pacocha, Kemmer and Orn"
+19,InterestExpenseUtilized,647.0,USD,CYE2022,Sec163j,,,"Pacocha, Kemmer and Orn"
 20,Sec163DisallowedInterestExpense,0.0,USD,CYE2022,Sec163j,,,"Pacocha, Kemmer and Orn"
-21,TentativeTestedIncomeBeforeTaxes,-345453.3498154817,USD,CYE2022,TestedIncome,,,"Pacocha, Kemmer and Orn"
+21,TentativeTestedIncomeBeforeTaxes,-255670.78699629745,USD,CYE2022,TestedIncome,,,"Pacocha, Kemmer and Orn"
 22,TestedIncome,0.0,USD,CYE2022,TestedIncome,,,"Pacocha, Kemmer and Orn"
 23,TestedLoss,0.0,USD,CYE2022,TestedIncome,,,"Pacocha, Kemmer and Orn"
-24,ProRataTestedIncome,0.0,USD,CYE2022,TestedIncome,,,"Pacocha, Kemmer and Orn"
-25,ProRataTestedLoss,0.0,USD,CYE2022,TestedIncome,,,"Pacocha, Kemmer and Orn"
-26,ProRataQBAI,0.0,USD,CYE2022,TestedIncome,,,"Pacocha, Kemmer and Orn"
-27,TestedLossQBAI,0.0,USD,CYE2022,TestedIncome,,,"Pacocha, Kemmer and Orn"
-28,TestedIncome_ETR,0.4271633205433366,USD,CYE2022,TestedIncome,,,"Pacocha, Kemmer and Orn"
-29,TestedInterestExpense,0.0,USD,CYE2022,TestedIncome,,,"Pacocha, Kemmer and Orn"
-30,TestedInterestIncome,0.0,USD,CYE2022,TestedIncome,,,"Pacocha, Kemmer and Orn"
-31,TestedIncomeTaxes,0.0,USD,CYE2022,TestedIncome,,,"Pacocha, Kemmer and Orn"
+24,TestedIncomeQBAI,0.0,USD,CYE2022,TestedIncome,,,"Pacocha, Kemmer and Orn"
+25,TestedLossQBAI,0.0,USD,CYE2022,TestedIncome,,,"Pacocha, Kemmer and Orn"
+26,TestedIncome_ETR,0.2217265439904206,USD,CYE2022,TestedIncome,,,"Pacocha, Kemmer and Orn"
+27,TestedInterestExpense,0.0,USD,CYE2022,TestedIncome,,,"Pacocha, Kemmer and Orn"
+28,TestedInterestIncome,0.0,USD,CYE2022,TestedIncome,,,"Pacocha, Kemmer and Orn"
+29,TestedIncomeTaxes,0.0,USD,CYE2022,TestedIncome,,,"Pacocha, Kemmer and Orn"
 0,Sales,-1437.0,USD,CYE2022,TBFC,nan,nan,Torp LLC
 1,COGS,1158.0,USD,CYE2022,TBFC,nan,nan,Torp LLC
-2,OtherIncomeThirdParty,-23165.0,USD,CYE2022,TBFC,nan,nan,Torp LLC
-3,OtherIncomeIntercompany,-572.0,USD,CYE2022,TBFC,nan,nan,Torp LLC
-4,InterestIncomeThirdParty,-654.0,USD,CYE2022,TBFC,nan,nan,Torp LLC
-5,InterestIncomeIntercompany,-16.0,USD,CYE2022,TBFC,nan,nan,Torp LLC
+2,OtherIncomeThirdParty,-12445.0,USD,CYE2022,TBFC,nan,nan,Torp LLC
+3,OtherIncomeIntercompany,-11371.0,USD,CYE2022,TBFC,nan,nan,Torp LLC
+4,InterestIncomeThirdParty,-9328.0,USD,CYE2022,TBFC,nan,nan,Torp LLC
+5,InterestIncomeIntercompany,-8522.0,USD,CYE2022,TBFC,nan,nan,Torp LLC
 6,DividendIncome,0.0,USD,CYE2022,TBFC,nan,nan,Torp LLC
-7,Depreciation,9.0,USD,CYE2022,TBFC,nan,nan,Torp LLC
-8,Amortization,22.0,USD,CYE2022,TBFC,nan,nan,Torp LLC
-9,InterestExpenseThirdParty,29.0,USD,CYE2022,TBFC,nan,nan,Torp LLC
-10,InterestExpenseIntercompany,1.0,USD,CYE2022,TBFC,nan,nan,Torp LLC
-11,IncomeTaxes,593.0,USD,CYE2022,TBFC,nan,nan,Torp LLC
-12,OtherDeductions,92.0,USD,CYE2022,TBFC,nan,nan,Torp LLC
+7,Depreciation,0.0,USD,CYE2022,TBFC,nan,nan,Torp LLC
+8,Amortization,5.0,USD,CYE2022,TBFC,nan,nan,Torp LLC
+9,InterestExpenseThirdParty,1600.0,USD,CYE2022,TBFC,nan,nan,Torp LLC
+10,InterestExpenseIntercompany,14.0,USD,CYE2022,TBFC,nan,nan,Torp LLC
+11,IncomeTaxes,17957.0,USD,CYE2022,TBFC,nan,nan,Torp LLC
+12,OtherDeductions,13.0,USD,CYE2022,TBFC,nan,nan,Torp LLC
 13,QBAI,378.0,USD,CYE2022,TBFC,nan,nan,Torp LLC
-14,EBIT,-23908.0,USD,CYE2022,EBIT,,,Torp LLC
-15,M1Adjustments,-16.666641633335274,USD,CYE2022,ForeignSchM-1Adj,,,Torp LLC
-16,TI_EBIT,-23924.666641633336,USD,CYE2022,TI_EBIT,,,Torp LLC
-17,ATI,-23955.666641633336,USD,CYE2022,Sec163j,,,Torp LLC
-18,Section163jLimitation,7840.69999249,USD,CYE2022,Sec163j,,,Torp LLC
-19,InterestExpenseUtilized,29.0,USD,CYE2022,Sec163j,,,Torp LLC
+14,EBIT,-32585.0,USD,CYE2022,EBIT,,,Torp LLC
+15,M1Adjustments,4.368628472200143,USD,CYE2022,ForeignSchM-1Adj,,,Torp LLC
+16,TI_EBIT,-32580.6313715278,USD,CYE2022,TI_EBIT,,,Torp LLC
+17,ATI,-32585.6313715278,USD,CYE2022,Sec163j,,,Torp LLC
+18,Section163jLimitation,19103.68941145834,USD,CYE2022,Sec163j,,,Torp LLC
+19,InterestExpenseUtilized,1600.0,USD,CYE2022,Sec163j,,,Torp LLC
 20,Sec163DisallowedInterestExpense,0.0,USD,CYE2022,Sec163j,,,Torp LLC
-21,TentativeTestedIncomeBeforeTaxes,-24549.666641633336,USD,CYE2022,TestedIncome,,,Torp LLC
-22,TestedIncome,-24549.666641633336,USD,CYE2022,TestedIncome,,,Torp LLC
+21,TentativeTestedIncomeBeforeTaxes,-40308.6313715278,USD,CYE2022,TestedIncome,,,Torp LLC
+22,TestedIncome,0.0,USD,CYE2022,TestedIncome,,,Torp LLC
 23,TestedLoss,0.0,USD,CYE2022,TestedIncome,,,Torp LLC
-24,ProRataTestedIncome,-24549.666641633336,USD,CYE2022,TestedIncome,,,Torp LLC
-25,ProRataTestedLoss,0.0,USD,CYE2022,TestedIncome,,,Torp LLC
-26,ProRataQBAI,378.0,USD,CYE2022,TestedIncome,,,Torp LLC
-27,TestedLossQBAI,0.0,USD,CYE2022,TestedIncome,,,Torp LLC
-28,TestedIncome_ETR,0.024155114147022348,USD,CYE2022,TestedIncome,,,Torp LLC
-29,TestedInterestExpense,29.0,USD,CYE2022,TestedIncome,,,Torp LLC
-30,TestedInterestIncome,-654.0,USD,CYE2022,TestedIncome,,,Torp LLC
-31,TestedIncomeTaxes,593.0,USD,CYE2022,TestedIncome,,,Torp LLC
-0,Sales,-15710.0,USD,CYE2022,TBFC,nan,nan,"Crona, Harris and Grimes"
+24,TestedIncomeQBAI,0.0,USD,CYE2022,TestedIncome,,,Torp LLC
+25,TestedLossQBAI,0.0,USD,CYE2022,TestedIncome,,,Torp LLC
+26,TestedIncome_ETR,0.4454877129041899,USD,CYE2022,TestedIncome,,,Torp LLC
+27,TestedInterestExpense,0.0,USD,CYE2022,TestedIncome,,,Torp LLC
+28,TestedInterestIncome,0.0,USD,CYE2022,TestedIncome,,,Torp LLC
+29,TestedIncomeTaxes,0.0,USD,CYE2022,TestedIncome,,,Torp LLC
+0,Sales,0.0,USD,CYE2022,TBFC,nan,nan,"Crona, Harris and Grimes"
 1,COGS,10647.0,USD,CYE2022,TBFC,nan,nan,"Crona, Harris and Grimes"
-2,OtherIncomeThirdParty,-49086.0,USD,CYE2022,TBFC,nan,nan,"Crona, Harris and Grimes"
-3,OtherIncomeIntercompany,-35771.0,USD,CYE2022,TBFC,nan,nan,"Crona, Harris and Grimes"
-4,InterestIncomeThirdParty,-34518.0,USD,CYE2022,TBFC,nan,nan,"Crona, Harris and Grimes"
-5,InterestIncomeIntercompany,-25154.0,USD,CYE2022,TBFC,nan,nan,"Crona, Harris and Grimes"
+2,OtherIncomeThirdParty,0.0,USD,CYE2022,TBFC,nan,nan,"Crona, Harris and Grimes"
+3,OtherIncomeIntercompany,0.0,USD,CYE2022,TBFC,nan,nan,"Crona, Harris and Grimes"
+4,InterestIncomeThirdParty,-4652.0,USD,CYE2022,TBFC,nan,nan,"Crona, Harris and Grimes"
+5,InterestIncomeIntercompany,0.0,USD,CYE2022,TBFC,nan,nan,"Crona, Harris and Grimes"
 6,DividendIncome,0.0,USD,CYE2022,TBFC,nan,nan,"Crona, Harris and Grimes"
-7,Depreciation,14.0,USD,CYE2022,TBFC,nan,nan,"Crona, Harris and Grimes"
-8,Amortization,12.0,USD,CYE2022,TBFC,nan,nan,"Crona, Harris and Grimes"
-9,InterestExpenseThirdParty,223.0,USD,CYE2022,TBFC,nan,nan,"Crona, Harris and Grimes"
-10,InterestExpenseIntercompany,163.0,USD,CYE2022,TBFC,nan,nan,"Crona, Harris and Grimes"
-11,IncomeTaxes,59951.0,USD,CYE2022,TBFC,nan,nan,"Crona, Harris and Grimes"
-12,OtherDeductions,117.0,USD,CYE2022,TBFC,nan,nan,"Crona, Harris and Grimes"
+7,Depreciation,45.0,USD,CYE2022,TBFC,nan,nan,"Crona, Harris and Grimes"
+8,Amortization,89.0,USD,CYE2022,TBFC,nan,nan,"Crona, Harris and Grimes"
+9,InterestExpenseThirdParty,35.0,USD,CYE2022,TBFC,nan,nan,"Crona, Harris and Grimes"
+10,InterestExpenseIntercompany,351.0,USD,CYE2022,TBFC,nan,nan,"Crona, Harris and Grimes"
+11,IncomeTaxes,0.0,USD,CYE2022,TBFC,nan,nan,"Crona, Harris and Grimes"
+12,OtherDeductions,559.0,USD,CYE2022,TBFC,nan,nan,"Crona, Harris and Grimes"
 13,QBAI,22252.0,USD,CYE2022,TBFC,nan,nan,"Crona, Harris and Grimes"
-14,EBIT,-114768.0,USD,CYE2022,EBIT,,,"Crona, Harris and Grimes"
-15,M1Adjustments,-213.04670564938024,USD,CYE2022,ForeignSchM-1Adj,,,"Crona, Harris and Grimes"
-16,TI_EBIT,-114981.04670564938,USD,CYE2022,TI_EBIT,,,"Crona, Harris and Grimes"
-17,ATI,-115007.04670564938,USD,CYE2022,Sec163j,,,"Crona, Harris and Grimes"
-18,Section163jLimitation,69020.11401169482,USD,CYE2022,Sec163j,,,"Crona, Harris and Grimes"
-19,InterestExpenseUtilized,223.0,USD,CYE2022,Sec163j,,,"Crona, Harris and Grimes"
+14,EBIT,11691.0,USD,CYE2022,EBIT,,,"Crona, Harris and Grimes"
+15,M1Adjustments,82.38892308568714,USD,CYE2022,ForeignSchM-1Adj,,,"Crona, Harris and Grimes"
+16,TI_EBIT,11773.388923085688,USD,CYE2022,TI_EBIT,,,"Crona, Harris and Grimes"
+17,ATI,11639.388923085688,USD,CYE2022,Sec163j,,,"Crona, Harris and Grimes"
+18,Section163jLimitation,4652.0,USD,CYE2022,Sec163j,,,"Crona, Harris and Grimes"
+19,InterestExpenseUtilized,35.0,USD,CYE2022,Sec163j,,,"Crona, Harris and Grimes"
 20,Sec163DisallowedInterestExpense,0.0,USD,CYE2022,Sec163j,,,"Crona, Harris and Grimes"
-21,TentativeTestedIncomeBeforeTaxes,-149276.04670564938,USD,CYE2022,TestedIncome,,,"Crona, Harris and Grimes"
+21,TentativeTestedIncomeBeforeTaxes,7156.388923085688,USD,CYE2022,TestedIncome,,,"Crona, Harris and Grimes"
 22,TestedIncome,0.0,USD,CYE2022,TestedIncome,,,"Crona, Harris and Grimes"
-23,TestedLoss,0.0,USD,CYE2022,TestedIncome,,,"Crona, Harris and Grimes"
-24,ProRataTestedIncome,0.0,USD,CYE2022,TestedIncome,,,"Crona, Harris and Grimes"
-25,ProRataTestedLoss,0.0,USD,CYE2022,TestedIncome,,,"Crona, Harris and Grimes"
-26,ProRataQBAI,0.0,USD,CYE2022,TestedIncome,,,"Crona, Harris and Grimes"
-27,TestedLossQBAI,0.0,USD,CYE2022,TestedIncome,,,"Crona, Harris and Grimes"
-28,TestedIncome_ETR,0.4016116538657715,USD,CYE2022,TestedIncome,,,"Crona, Harris and Grimes"
-29,TestedInterestExpense,0.0,USD,CYE2022,TestedIncome,,,"Crona, Harris and Grimes"
-30,TestedInterestIncome,0.0,USD,CYE2022,TestedIncome,,,"Crona, Harris and Grimes"
-31,TestedIncomeTaxes,0.0,USD,CYE2022,TestedIncome,,,"Crona, Harris and Grimes"
+23,TestedLoss,7156.388923085688,USD,CYE2022,TestedIncome,,,"Crona, Harris and Grimes"
+24,TestedIncomeQBAI,0.0,USD,CYE2022,TestedIncome,,,"Crona, Harris and Grimes"
+25,TestedLossQBAI,2225.2000000000003,USD,CYE2022,TestedIncome,,,"Crona, Harris and Grimes"
+26,TestedIncome_ETR,-0.0,USD,CYE2022,TestedIncome,,,"Crona, Harris and Grimes"
+27,TestedInterestExpense,0.0,USD,CYE2022,TestedIncome,,,"Crona, Harris and Grimes"
+28,TestedInterestIncome,-4652.0,USD,CYE2022,TestedIncome,,,"Crona, Harris and Grimes"
+29,TestedIncomeTaxes,0.0,USD,CYE2022,TestedIncome,,,"Crona, Harris and Grimes"
 0,Sales,-33078.0,USD,CYE2022,TBFC,nan,nan,"Schoen, O'Conner and Senger"
 1,COGS,9254.0,USD,CYE2022,TBFC,nan,nan,"Schoen, O'Conner and Senger"
-2,OtherIncomeThirdParty,-96193.0,USD,CYE2022,TBFC,nan,nan,"Schoen, O'Conner and Senger"
-3,OtherIncomeIntercompany,-16285.0,USD,CYE2022,TBFC,nan,nan,"Schoen, O'Conner and Senger"
-4,InterestIncomeThirdParty,-64547.0,USD,CYE2022,TBFC,nan,nan,"Schoen, O'Conner and Senger"
-5,InterestIncomeIntercompany,-10928.0,USD,CYE2022,TBFC,nan,nan,"Schoen, O'Conner and Senger"
+2,OtherIncomeThirdParty,-10992.0,USD,CYE2022,TBFC,nan,nan,"Schoen, O'Conner and Senger"
+3,OtherIncomeIntercompany,-101569.0,USD,CYE2022,TBFC,nan,nan,"Schoen, O'Conner and Senger"
+4,InterestIncomeThirdParty,-2281.0,USD,CYE2022,TBFC,nan,nan,"Schoen, O'Conner and Senger"
+5,InterestIncomeIntercompany,-21073.0,USD,CYE2022,TBFC,nan,nan,"Schoen, O'Conner and Senger"
 6,DividendIncome,0.0,USD,CYE2022,TBFC,nan,nan,"Schoen, O'Conner and Senger"
-7,Depreciation,16.0,USD,CYE2022,TBFC,nan,nan,"Schoen, O'Conner and Senger"
-8,Amortization,35.0,USD,CYE2022,TBFC,nan,nan,"Schoen, O'Conner and Senger"
-9,InterestExpenseThirdParty,468.0,USD,CYE2022,TBFC,nan,nan,"Schoen, O'Conner and Senger"
-10,InterestExpenseIntercompany,79.0,USD,CYE2022,TBFC,nan,nan,"Schoen, O'Conner and Senger"
-11,IncomeTaxes,85701.0,USD,CYE2022,TBFC,nan,nan,"Schoen, O'Conner and Senger"
-12,OtherDeductions,2018.0,USD,CYE2022,TBFC,nan,nan,"Schoen, O'Conner and Senger"
+7,Depreciation,8522.0,USD,CYE2022,TBFC,nan,nan,"Schoen, O'Conner and Senger"
+8,Amortization,2656.0,USD,CYE2022,TBFC,nan,nan,"Schoen, O'Conner and Senger"
+9,InterestExpenseThirdParty,5300.0,USD,CYE2022,TBFC,nan,nan,"Schoen, O'Conner and Senger"
+10,InterestExpenseIntercompany,494.0,USD,CYE2022,TBFC,nan,nan,"Schoen, O'Conner and Senger"
+11,IncomeTaxes,22619.0,USD,CYE2022,TBFC,nan,nan,"Schoen, O'Conner and Senger"
+12,OtherDeductions,1935.0,USD,CYE2022,TBFC,nan,nan,"Schoen, O'Conner and Senger"
 13,QBAI,13094.0,USD,CYE2022,TBFC,nan,nan,"Schoen, O'Conner and Senger"
-14,EBIT,-145082.0,USD,CYE2022,EBIT,,,"Schoen, O'Conner and Senger"
-15,M1Adjustments,-599.1935204587924,USD,CYE2022,ForeignSchM-1Adj,,,"Schoen, O'Conner and Senger"
-16,TI_EBIT,-145681.1935204588,USD,CYE2022,TI_EBIT,,,"Schoen, O'Conner and Senger"
-17,ATI,-145732.1935204588,USD,CYE2022,Sec163j,,,"Schoen, O'Conner and Senger"
-18,Section163jLimitation,108266.65805613765,USD,CYE2022,Sec163j,,,"Schoen, O'Conner and Senger"
-19,InterestExpenseUtilized,468.0,USD,CYE2022,Sec163j,,,"Schoen, O'Conner and Senger"
+14,EBIT,-143851.0,USD,CYE2022,EBIT,,,"Schoen, O'Conner and Senger"
+15,M1Adjustments,890.6937879121913,USD,CYE2022,ForeignSchM-1Adj,,,"Schoen, O'Conner and Senger"
+16,TI_EBIT,-142960.3062120878,USD,CYE2022,TI_EBIT,,,"Schoen, O'Conner and Senger"
+17,ATI,-154138.3062120878,USD,CYE2022,Sec163j,,,"Schoen, O'Conner and Senger"
+18,Section163jLimitation,48522.49186362634,USD,CYE2022,Sec163j,,,"Schoen, O'Conner and Senger"
+19,InterestExpenseUtilized,5300.0,USD,CYE2022,Sec163j,,,"Schoen, O'Conner and Senger"
 20,Sec163DisallowedInterestExpense,0.0,USD,CYE2022,Sec163j,,,"Schoen, O'Conner and Senger"
-21,TentativeTestedIncomeBeforeTaxes,-209760.1935204588,USD,CYE2022,TestedIncome,,,"Schoen, O'Conner and Senger"
-22,TestedIncome,0.0,USD,CYE2022,TestedIncome,,,"Schoen, O'Conner and Senger"
+21,TentativeTestedIncomeBeforeTaxes,-139941.3062120878,USD,CYE2022,TestedIncome,,,"Schoen, O'Conner and Senger"
+22,TestedIncome,-139941.3062120878,USD,CYE2022,TestedIncome,,,"Schoen, O'Conner and Senger"
 23,TestedLoss,0.0,USD,CYE2022,TestedIncome,,,"Schoen, O'Conner and Senger"
-24,ProRataTestedIncome,0.0,USD,CYE2022,TestedIncome,,,"Schoen, O'Conner and Senger"
-25,ProRataTestedLoss,0.0,USD,CYE2022,TestedIncome,,,"Schoen, O'Conner and Senger"
-26,ProRataQBAI,0.0,USD,CYE2022,TestedIncome,,,"Schoen, O'Conner and Senger"
-27,TestedLossQBAI,0.0,USD,CYE2022,TestedIncome,,,"Schoen, O'Conner and Senger"
-28,TestedIncome_ETR,0.40856655670295816,USD,CYE2022,TestedIncome,,,"Schoen, O'Conner and Senger"
-29,TestedInterestExpense,0.0,USD,CYE2022,TestedIncome,,,"Schoen, O'Conner and Senger"
-30,TestedInterestIncome,0.0,USD,CYE2022,TestedIncome,,,"Schoen, O'Conner and Senger"
-31,TestedIncomeTaxes,0.0,USD,CYE2022,TestedIncome,,,"Schoen, O'Conner and Senger"
+24,TestedIncomeQBAI,13094.0,USD,CYE2022,TestedIncome,,,"Schoen, O'Conner and Senger"
+25,TestedLossQBAI,0.0,USD,CYE2022,TestedIncome,,,"Schoen, O'Conner and Senger"
+26,TestedIncome_ETR,0.16163204855126773,USD,CYE2022,TestedIncome,,,"Schoen, O'Conner and Senger"
+27,TestedInterestExpense,5300.0,USD,CYE2022,TestedIncome,,,"Schoen, O'Conner and Senger"
+28,TestedInterestIncome,-2281.0,USD,CYE2022,TestedIncome,,,"Schoen, O'Conner and Senger"
+29,TestedIncomeTaxes,22619.0,USD,CYE2022,TestedIncome,,,"Schoen, O'Conner and Senger"
 0,Sales,-19409.0,USD,CYE2022,TBFC,nan,nan,"Schiller, Huels and Moen"
 1,COGS,10484.0,USD,CYE2022,TBFC,nan,nan,"Schiller, Huels and Moen"
-2,OtherIncomeThirdParty,-35993.0,USD,CYE2022,TBFC,nan,nan,"Schiller, Huels and Moen"
-3,OtherIncomeIntercompany,-110514.0,USD,CYE2022,TBFC,nan,nan,"Schiller, Huels and Moen"
-4,InterestIncomeThirdParty,-33449.0,USD,CYE2022,TBFC,nan,nan,"Schiller, Huels and Moen"
-5,InterestIncomeIntercompany,-102702.0,USD,CYE2022,TBFC,nan,nan,"Schiller, Huels and Moen"
+2,OtherIncomeThirdParty,-136.0,USD,CYE2022,TBFC,nan,nan,"Schiller, Huels and Moen"
+3,OtherIncomeIntercompany,-144977.0,USD,CYE2022,TBFC,nan,nan,"Schiller, Huels and Moen"
+4,InterestIncomeThirdParty,-28.0,USD,CYE2022,TBFC,nan,nan,"Schiller, Huels and Moen"
+5,InterestIncomeIntercompany,-29630.0,USD,CYE2022,TBFC,nan,nan,"Schiller, Huels and Moen"
 6,DividendIncome,0.0,USD,CYE2022,TBFC,nan,nan,"Schiller, Huels and Moen"
-7,Depreciation,76.0,USD,CYE2022,TBFC,nan,nan,"Schiller, Huels and Moen"
-8,Amortization,4612.0,USD,CYE2022,TBFC,nan,nan,"Schiller, Huels and Moen"
-9,InterestExpenseThirdParty,-21.0,USD,CYE2022,TBFC,nan,nan,"Schiller, Huels and Moen"
-10,InterestExpenseIntercompany,-64.0,USD,CYE2022,TBFC,nan,nan,"Schiller, Huels and Moen"
-11,IncomeTaxes,136367.0,USD,CYE2022,TBFC,nan,nan,"Schiller, Huels and Moen"
-12,OtherDeductions,666.0,USD,CYE2022,TBFC,nan,nan,"Schiller, Huels and Moen"
+7,Depreciation,2831.0,USD,CYE2022,TBFC,nan,nan,"Schiller, Huels and Moen"
+8,Amortization,215.0,USD,CYE2022,TBFC,nan,nan,"Schiller, Huels and Moen"
+9,InterestExpenseThirdParty,0.0,USD,CYE2022,TBFC,nan,nan,"Schiller, Huels and Moen"
+10,InterestExpenseIntercompany,-85.0,USD,CYE2022,TBFC,nan,nan,"Schiller, Huels and Moen"
+11,IncomeTaxes,28728.0,USD,CYE2022,TBFC,nan,nan,"Schiller, Huels and Moen"
+12,OtherDeductions,2060.0,USD,CYE2022,TBFC,nan,nan,"Schiller, Huels and Moen"
 13,QBAI,3207.0,USD,CYE2022,TBFC,nan,nan,"Schiller, Huels and Moen"
-14,EBIT,-252844.0,USD,CYE2022,EBIT,,,"Schiller, Huels and Moen"
-15,M1Adjustments,-30.583396093603238,USD,CYE2022,ForeignSchM-1Adj,,,"Schiller, Huels and Moen"
-16,TI_EBIT,-252874.5833960936,USD,CYE2022,TI_EBIT,,,"Schiller, Huels and Moen"
-17,ATI,-257562.5833960936,USD,CYE2022,Sec163j,,,"Schiller, Huels and Moen"
-18,Section163jLimitation,110717.77501882808,USD,CYE2022,Sec163j,,,"Schiller, Huels and Moen"
-19,InterestExpenseUtilized,-21.0,USD,CYE2022,Sec163j,,,"Schiller, Huels and Moen"
+14,EBIT,-178647.0,USD,CYE2022,EBIT,,,"Schiller, Huels and Moen"
+15,M1Adjustments,1053.1076041746392,USD,CYE2022,ForeignSchM-1Adj,,,"Schiller, Huels and Moen"
+16,TI_EBIT,-177593.89239582536,USD,CYE2022,TI_EBIT,,,"Schiller, Huels and Moen"
+17,ATI,-180639.89239582536,USD,CYE2022,Sec163j,,,"Schiller, Huels and Moen"
+18,Section163jLimitation,54219.967718747605,USD,CYE2022,Sec163j,,,"Schiller, Huels and Moen"
+19,InterestExpenseUtilized,0.0,USD,CYE2022,Sec163j,,,"Schiller, Huels and Moen"
 20,Sec163DisallowedInterestExpense,0.0,USD,CYE2022,Sec163j,,,"Schiller, Huels and Moen"
-21,TentativeTestedIncomeBeforeTaxes,-286344.58339609357,USD,CYE2022,TestedIncome,,,"Schiller, Huels and Moen"
-22,TestedIncome,0.0,USD,CYE2022,TestedIncome,,,"Schiller, Huels and Moen"
+21,TentativeTestedIncomeBeforeTaxes,-177621.89239582536,USD,CYE2022,TestedIncome,,,"Schiller, Huels and Moen"
+22,TestedIncome,-177621.89239582536,USD,CYE2022,TestedIncome,,,"Schiller, Huels and Moen"
 23,TestedLoss,0.0,USD,CYE2022,TestedIncome,,,"Schiller, Huels and Moen"
-24,ProRataTestedIncome,0.0,USD,CYE2022,TestedIncome,,,"Schiller, Huels and Moen"
-25,ProRataTestedLoss,0.0,USD,CYE2022,TestedIncome,,,"Schiller, Huels and Moen"
-26,ProRataQBAI,0.0,USD,CYE2022,TestedIncome,,,"Schiller, Huels and Moen"
-27,TestedLossQBAI,0.0,USD,CYE2022,TestedIncome,,,"Schiller, Huels and Moen"
-28,TestedIncome_ETR,0.47623390805114973,USD,CYE2022,TestedIncome,,,"Schiller, Huels and Moen"
-29,TestedInterestExpense,0.0,USD,CYE2022,TestedIncome,,,"Schiller, Huels and Moen"
-30,TestedInterestIncome,0.0,USD,CYE2022,TestedIncome,,,"Schiller, Huels and Moen"
-31,TestedIncomeTaxes,0.0,USD,CYE2022,TestedIncome,,,"Schiller, Huels and Moen"
+24,TestedIncomeQBAI,3207.0,USD,CYE2022,TestedIncome,,,"Schiller, Huels and Moen"
+25,TestedLossQBAI,0.0,USD,CYE2022,TestedIncome,,,"Schiller, Huels and Moen"
+26,TestedIncome_ETR,0.16173681978334328,USD,CYE2022,TestedIncome,,,"Schiller, Huels and Moen"
+27,TestedInterestExpense,0.0,USD,CYE2022,TestedIncome,,,"Schiller, Huels and Moen"
+28,TestedInterestIncome,-28.0,USD,CYE2022,TestedIncome,,,"Schiller, Huels and Moen"
+29,TestedIncomeTaxes,28728.0,USD,CYE2022,TestedIncome,,,"Schiller, Huels and Moen"
 0,Sales,-19769.0,USD,CYE2022,TBFC,nan,nan,Mraz - Frami
 1,COGS,11538.0,USD,CYE2022,TBFC,nan,nan,Mraz - Frami
-2,OtherIncomeThirdParty,-98507.0,USD,CYE2022,TBFC,nan,nan,Mraz - Frami
-3,OtherIncomeIntercompany,-11662.0,USD,CYE2022,TBFC,nan,nan,Mraz - Frami
-4,InterestIncomeThirdParty,-40481.0,USD,CYE2022,TBFC,nan,nan,Mraz - Frami
-5,InterestIncomeIntercompany,-4792.0,USD,CYE2022,TBFC,nan,nan,Mraz - Frami
+2,OtherIncomeThirdParty,-24945.0,USD,CYE2022,TBFC,nan,nan,Mraz - Frami
+3,OtherIncomeIntercompany,-81957.0,USD,CYE2022,TBFC,nan,nan,Mraz - Frami
+4,InterestIncomeThirdParty,-23428.0,USD,CYE2022,TBFC,nan,nan,Mraz - Frami
+5,InterestIncomeIntercompany,-76971.0,USD,CYE2022,TBFC,nan,nan,Mraz - Frami
 6,DividendIncome,0.0,USD,CYE2022,TBFC,nan,nan,Mraz - Frami
-7,Depreciation,987.0,USD,CYE2022,TBFC,nan,nan,Mraz - Frami
-8,Amortization,667.0,USD,CYE2022,TBFC,nan,nan,Mraz - Frami
-9,InterestExpenseThirdParty,456.0,USD,CYE2022,TBFC,nan,nan,Mraz - Frami
-10,InterestExpenseIntercompany,54.0,USD,CYE2022,TBFC,nan,nan,Mraz - Frami
-11,IncomeTaxes,46296.0,USD,CYE2022,TBFC,nan,nan,Mraz - Frami
-12,OtherDeductions,460.0,USD,CYE2022,TBFC,nan,nan,Mraz - Frami
+7,Depreciation,25.0,USD,CYE2022,TBFC,nan,nan,Mraz - Frami
+8,Amortization,1.0,USD,CYE2022,TBFC,nan,nan,Mraz - Frami
+9,InterestExpenseThirdParty,119.0,USD,CYE2022,TBFC,nan,nan,Mraz - Frami
+10,InterestExpenseIntercompany,391.0,USD,CYE2022,TBFC,nan,nan,Mraz - Frami
+11,IncomeTaxes,96516.0,USD,CYE2022,TBFC,nan,nan,Mraz - Frami
+12,OtherDeductions,3727.0,USD,CYE2022,TBFC,nan,nan,Mraz - Frami
 13,QBAI,881.0,USD,CYE2022,TBFC,nan,nan,Mraz - Frami
-14,EBIT,-121024.0,USD,CYE2022,EBIT,,,Mraz - Frami
-15,M1Adjustments,-141.40951656474687,USD,CYE2022,ForeignSchM-1Adj,,,Mraz - Frami
-16,TI_EBIT,-121165.40951656474,USD,CYE2022,TI_EBIT,,,Mraz - Frami
-17,ATI,-122819.40951656474,USD,CYE2022,Sec163j,,,Mraz - Frami
-18,Section163jLimitation,77326.82285496942,USD,CYE2022,Sec163j,,,Mraz - Frami
-19,InterestExpenseUtilized,456.0,USD,CYE2022,Sec163j,,,Mraz - Frami
+14,EBIT,-187960.0,USD,CYE2022,EBIT,,,Mraz - Frami
+15,M1Adjustments,-2406.1213367273454,USD,CYE2022,ForeignSchM-1Adj,,,Mraz - Frami
+16,TI_EBIT,-190366.12133672734,USD,CYE2022,TI_EBIT,,,Mraz - Frami
+17,ATI,-190392.12133672734,USD,CYE2022,Sec163j,,,Mraz - Frami
+18,Section163jLimitation,80545.6364010182,USD,CYE2022,Sec163j,,,Mraz - Frami
+19,InterestExpenseUtilized,119.0,USD,CYE2022,Sec163j,,,Mraz - Frami
 20,Sec163DisallowedInterestExpense,0.0,USD,CYE2022,Sec163j,,,Mraz - Frami
-21,TentativeTestedIncomeBeforeTaxes,-161190.40951656474,USD,CYE2022,TestedIncome,,,Mraz - Frami
+21,TentativeTestedIncomeBeforeTaxes,-213675.12133672734,USD,CYE2022,TestedIncome,,,Mraz - Frami
 22,TestedIncome,0.0,USD,CYE2022,TestedIncome,,,Mraz - Frami
 23,TestedLoss,0.0,USD,CYE2022,TestedIncome,,,Mraz - Frami
-24,ProRataTestedIncome,0.0,USD,CYE2022,TestedIncome,,,Mraz - Frami
-25,ProRataTestedLoss,0.0,USD,CYE2022,TestedIncome,,,Mraz - Frami
-26,ProRataQBAI,0.0,USD,CYE2022,TestedIncome,,,Mraz - Frami
-27,TestedLossQBAI,0.0,USD,CYE2022,TestedIncome,,,Mraz - Frami
-28,TestedIncome_ETR,0.2872131173240948,USD,CYE2022,TestedIncome,,,Mraz - Frami
-29,TestedInterestExpense,0.0,USD,CYE2022,TestedIncome,,,Mraz - Frami
-30,TestedInterestIncome,0.0,USD,CYE2022,TestedIncome,,,Mraz - Frami
-31,TestedIncomeTaxes,0.0,USD,CYE2022,TestedIncome,,,Mraz - Frami
-0,Sales,-7905.0,USD,CYE2022,TBFC,nan,nan,Morissette - Steuber
+24,TestedIncomeQBAI,0.0,USD,CYE2022,TestedIncome,,,Mraz - Frami
+25,TestedLossQBAI,0.0,USD,CYE2022,TestedIncome,,,Mraz - Frami
+26,TestedIncome_ETR,0.451695075197369,USD,CYE2022,TestedIncome,,,Mraz - Frami
+27,TestedInterestExpense,0.0,USD,CYE2022,TestedIncome,,,Mraz - Frami
+28,TestedInterestIncome,0.0,USD,CYE2022,TestedIncome,,,Mraz - Frami
+29,TestedIncomeTaxes,0.0,USD,CYE2022,TestedIncome,,,Mraz - Frami
+0,Sales,0.0,USD,CYE2022,TBFC,nan,nan,Morissette - Steuber
 1,COGS,3688.0,USD,CYE2022,TBFC,nan,nan,Morissette - Steuber
-2,OtherIncomeThirdParty,-40441.0,USD,CYE2022,TBFC,nan,nan,Morissette - Steuber
-3,OtherIncomeIntercompany,-40898.0,USD,CYE2022,TBFC,nan,nan,Morissette - Steuber
-4,InterestIncomeThirdParty,-13374.0,USD,CYE2022,TBFC,nan,nan,Morissette - Steuber
-5,InterestIncomeIntercompany,-13526.0,USD,CYE2022,TBFC,nan,nan,Morissette - Steuber
+2,OtherIncomeThirdParty,0.0,USD,CYE2022,TBFC,nan,nan,Morissette - Steuber
+3,OtherIncomeIntercompany,0.0,USD,CYE2022,TBFC,nan,nan,Morissette - Steuber
+4,InterestIncomeThirdParty,-19327.0,USD,CYE2022,TBFC,nan,nan,Morissette - Steuber
+5,InterestIncomeIntercompany,0.0,USD,CYE2022,TBFC,nan,nan,Morissette - Steuber
 6,DividendIncome,0.0,USD,CYE2022,TBFC,nan,nan,Morissette - Steuber
-7,Depreciation,476.0,USD,CYE2022,TBFC,nan,nan,Morissette - Steuber
-8,Amortization,701.0,USD,CYE2022,TBFC,nan,nan,Morissette - Steuber
-9,InterestExpenseThirdParty,92.0,USD,CYE2022,TBFC,nan,nan,Morissette - Steuber
-10,InterestExpenseIntercompany,93.0,USD,CYE2022,TBFC,nan,nan,Morissette - Steuber
-11,IncomeTaxes,28611.0,USD,CYE2022,TBFC,nan,nan,Morissette - Steuber
-12,OtherDeductions,17.0,USD,CYE2022,TBFC,nan,nan,Morissette - Steuber
+7,Depreciation,39.0,USD,CYE2022,TBFC,nan,nan,Morissette - Steuber
+8,Amortization,121.0,USD,CYE2022,TBFC,nan,nan,Morissette - Steuber
+9,InterestExpenseThirdParty,6100.0,USD,CYE2022,TBFC,nan,nan,Morissette - Steuber
+10,InterestExpenseIntercompany,124.0,USD,CYE2022,TBFC,nan,nan,Morissette - Steuber
+11,IncomeTaxes,0.0,USD,CYE2022,TBFC,nan,nan,Morissette - Steuber
+12,OtherDeductions,280.0,USD,CYE2022,TBFC,nan,nan,Morissette - Steuber
 13,QBAI,2430.0,USD,CYE2022,TBFC,nan,nan,Morissette - Steuber
-14,EBIT,-97795.0,USD,CYE2022,EBIT,,,Morissette - Steuber
-15,M1Adjustments,-236.4202502982831,USD,CYE2022,ForeignSchM-1Adj,,,Morissette - Steuber
-16,TI_EBIT,-98031.42025029828,USD,CYE2022,TI_EBIT,,,Morissette - Steuber
-17,ATI,-99208.42025029828,USD,CYE2022,Sec163j,,,Morissette - Steuber
-18,Section163jLimitation,43136.52607508948,USD,CYE2022,Sec163j,,,Morissette - Steuber
-19,InterestExpenseUtilized,92.0,USD,CYE2022,Sec163j,,,Morissette - Steuber
+14,EBIT,4252.0,USD,CYE2022,EBIT,,,Morissette - Steuber
+15,M1Adjustments,68.50500085890693,USD,CYE2022,ForeignSchM-1Adj,,,Morissette - Steuber
+16,TI_EBIT,4320.505000858907,USD,CYE2022,TI_EBIT,,,Morissette - Steuber
+17,ATI,4160.505000858907,USD,CYE2022,Sec163j,,,Morissette - Steuber
+18,Section163jLimitation,19327.0,USD,CYE2022,Sec163j,,,Morissette - Steuber
+19,InterestExpenseUtilized,6100.0,USD,CYE2022,Sec163j,,,Morissette - Steuber
 20,Sec163DisallowedInterestExpense,0.0,USD,CYE2022,Sec163j,,,Morissette - Steuber
-21,TentativeTestedIncomeBeforeTaxes,-111313.42025029828,USD,CYE2022,TestedIncome,,,Morissette - Steuber
-22,TestedIncome,0.0,USD,CYE2022,TestedIncome,,,Morissette - Steuber
+21,TentativeTestedIncomeBeforeTaxes,-8906.494999141094,USD,CYE2022,TestedIncome,,,Morissette - Steuber
+22,TestedIncome,-8906.494999141094,USD,CYE2022,TestedIncome,,,Morissette - Steuber
 23,TestedLoss,0.0,USD,CYE2022,TestedIncome,,,Morissette - Steuber
-24,ProRataTestedIncome,0.0,USD,CYE2022,TestedIncome,,,Morissette - Steuber
-25,ProRataTestedLoss,0.0,USD,CYE2022,TestedIncome,,,Morissette - Steuber
-26,ProRataQBAI,0.0,USD,CYE2022,TestedIncome,,,Morissette - Steuber
-27,TestedLossQBAI,0.0,USD,CYE2022,TestedIncome,,,Morissette - Steuber
-28,TestedIncome_ETR,0.257031002512236,USD,CYE2022,TestedIncome,,,Morissette - Steuber
-29,TestedInterestExpense,0.0,USD,CYE2022,TestedIncome,,,Morissette - Steuber
-30,TestedInterestIncome,0.0,USD,CYE2022,TestedIncome,,,Morissette - Steuber
-31,TestedIncomeTaxes,0.0,USD,CYE2022,TestedIncome,,,Morissette - Steuber
+24,TestedIncomeQBAI,2430.0,USD,CYE2022,TestedIncome,,,Morissette - Steuber
+25,TestedLossQBAI,0.0,USD,CYE2022,TestedIncome,,,Morissette - Steuber
+26,TestedIncome_ETR,0.0,USD,CYE2022,TestedIncome,,,Morissette - Steuber
+27,TestedInterestExpense,6100.0,USD,CYE2022,TestedIncome,,,Morissette - Steuber
+28,TestedInterestIncome,-19327.0,USD,CYE2022,TestedIncome,,,Morissette - Steuber
+29,TestedIncomeTaxes,0.0,USD,CYE2022,TestedIncome,,,Morissette - Steuber
 0,Sales,-26177.0,USD,CYE2022,TBFC,nan,nan,Schroeder - Fritsch
 1,COGS,10400.0,USD,CYE2022,TBFC,nan,nan,Schroeder - Fritsch
-2,OtherIncomeThirdParty,-64421.0,USD,CYE2022,TBFC,nan,nan,Schroeder - Fritsch
-3,OtherIncomeIntercompany,-27761.0,USD,CYE2022,TBFC,nan,nan,Schroeder - Fritsch
-4,InterestIncomeThirdParty,-15500.0,USD,CYE2022,TBFC,nan,nan,Schroeder - Fritsch
-5,InterestIncomeIntercompany,-6680.0,USD,CYE2022,TBFC,nan,nan,Schroeder - Fritsch
+2,OtherIncomeThirdParty,-74006.0,USD,CYE2022,TBFC,nan,nan,Schroeder - Fritsch
+3,OtherIncomeIntercompany,-20473.0,USD,CYE2022,TBFC,nan,nan,Schroeder - Fritsch
+4,InterestIncomeThirdParty,-25340.0,USD,CYE2022,TBFC,nan,nan,Schroeder - Fritsch
+5,InterestIncomeIntercompany,-7010.0,USD,CYE2022,TBFC,nan,nan,Schroeder - Fritsch
 6,DividendIncome,0.0,USD,CYE2022,TBFC,nan,nan,Schroeder - Fritsch
-7,Depreciation,491.0,USD,CYE2022,TBFC,nan,nan,Schroeder - Fritsch
-8,Amortization,2319.0,USD,CYE2022,TBFC,nan,nan,Schroeder - Fritsch
-9,InterestExpenseThirdParty,756.0,USD,CYE2022,TBFC,nan,nan,Schroeder - Fritsch
-10,InterestExpenseIntercompany,326.0,USD,CYE2022,TBFC,nan,nan,Schroeder - Fritsch
-11,IncomeTaxes,18296.0,USD,CYE2022,TBFC,nan,nan,Schroeder - Fritsch
-12,OtherDeductions,4394.0,USD,CYE2022,TBFC,nan,nan,Schroeder - Fritsch
+7,Depreciation,1438.0,USD,CYE2022,TBFC,nan,nan,Schroeder - Fritsch
+8,Amortization,3811.0,USD,CYE2022,TBFC,nan,nan,Schroeder - Fritsch
+9,InterestExpenseThirdParty,84800.0,USD,CYE2022,TBFC,nan,nan,Schroeder - Fritsch
+10,InterestExpenseIntercompany,234.0,USD,CYE2022,TBFC,nan,nan,Schroeder - Fritsch
+11,IncomeTaxes,30621.0,USD,CYE2022,TBFC,nan,nan,Schroeder - Fritsch
+12,OtherDeductions,2097.0,USD,CYE2022,TBFC,nan,nan,Schroeder - Fritsch
 13,QBAI,6718.0,USD,CYE2022,TBFC,nan,nan,Schroeder - Fritsch
-14,EBIT,-107109.0,USD,CYE2022,EBIT,,,Schroeder - Fritsch
-15,M1Adjustments,14.342099110833148,USD,CYE2022,ForeignSchM-1Adj,,,Schroeder - Fritsch
-16,TI_EBIT,-107094.65790088917,USD,CYE2022,TI_EBIT,,,Schroeder - Fritsch
-17,ATI,-109904.65790088917,USD,CYE2022,Sec163j,,,Schroeder - Fritsch
-18,Section163jLimitation,48471.39737026675,USD,CYE2022,Sec163j,,,Schroeder - Fritsch
-19,InterestExpenseUtilized,756.0,USD,CYE2022,Sec163j,,,Schroeder - Fritsch
-20,Sec163DisallowedInterestExpense,0.0,USD,CYE2022,Sec163j,,,Schroeder - Fritsch
-21,TentativeTestedIncomeBeforeTaxes,-121838.65790088917,USD,CYE2022,TestedIncome,,,Schroeder - Fritsch
-22,TestedIncome,-121838.65790088917,USD,CYE2022,TestedIncome,,,Schroeder - Fritsch
+14,EBIT,-109686.0,USD,CYE2022,EBIT,,,Schroeder - Fritsch
+15,M1Adjustments,1379.6847119869044,USD,CYE2022,ForeignSchM-1Adj,,,Schroeder - Fritsch
+16,TI_EBIT,-108306.3152880131,USD,CYE2022,TI_EBIT,,,Schroeder - Fritsch
+17,ATI,-113555.3152880131,USD,CYE2022,Sec163j,,,Schroeder - Fritsch
+18,Section163jLimitation,59406.594586403924,USD,CYE2022,Sec163j,,,Schroeder - Fritsch
+19,InterestExpenseUtilized,59406.594586403924,USD,CYE2022,Sec163j,,,Schroeder - Fritsch
+20,Sec163DisallowedInterestExpense,25393.405413596076,USD,CYE2022,Sec163j,,,Schroeder - Fritsch
+21,TentativeTestedIncomeBeforeTaxes,-74239.72070160917,USD,CYE2022,TestedIncome,,,Schroeder - Fritsch
+22,TestedIncome,0.0,USD,CYE2022,TestedIncome,,,Schroeder - Fritsch
 23,TestedLoss,0.0,USD,CYE2022,TestedIncome,,,Schroeder - Fritsch
-24,ProRataTestedIncome,-121838.65790088917,USD,CYE2022,TestedIncome,,,Schroeder - Fritsch
-25,ProRataTestedLoss,0.0,USD,CYE2022,TestedIncome,,,Schroeder - Fritsch
-26,ProRataQBAI,6718.0,USD,CYE2022,TestedIncome,,,Schroeder - Fritsch
-27,TestedLossQBAI,0.0,USD,CYE2022,TestedIncome,,,Schroeder - Fritsch
-28,TestedIncome_ETR,0.1501658038196962,USD,CYE2022,TestedIncome,,,Schroeder - Fritsch
-29,TestedInterestExpense,756.0,USD,CYE2022,TestedIncome,,,Schroeder - Fritsch
-30,TestedInterestIncome,-15500.0,USD,CYE2022,TestedIncome,,,Schroeder - Fritsch
-31,TestedIncomeTaxes,18296.0,USD,CYE2022,TestedIncome,,,Schroeder - Fritsch
+24,TestedIncomeQBAI,0.0,USD,CYE2022,TestedIncome,,,Schroeder - Fritsch
+25,TestedLossQBAI,0.0,USD,CYE2022,TestedIncome,,,Schroeder - Fritsch
+26,TestedIncome_ETR,0.412461142237787,USD,CYE2022,TestedIncome,,,Schroeder - Fritsch
+27,TestedInterestExpense,0.0,USD,CYE2022,TestedIncome,,,Schroeder - Fritsch
+28,TestedInterestIncome,0.0,USD,CYE2022,TestedIncome,,,Schroeder - Fritsch
+29,TestedIncomeTaxes,0.0,USD,CYE2022,TestedIncome,,,Schroeder - Fritsch
 0,Sales,-32747.0,USD,CYE2022,TBFC,nan,nan,"Mueller, Dach and Hyatt"
 1,COGS,12416.0,USD,CYE2022,TBFC,nan,nan,"Mueller, Dach and Hyatt"
-2,OtherIncomeThirdParty,-107058.0,USD,CYE2022,TBFC,nan,nan,"Mueller, Dach and Hyatt"
-3,OtherIncomeIntercompany,-4194.0,USD,CYE2022,TBFC,nan,nan,"Mueller, Dach and Hyatt"
-4,InterestIncomeThirdParty,-64660.0,USD,CYE2022,TBFC,nan,nan,"Mueller, Dach and Hyatt"
-5,InterestIncomeIntercompany,-2533.0,USD,CYE2022,TBFC,nan,nan,"Mueller, Dach and Hyatt"
+2,OtherIncomeThirdParty,-72194.0,USD,CYE2022,TBFC,nan,nan,"Mueller, Dach and Hyatt"
+3,OtherIncomeIntercompany,-32999.0,USD,CYE2022,TBFC,nan,nan,"Mueller, Dach and Hyatt"
+4,InterestIncomeThirdParty,-70816.0,USD,CYE2022,TBFC,nan,nan,"Mueller, Dach and Hyatt"
+5,InterestIncomeIntercompany,-32369.0,USD,CYE2022,TBFC,nan,nan,"Mueller, Dach and Hyatt"
 6,DividendIncome,0.0,USD,CYE2022,TBFC,nan,nan,"Mueller, Dach and Hyatt"
-7,Depreciation,240.0,USD,CYE2022,TBFC,nan,nan,"Mueller, Dach and Hyatt"
-8,Amortization,8.0,USD,CYE2022,TBFC,nan,nan,"Mueller, Dach and Hyatt"
-9,InterestExpenseThirdParty,500.0,USD,CYE2022,TBFC,nan,nan,"Mueller, Dach and Hyatt"
-10,InterestExpenseIntercompany,20.0,USD,CYE2022,TBFC,nan,nan,"Mueller, Dach and Hyatt"
-11,IncomeTaxes,75188.0,USD,CYE2022,TBFC,nan,nan,"Mueller, Dach and Hyatt"
-12,OtherDeductions,1708.0,USD,CYE2022,TBFC,nan,nan,"Mueller, Dach and Hyatt"
+7,Depreciation,1232.0,USD,CYE2022,TBFC,nan,nan,"Mueller, Dach and Hyatt"
+8,Amortization,1185.0,USD,CYE2022,TBFC,nan,nan,"Mueller, Dach and Hyatt"
+9,InterestExpenseThirdParty,357.0,USD,CYE2022,TBFC,nan,nan,"Mueller, Dach and Hyatt"
+10,InterestExpenseIntercompany,163.0,USD,CYE2022,TBFC,nan,nan,"Mueller, Dach and Hyatt"
+11,IncomeTaxes,96893.0,USD,CYE2022,TBFC,nan,nan,"Mueller, Dach and Hyatt"
+12,OtherDeductions,7767.0,USD,CYE2022,TBFC,nan,nan,"Mueller, Dach and Hyatt"
 13,QBAI,5995.0,USD,CYE2022,TBFC,nan,nan,"Mueller, Dach and Hyatt"
-14,EBIT,-132140.0,USD,CYE2022,EBIT,,,"Mueller, Dach and Hyatt"
-15,M1Adjustments,2.7724435118103274,USD,CYE2022,ForeignSchM-1Adj,,,"Mueller, Dach and Hyatt"
-16,TI_EBIT,-132137.2275564882,USD,CYE2022,TI_EBIT,,,"Mueller, Dach and Hyatt"
-17,ATI,-132385.2275564882,USD,CYE2022,Sec163j,,,"Mueller, Dach and Hyatt"
-18,Section163jLimitation,104375.56826694644,USD,CYE2022,Sec163j,,,"Mueller, Dach and Hyatt"
-19,InterestExpenseUtilized,500.0,USD,CYE2022,Sec163j,,,"Mueller, Dach and Hyatt"
+14,EBIT,-147546.0,USD,CYE2022,EBIT,,,"Mueller, Dach and Hyatt"
+15,M1Adjustments,681.8034788839908,USD,CYE2022,ForeignSchM-1Adj,,,"Mueller, Dach and Hyatt"
+16,TI_EBIT,-146864.196521116,USD,CYE2022,TI_EBIT,,,"Mueller, Dach and Hyatt"
+17,ATI,-149281.196521116,USD,CYE2022,Sec163j,,,"Mueller, Dach and Hyatt"
+18,Section163jLimitation,115600.35895633479,USD,CYE2022,Sec163j,,,"Mueller, Dach and Hyatt"
+19,InterestExpenseUtilized,357.0,USD,CYE2022,Sec163j,,,"Mueller, Dach and Hyatt"
 20,Sec163DisallowedInterestExpense,0.0,USD,CYE2022,Sec163j,,,"Mueller, Dach and Hyatt"
-21,TentativeTestedIncomeBeforeTaxes,-196297.2275564882,USD,CYE2022,TestedIncome,,,"Mueller, Dach and Hyatt"
+21,TentativeTestedIncomeBeforeTaxes,-217323.196521116,USD,CYE2022,TestedIncome,,,"Mueller, Dach and Hyatt"
 22,TestedIncome,0.0,USD,CYE2022,TestedIncome,,,"Mueller, Dach and Hyatt"
 23,TestedLoss,0.0,USD,CYE2022,TestedIncome,,,"Mueller, Dach and Hyatt"
-24,ProRataTestedIncome,0.0,USD,CYE2022,TestedIncome,,,"Mueller, Dach and Hyatt"
-25,ProRataTestedLoss,0.0,USD,CYE2022,TestedIncome,,,"Mueller, Dach and Hyatt"
-26,ProRataQBAI,0.0,USD,CYE2022,TestedIncome,,,"Mueller, Dach and Hyatt"
-27,TestedLossQBAI,0.0,USD,CYE2022,TestedIncome,,,"Mueller, Dach and Hyatt"
-28,TestedIncome_ETR,0.38303139038661793,USD,CYE2022,TestedIncome,,,"Mueller, Dach and Hyatt"
-29,TestedInterestExpense,0.0,USD,CYE2022,TestedIncome,,,"Mueller, Dach and Hyatt"
-30,TestedInterestIncome,0.0,USD,CYE2022,TestedIncome,,,"Mueller, Dach and Hyatt"
-31,TestedIncomeTaxes,0.0,USD,CYE2022,TestedIncome,,,"Mueller, Dach and Hyatt"
+24,TestedIncomeQBAI,0.0,USD,CYE2022,TestedIncome,,,"Mueller, Dach and Hyatt"
+25,TestedLossQBAI,0.0,USD,CYE2022,TestedIncome,,,"Mueller, Dach and Hyatt"
+26,TestedIncome_ETR,0.44584748223407195,USD,CYE2022,TestedIncome,,,"Mueller, Dach and Hyatt"
+27,TestedInterestExpense,0.0,USD,CYE2022,TestedIncome,,,"Mueller, Dach and Hyatt"
+28,TestedInterestIncome,0.0,USD,CYE2022,TestedIncome,,,"Mueller, Dach and Hyatt"
+29,TestedIncomeTaxes,0.0,USD,CYE2022,TestedIncome,,,"Mueller, Dach and Hyatt"
 0,Sales,-6453.0,USD,CYE2022,TBFC,nan,nan,"Reynolds, Kozey and Kerluke"
 1,COGS,1716.0,USD,CYE2022,TBFC,nan,nan,"Reynolds, Kozey and Kerluke"
-2,OtherIncomeThirdParty,-41667.0,USD,CYE2022,TBFC,nan,nan,"Reynolds, Kozey and Kerluke"
-3,OtherIncomeIntercompany,-13935.0,USD,CYE2022,TBFC,nan,nan,"Reynolds, Kozey and Kerluke"
-4,InterestIncomeThirdParty,-157.0,USD,CYE2022,TBFC,nan,nan,"Reynolds, Kozey and Kerluke"
-5,InterestIncomeIntercompany,-53.0,USD,CYE2022,TBFC,nan,nan,"Reynolds, Kozey and Kerluke"
+2,OtherIncomeThirdParty,-35298.0,USD,CYE2022,TBFC,nan,nan,"Reynolds, Kozey and Kerluke"
+3,OtherIncomeIntercompany,-20572.0,USD,CYE2022,TBFC,nan,nan,"Reynolds, Kozey and Kerluke"
+4,InterestIncomeThirdParty,-31827.0,USD,CYE2022,TBFC,nan,nan,"Reynolds, Kozey and Kerluke"
+5,InterestIncomeIntercompany,-18548.0,USD,CYE2022,TBFC,nan,nan,"Reynolds, Kozey and Kerluke"
 6,DividendIncome,0.0,USD,CYE2022,TBFC,nan,nan,"Reynolds, Kozey and Kerluke"
-7,Depreciation,135.0,USD,CYE2022,TBFC,nan,nan,"Reynolds, Kozey and Kerluke"
-8,Amortization,20.0,USD,CYE2022,TBFC,nan,nan,"Reynolds, Kozey and Kerluke"
-9,InterestExpenseThirdParty,40.0,USD,CYE2022,TBFC,nan,nan,"Reynolds, Kozey and Kerluke"
-10,InterestExpenseIntercompany,14.0,USD,CYE2022,TBFC,nan,nan,"Reynolds, Kozey and Kerluke"
-11,IncomeTaxes,2636.0,USD,CYE2022,TBFC,nan,nan,"Reynolds, Kozey and Kerluke"
-12,OtherDeductions,530.0,USD,CYE2022,TBFC,nan,nan,"Reynolds, Kozey and Kerluke"
+7,Depreciation,579.0,USD,CYE2022,TBFC,nan,nan,"Reynolds, Kozey and Kerluke"
+8,Amortization,2183.0,USD,CYE2022,TBFC,nan,nan,"Reynolds, Kozey and Kerluke"
+9,InterestExpenseThirdParty,34.0,USD,CYE2022,TBFC,nan,nan,"Reynolds, Kozey and Kerluke"
+10,InterestExpenseIntercompany,20.0,USD,CYE2022,TBFC,nan,nan,"Reynolds, Kozey and Kerluke"
+11,IncomeTaxes,50730.0,USD,CYE2022,TBFC,nan,nan,"Reynolds, Kozey and Kerluke"
+12,OtherDeductions,262.0,USD,CYE2022,TBFC,nan,nan,"Reynolds, Kozey and Kerluke"
 13,QBAI,508.0,USD,CYE2022,TBFC,nan,nan,"Reynolds, Kozey and Kerluke"
-14,EBIT,-59693.0,USD,CYE2022,EBIT,,,"Reynolds, Kozey and Kerluke"
-15,M1Adjustments,-177.49635535834693,USD,CYE2022,ForeignSchM-1Adj,,,"Reynolds, Kozey and Kerluke"
-16,TI_EBIT,-59870.496355358344,USD,CYE2022,TI_EBIT,,,"Reynolds, Kozey and Kerluke"
-17,ATI,-60025.496355358344,USD,CYE2022,Sec163j,,,"Reynolds, Kozey and Kerluke"
-18,Section163jLimitation,18164.6489066075,USD,CYE2022,Sec163j,,,"Reynolds, Kozey and Kerluke"
-19,InterestExpenseUtilized,40.0,USD,CYE2022,Sec163j,,,"Reynolds, Kozey and Kerluke"
+14,EBIT,-76111.0,USD,CYE2022,EBIT,,,"Reynolds, Kozey and Kerluke"
+15,M1Adjustments,205.0828982052628,USD,CYE2022,ForeignSchM-1Adj,,,"Reynolds, Kozey and Kerluke"
+16,TI_EBIT,-75905.91710179474,USD,CYE2022,TI_EBIT,,,"Reynolds, Kozey and Kerluke"
+17,ATI,-78667.91710179474,USD,CYE2022,Sec163j,,,"Reynolds, Kozey and Kerluke"
+18,Section163jLimitation,55427.37513053842,USD,CYE2022,Sec163j,,,"Reynolds, Kozey and Kerluke"
+19,InterestExpenseUtilized,34.0,USD,CYE2022,Sec163j,,,"Reynolds, Kozey and Kerluke"
 20,Sec163DisallowedInterestExpense,0.0,USD,CYE2022,Sec163j,,,"Reynolds, Kozey and Kerluke"
-21,TentativeTestedIncomeBeforeTaxes,-59987.496355358344,USD,CYE2022,TestedIncome,,,"Reynolds, Kozey and Kerluke"
-22,TestedIncome,-59987.496355358344,USD,CYE2022,TestedIncome,,,"Reynolds, Kozey and Kerluke"
+21,TentativeTestedIncomeBeforeTaxes,-107698.91710179474,USD,CYE2022,TestedIncome,,,"Reynolds, Kozey and Kerluke"
+22,TestedIncome,0.0,USD,CYE2022,TestedIncome,,,"Reynolds, Kozey and Kerluke"
 23,TestedLoss,0.0,USD,CYE2022,TestedIncome,,,"Reynolds, Kozey and Kerluke"
-24,ProRataTestedIncome,-59987.496355358344,USD,CYE2022,TestedIncome,,,"Reynolds, Kozey and Kerluke"
-25,ProRataTestedLoss,0.0,USD,CYE2022,TestedIncome,,,"Reynolds, Kozey and Kerluke"
-26,ProRataQBAI,508.0,USD,CYE2022,TestedIncome,,,"Reynolds, Kozey and Kerluke"
-27,TestedLossQBAI,0.0,USD,CYE2022,TestedIncome,,,"Reynolds, Kozey and Kerluke"
-28,TestedIncome_ETR,0.04394249068813723,USD,CYE2022,TestedIncome,,,"Reynolds, Kozey and Kerluke"
-29,TestedInterestExpense,40.0,USD,CYE2022,TestedIncome,,,"Reynolds, Kozey and Kerluke"
-30,TestedInterestIncome,-157.0,USD,CYE2022,TestedIncome,,,"Reynolds, Kozey and Kerluke"
-31,TestedIncomeTaxes,2636.0,USD,CYE2022,TestedIncome,,,"Reynolds, Kozey and Kerluke"
+24,TestedIncomeQBAI,0.0,USD,CYE2022,TestedIncome,,,"Reynolds, Kozey and Kerluke"
+25,TestedLossQBAI,0.0,USD,CYE2022,TestedIncome,,,"Reynolds, Kozey and Kerluke"
+26,TestedIncome_ETR,0.47103537681860885,USD,CYE2022,TestedIncome,,,"Reynolds, Kozey and Kerluke"
+27,TestedInterestExpense,0.0,USD,CYE2022,TestedIncome,,,"Reynolds, Kozey and Kerluke"
+28,TestedInterestIncome,0.0,USD,CYE2022,TestedIncome,,,"Reynolds, Kozey and Kerluke"
+29,TestedIncomeTaxes,0.0,USD,CYE2022,TestedIncome,,,"Reynolds, Kozey and Kerluke"
 0,Sales,-71607.0,USD,CYE2022,TBFC,nan,nan,"Braun, King and Barrows"
 1,COGS,40594.0,USD,CYE2022,TBFC,nan,nan,"Braun, King and Barrows"
-2,OtherIncomeThirdParty,-84903.0,USD,CYE2022,TBFC,nan,nan,"Braun, King and Barrows"
-3,OtherIncomeIntercompany,-175855.0,USD,CYE2022,TBFC,nan,nan,"Braun, King and Barrows"
-4,InterestIncomeThirdParty,-16406.0,USD,CYE2022,TBFC,nan,nan,"Braun, King and Barrows"
-5,InterestIncomeIntercompany,-33982.0,USD,CYE2022,TBFC,nan,nan,"Braun, King and Barrows"
+2,OtherIncomeThirdParty,-154469.0,USD,CYE2022,TBFC,nan,nan,"Braun, King and Barrows"
+3,OtherIncomeIntercompany,-101529.0,USD,CYE2022,TBFC,nan,nan,"Braun, King and Barrows"
+4,InterestIncomeThirdParty,-108012.0,USD,CYE2022,TBFC,nan,nan,"Braun, King and Barrows"
+5,InterestIncomeIntercompany,-70993.0,USD,CYE2022,TBFC,nan,nan,"Braun, King and Barrows"
 6,DividendIncome,0.0,USD,CYE2022,TBFC,nan,nan,"Braun, King and Barrows"
-7,Depreciation,2449.0,USD,CYE2022,TBFC,nan,nan,"Braun, King and Barrows"
-8,Amortization,5331.0,USD,CYE2022,TBFC,nan,nan,"Braun, King and Barrows"
-9,InterestExpenseThirdParty,173.0,USD,CYE2022,TBFC,nan,nan,"Braun, King and Barrows"
-10,InterestExpenseIntercompany,359.0,USD,CYE2022,TBFC,nan,nan,"Braun, King and Barrows"
-11,IncomeTaxes,50446.0,USD,CYE2022,TBFC,nan,nan,"Braun, King and Barrows"
-12,OtherDeductions,477.0,USD,CYE2022,TBFC,nan,nan,"Braun, King and Barrows"
+7,Depreciation,179.0,USD,CYE2022,TBFC,nan,nan,"Braun, King and Barrows"
+8,Amortization,617.0,USD,CYE2022,TBFC,nan,nan,"Braun, King and Barrows"
+9,InterestExpenseThirdParty,321.0,USD,CYE2022,TBFC,nan,nan,"Braun, King and Barrows"
+10,InterestExpenseIntercompany,211.0,USD,CYE2022,TBFC,nan,nan,"Braun, King and Barrows"
+11,IncomeTaxes,176527.0,USD,CYE2022,TBFC,nan,nan,"Braun, King and Barrows"
+12,OtherDeductions,5237.0,USD,CYE2022,TBFC,nan,nan,"Braun, King and Barrows"
 13,QBAI,7648.0,USD,CYE2022,TBFC,nan,nan,"Braun, King and Barrows"
-14,EBIT,-317137.0,USD,CYE2022,EBIT,,,"Braun, King and Barrows"
-15,M1Adjustments,3594.233272674758,USD,CYE2022,ForeignSchM-1Adj,,,"Braun, King and Barrows"
-16,TI_EBIT,-313542.7667273252,USD,CYE2022,TI_EBIT,,,"Braun, King and Barrows"
-17,ATI,-321322.7667273252,USD,CYE2022,Sec163j,,,"Braun, King and Barrows"
-18,Section163jLimitation,112802.83001819756,USD,CYE2022,Sec163j,,,"Braun, King and Barrows"
-19,InterestExpenseUtilized,173.0,USD,CYE2022,Sec163j,,,"Braun, King and Barrows"
+14,EBIT,-351760.0,USD,CYE2022,EBIT,,,"Braun, King and Barrows"
+15,M1Adjustments,-3947.845919890808,USD,CYE2022,ForeignSchM-1Adj,,,"Braun, King and Barrows"
+16,TI_EBIT,-355707.8459198908,USD,CYE2022,TI_EBIT,,,"Braun, King and Barrows"
+17,ATI,-356503.8459198908,USD,CYE2022,Sec163j,,,"Braun, King and Barrows"
+18,Section163jLimitation,214963.15377596725,USD,CYE2022,Sec163j,,,"Braun, King and Barrows"
+19,InterestExpenseUtilized,321.0,USD,CYE2022,Sec163j,,,"Braun, King and Barrows"
 20,Sec163DisallowedInterestExpense,0.0,USD,CYE2022,Sec163j,,,"Braun, King and Barrows"
-21,TentativeTestedIncomeBeforeTaxes,-329775.7667273252,USD,CYE2022,TestedIncome,,,"Braun, King and Barrows"
-22,TestedIncome,-329775.7667273252,USD,CYE2022,TestedIncome,,,"Braun, King and Barrows"
+21,TentativeTestedIncomeBeforeTaxes,-463398.8459198908,USD,CYE2022,TestedIncome,,,"Braun, King and Barrows"
+22,TestedIncome,0.0,USD,CYE2022,TestedIncome,,,"Braun, King and Barrows"
 23,TestedLoss,0.0,USD,CYE2022,TestedIncome,,,"Braun, King and Barrows"
-24,ProRataTestedIncome,-329775.7667273252,USD,CYE2022,TestedIncome,,,"Braun, King and Barrows"
-25,ProRataTestedLoss,0.0,USD,CYE2022,TestedIncome,,,"Braun, King and Barrows"
-26,ProRataQBAI,7648.0,USD,CYE2022,TestedIncome,,,"Braun, King and Barrows"
-27,TestedLossQBAI,0.0,USD,CYE2022,TestedIncome,,,"Braun, King and Barrows"
-28,TestedIncome_ETR,0.15297060939505366,USD,CYE2022,TestedIncome,,,"Braun, King and Barrows"
-29,TestedInterestExpense,173.0,USD,CYE2022,TestedIncome,,,"Braun, King and Barrows"
-30,TestedInterestIncome,-16406.0,USD,CYE2022,TestedIncome,,,"Braun, King and Barrows"
-31,TestedIncomeTaxes,50446.0,USD,CYE2022,TestedIncome,,,"Braun, King and Barrows"
+24,TestedIncomeQBAI,0.0,USD,CYE2022,TestedIncome,,,"Braun, King and Barrows"
+25,TestedLossQBAI,0.0,USD,CYE2022,TestedIncome,,,"Braun, King and Barrows"
+26,TestedIncome_ETR,0.38093966256989076,USD,CYE2022,TestedIncome,,,"Braun, King and Barrows"
+27,TestedInterestExpense,0.0,USD,CYE2022,TestedIncome,,,"Braun, King and Barrows"
+28,TestedInterestIncome,0.0,USD,CYE2022,TestedIncome,,,"Braun, King and Barrows"
+29,TestedIncomeTaxes,0.0,USD,CYE2022,TestedIncome,,,"Braun, King and Barrows"
 0,Sales,-16178.0,USD,CYE2022,TBFC,nan,nan,Konopelski - Dare
 1,COGS,5022.0,USD,CYE2022,TBFC,nan,nan,Konopelski - Dare
-2,OtherIncomeThirdParty,-18269.0,USD,CYE2022,TBFC,nan,nan,Konopelski - Dare
-3,OtherIncomeIntercompany,-54927.0,USD,CYE2022,TBFC,nan,nan,Konopelski - Dare
-4,InterestIncomeThirdParty,-10309.0,USD,CYE2022,TBFC,nan,nan,Konopelski - Dare
-5,InterestIncomeIntercompany,-30994.0,USD,CYE2022,TBFC,nan,nan,Konopelski - Dare
+2,OtherIncomeThirdParty,-52327.0,USD,CYE2022,TBFC,nan,nan,Konopelski - Dare
+3,OtherIncomeIntercompany,-21010.0,USD,CYE2022,TBFC,nan,nan,Konopelski - Dare
+4,InterestIncomeThirdParty,-6820.0,USD,CYE2022,TBFC,nan,nan,Konopelski - Dare
+5,InterestIncomeIntercompany,-2738.0,USD,CYE2022,TBFC,nan,nan,Konopelski - Dare
 6,DividendIncome,0.0,USD,CYE2022,TBFC,nan,nan,Konopelski - Dare
-7,Depreciation,3202.0,USD,CYE2022,TBFC,nan,nan,Konopelski - Dare
-8,Amortization,1263.0,USD,CYE2022,TBFC,nan,nan,Konopelski - Dare
-9,InterestExpenseThirdParty,174.0,USD,CYE2022,TBFC,nan,nan,Konopelski - Dare
-10,InterestExpenseIntercompany,524.0,USD,CYE2022,TBFC,nan,nan,Konopelski - Dare
-11,IncomeTaxes,41310.0,USD,CYE2022,TBFC,nan,nan,Konopelski - Dare
-12,OtherDeductions,413.0,USD,CYE2022,TBFC,nan,nan,Konopelski - Dare
+7,Depreciation,12.0,USD,CYE2022,TBFC,nan,nan,Konopelski - Dare
+8,Amortization,1071.0,USD,CYE2022,TBFC,nan,nan,Konopelski - Dare
+9,InterestExpenseThirdParty,49800.0,USD,CYE2022,TBFC,nan,nan,Konopelski - Dare
+10,InterestExpenseIntercompany,200.0,USD,CYE2022,TBFC,nan,nan,Konopelski - Dare
+11,IncomeTaxes,13229.0,USD,CYE2022,TBFC,nan,nan,Konopelski - Dare
+12,OtherDeductions,272.0,USD,CYE2022,TBFC,nan,nan,Konopelski - Dare
 13,QBAI,1471.0,USD,CYE2022,TBFC,nan,nan,Konopelski - Dare
-14,EBIT,-109944.0,USD,CYE2022,EBIT,,,Konopelski - Dare
-15,M1Adjustments,268.518437375313,USD,CYE2022,ForeignSchM-1Adj,,,Konopelski - Dare
-16,TI_EBIT,-109675.48156262469,USD,CYE2022,TI_EBIT,,,Konopelski - Dare
-17,ATI,-114140.48156262469,USD,CYE2022,Sec163j,,,Konopelski - Dare
-18,Section163jLimitation,44551.1444687874,USD,CYE2022,Sec163j,,,Konopelski - Dare
-19,InterestExpenseUtilized,174.0,USD,CYE2022,Sec163j,,,Konopelski - Dare
-20,Sec163DisallowedInterestExpense,0.0,USD,CYE2022,Sec163j,,,Konopelski - Dare
-21,TentativeTestedIncomeBeforeTaxes,-119810.48156262469,USD,CYE2022,TestedIncome,,,Konopelski - Dare
+14,EBIT,-85676.0,USD,CYE2022,EBIT,,,Konopelski - Dare
+15,M1Adjustments,-254.68774325532925,USD,CYE2022,ForeignSchM-1Adj,,,Konopelski - Dare
+16,TI_EBIT,-85930.68774325533,USD,CYE2022,TI_EBIT,,,Konopelski - Dare
+17,ATI,-87013.68774325533,USD,CYE2022,Sec163j,,,Konopelski - Dare
+18,Section163jLimitation,32924.1063229766,USD,CYE2022,Sec163j,,,Konopelski - Dare
+19,InterestExpenseUtilized,32924.1063229766,USD,CYE2022,Sec163j,,,Konopelski - Dare
+20,Sec163DisallowedInterestExpense,16875.8936770234,USD,CYE2022,Sec163j,,,Konopelski - Dare
+21,TentativeTestedIncomeBeforeTaxes,-59826.58142027873,USD,CYE2022,TestedIncome,,,Konopelski - Dare
 22,TestedIncome,0.0,USD,CYE2022,TestedIncome,,,Konopelski - Dare
 23,TestedLoss,0.0,USD,CYE2022,TestedIncome,,,Konopelski - Dare
-24,ProRataTestedIncome,0.0,USD,CYE2022,TestedIncome,,,Konopelski - Dare
-25,ProRataTestedLoss,0.0,USD,CYE2022,TestedIncome,,,Konopelski - Dare
-26,ProRataQBAI,0.0,USD,CYE2022,TestedIncome,,,Konopelski - Dare
-27,TestedLossQBAI,0.0,USD,CYE2022,TestedIncome,,,Konopelski - Dare
-28,TestedIncome_ETR,0.34479454102191676,USD,CYE2022,TestedIncome,,,Konopelski - Dare
-29,TestedInterestExpense,0.0,USD,CYE2022,TestedIncome,,,Konopelski - Dare
-30,TestedInterestIncome,0.0,USD,CYE2022,TestedIncome,,,Konopelski - Dare
-31,TestedIncomeTaxes,0.0,USD,CYE2022,TestedIncome,,,Konopelski - Dare
+24,TestedIncomeQBAI,0.0,USD,CYE2022,TestedIncome,,,Konopelski - Dare
+25,TestedLossQBAI,0.0,USD,CYE2022,TestedIncome,,,Konopelski - Dare
+26,TestedIncome_ETR,0.22112244567455624,USD,CYE2022,TestedIncome,,,Konopelski - Dare
+27,TestedInterestExpense,0.0,USD,CYE2022,TestedIncome,,,Konopelski - Dare
+28,TestedInterestIncome,0.0,USD,CYE2022,TestedIncome,,,Konopelski - Dare
+29,TestedIncomeTaxes,0.0,USD,CYE2022,TestedIncome,,,Konopelski - Dare
 0,Sales,-30719.0,USD,CYE2022,TBFC,nan,nan,Ferry Group
 1,COGS,15906.0,USD,CYE2022,TBFC,nan,nan,Ferry Group
-2,OtherIncomeThirdParty,-26251.0,USD,CYE2022,TBFC,nan,nan,Ferry Group
-3,OtherIncomeIntercompany,-62777.0,USD,CYE2022,TBFC,nan,nan,Ferry Group
-4,InterestIncomeThirdParty,-12770.0,USD,CYE2022,TBFC,nan,nan,Ferry Group
-5,InterestIncomeIntercompany,-30538.0,USD,CYE2022,TBFC,nan,nan,Ferry Group
+2,OtherIncomeThirdParty,-73473.0,USD,CYE2022,TBFC,nan,nan,Ferry Group
+3,OtherIncomeIntercompany,-15456.0,USD,CYE2022,TBFC,nan,nan,Ferry Group
+4,InterestIncomeThirdParty,-48264.0,USD,CYE2022,TBFC,nan,nan,Ferry Group
+5,InterestIncomeIntercompany,-10153.0,USD,CYE2022,TBFC,nan,nan,Ferry Group
 6,DividendIncome,0.0,USD,CYE2022,TBFC,nan,nan,Ferry Group
-7,Depreciation,9.0,USD,CYE2022,TBFC,nan,nan,Ferry Group
-8,Amortization,490.0,USD,CYE2022,TBFC,nan,nan,Ferry Group
-9,InterestExpenseThirdParty,481.0,USD,CYE2022,TBFC,nan,nan,Ferry Group
-10,InterestExpenseIntercompany,1149.0,USD,CYE2022,TBFC,nan,nan,Ferry Group
-11,IncomeTaxes,41836.0,USD,CYE2022,TBFC,nan,nan,Ferry Group
-12,OtherDeductions,500.0,USD,CYE2022,TBFC,nan,nan,Ferry Group
+7,Depreciation,465.0,USD,CYE2022,TBFC,nan,nan,Ferry Group
+8,Amortization,235.0,USD,CYE2022,TBFC,nan,nan,Ferry Group
+9,InterestExpenseThirdParty,1347.0,USD,CYE2022,TBFC,nan,nan,Ferry Group
+10,InterestExpenseIntercompany,283.0,USD,CYE2022,TBFC,nan,nan,Ferry Group
+11,IncomeTaxes,56546.0,USD,CYE2022,TBFC,nan,nan,Ferry Group
+12,OtherDeductions,599.0,USD,CYE2022,TBFC,nan,nan,Ferry Group
 13,QBAI,79824.0,USD,CYE2022,TBFC,nan,nan,Ferry Group
-14,EBIT,-132231.0,USD,CYE2022,EBIT,,,Ferry Group
-15,M1Adjustments,767.9390219413101,USD,CYE2022,ForeignSchM-1Adj,,,Ferry Group
-16,TI_EBIT,-131463.0609780587,USD,CYE2022,TI_EBIT,,,Ferry Group
-17,ATI,-131962.0609780587,USD,CYE2022,Sec163j,,,Ferry Group
-18,Section163jLimitation,52358.61829341761,USD,CYE2022,Sec163j,,,Ferry Group
-19,InterestExpenseUtilized,481.0,USD,CYE2022,Sec163j,,,Ferry Group
+14,EBIT,-112313.0,USD,CYE2022,EBIT,,,Ferry Group
+15,M1Adjustments,-162.10665951346306,USD,CYE2022,ForeignSchM-1Adj,,,Ferry Group
+16,TI_EBIT,-112475.10665951346,USD,CYE2022,TI_EBIT,,,Ferry Group
+17,ATI,-113175.10665951346,USD,CYE2022,Sec163j,,,Ferry Group
+18,Section163jLimitation,82216.53199785404,USD,CYE2022,Sec163j,,,Ferry Group
+19,InterestExpenseUtilized,1347.0,USD,CYE2022,Sec163j,,,Ferry Group
 20,Sec163DisallowedInterestExpense,0.0,USD,CYE2022,Sec163j,,,Ferry Group
-21,TentativeTestedIncomeBeforeTaxes,-143752.0609780587,USD,CYE2022,TestedIncome,,,Ferry Group
+21,TentativeTestedIncomeBeforeTaxes,-159392.10665951346,USD,CYE2022,TestedIncome,,,Ferry Group
 22,TestedIncome,0.0,USD,CYE2022,TestedIncome,,,Ferry Group
 23,TestedLoss,0.0,USD,CYE2022,TestedIncome,,,Ferry Group
-24,ProRataTestedIncome,0.0,USD,CYE2022,TestedIncome,,,Ferry Group
-25,ProRataTestedLoss,0.0,USD,CYE2022,TestedIncome,,,Ferry Group
-26,ProRataQBAI,0.0,USD,CYE2022,TestedIncome,,,Ferry Group
-27,TestedLossQBAI,0.0,USD,CYE2022,TestedIncome,,,Ferry Group
-28,TestedIncome_ETR,0.29102887092787877,USD,CYE2022,TestedIncome,,,Ferry Group
-29,TestedInterestExpense,0.0,USD,CYE2022,TestedIncome,,,Ferry Group
-30,TestedInterestIncome,0.0,USD,CYE2022,TestedIncome,,,Ferry Group
-31,TestedIncomeTaxes,0.0,USD,CYE2022,TestedIncome,,,Ferry Group
-0,Sales,-133340.0,USD,CYE2022,TBFC,nan,nan,Kovacek and Sons
+24,TestedIncomeQBAI,0.0,USD,CYE2022,TestedIncome,,,Ferry Group
+25,TestedLossQBAI,0.0,USD,CYE2022,TestedIncome,,,Ferry Group
+26,TestedIncome_ETR,0.35476035284978774,USD,CYE2022,TestedIncome,,,Ferry Group
+27,TestedInterestExpense,0.0,USD,CYE2022,TestedIncome,,,Ferry Group
+28,TestedInterestIncome,0.0,USD,CYE2022,TestedIncome,,,Ferry Group
+29,TestedIncomeTaxes,0.0,USD,CYE2022,TestedIncome,,,Ferry Group
+0,Sales,0.0,USD,CYE2022,TBFC,nan,nan,Kovacek and Sons
 1,COGS,43381.0,USD,CYE2022,TBFC,nan,nan,Kovacek and Sons
-2,OtherIncomeThirdParty,-114327.0,USD,CYE2022,TBFC,nan,nan,Kovacek and Sons
-3,OtherIncomeIntercompany,-128853.0,USD,CYE2022,TBFC,nan,nan,Kovacek and Sons
-4,InterestIncomeThirdParty,-99431.0,USD,CYE2022,TBFC,nan,nan,Kovacek and Sons
-5,InterestIncomeIntercompany,-112063.0,USD,CYE2022,TBFC,nan,nan,Kovacek and Sons
+2,OtherIncomeThirdParty,0.0,USD,CYE2022,TBFC,nan,nan,Kovacek and Sons
+3,OtherIncomeIntercompany,0.0,USD,CYE2022,TBFC,nan,nan,Kovacek and Sons
+4,InterestIncomeThirdParty,-41672.0,USD,CYE2022,TBFC,nan,nan,Kovacek and Sons
+5,InterestIncomeIntercompany,0.0,USD,CYE2022,TBFC,nan,nan,Kovacek and Sons
 6,DividendIncome,0.0,USD,CYE2022,TBFC,nan,nan,Kovacek and Sons
-7,Depreciation,1500.0,USD,CYE2022,TBFC,nan,nan,Kovacek and Sons
-8,Amortization,13709.0,USD,CYE2022,TBFC,nan,nan,Kovacek and Sons
-9,InterestExpenseThirdParty,629.0,USD,CYE2022,TBFC,nan,nan,Kovacek and Sons
-10,InterestExpenseIntercompany,708.0,USD,CYE2022,TBFC,nan,nan,Kovacek and Sons
-11,IncomeTaxes,206716.0,USD,CYE2022,TBFC,nan,nan,Kovacek and Sons
-12,OtherDeductions,6531.0,USD,CYE2022,TBFC,nan,nan,Kovacek and Sons
+7,Depreciation,6286.0,USD,CYE2022,TBFC,nan,nan,Kovacek and Sons
+8,Amortization,4374.0,USD,CYE2022,TBFC,nan,nan,Kovacek and Sons
+9,InterestExpenseThirdParty,231.0,USD,CYE2022,TBFC,nan,nan,Kovacek and Sons
+10,InterestExpenseIntercompany,1106.0,USD,CYE2022,TBFC,nan,nan,Kovacek and Sons
+11,IncomeTaxes,0.0,USD,CYE2022,TBFC,nan,nan,Kovacek and Sons
+12,OtherDeductions,3635.0,USD,CYE2022,TBFC,nan,nan,Kovacek and Sons
 13,QBAI,37369.0,USD,CYE2022,TBFC,nan,nan,Kovacek and Sons
-14,EBIT,-422754.0,USD,CYE2022,EBIT,,,Kovacek and Sons
-15,M1Adjustments,304.9256609404792,USD,CYE2022,ForeignSchM-1Adj,,,Kovacek and Sons
-16,TI_EBIT,-422449.07433905953,USD,CYE2022,TI_EBIT,,,Kovacek and Sons
-17,ATI,-437658.07433905953,USD,CYE2022,Sec163j,,,Kovacek and Sons
-18,Section163jLimitation,230728.42230171786,USD,CYE2022,Sec163j,,,Kovacek and Sons
-19,InterestExpenseUtilized,629.0,USD,CYE2022,Sec163j,,,Kovacek and Sons
+14,EBIT,58782.0,USD,CYE2022,EBIT,,,Kovacek and Sons
+15,M1Adjustments,-674.7211543372244,USD,CYE2022,ForeignSchM-1Adj,,,Kovacek and Sons
+16,TI_EBIT,58107.278845662775,USD,CYE2022,TI_EBIT,,,Kovacek and Sons
+17,ATI,47447.278845662775,USD,CYE2022,Sec163j,,,Kovacek and Sons
+18,Section163jLimitation,41672.0,USD,CYE2022,Sec163j,,,Kovacek and Sons
+19,InterestExpenseUtilized,231.0,USD,CYE2022,Sec163j,,,Kovacek and Sons
 20,Sec163DisallowedInterestExpense,0.0,USD,CYE2022,Sec163j,,,Kovacek and Sons
-21,TentativeTestedIncomeBeforeTaxes,-521251.07433905953,USD,CYE2022,TestedIncome,,,Kovacek and Sons
+21,TentativeTestedIncomeBeforeTaxes,16666.278845662775,USD,CYE2022,TestedIncome,,,Kovacek and Sons
 22,TestedIncome,0.0,USD,CYE2022,TestedIncome,,,Kovacek and Sons
-23,TestedLoss,0.0,USD,CYE2022,TestedIncome,,,Kovacek and Sons
-24,ProRataTestedIncome,0.0,USD,CYE2022,TestedIncome,,,Kovacek and Sons
-25,ProRataTestedLoss,0.0,USD,CYE2022,TestedIncome,,,Kovacek and Sons
-26,ProRataQBAI,0.0,USD,CYE2022,TestedIncome,,,Kovacek and Sons
-27,TestedLossQBAI,0.0,USD,CYE2022,TestedIncome,,,Kovacek and Sons
-28,TestedIncome_ETR,0.39657664065654646,USD,CYE2022,TestedIncome,,,Kovacek and Sons
-29,TestedInterestExpense,0.0,USD,CYE2022,TestedIncome,,,Kovacek and Sons
-30,TestedInterestIncome,0.0,USD,CYE2022,TestedIncome,,,Kovacek and Sons
-31,TestedIncomeTaxes,0.0,USD,CYE2022,TestedIncome,,,Kovacek and Sons
-0,Sales,-79184.0,USD,CYE2022,TBFC,nan,nan,"Collins, Gleason and Abshire"
+23,TestedLoss,16666.278845662775,USD,CYE2022,TestedIncome,,,Kovacek and Sons
+24,TestedIncomeQBAI,0.0,USD,CYE2022,TestedIncome,,,Kovacek and Sons
+25,TestedLossQBAI,3736.9,USD,CYE2022,TestedIncome,,,Kovacek and Sons
+26,TestedIncome_ETR,-0.0,USD,CYE2022,TestedIncome,,,Kovacek and Sons
+27,TestedInterestExpense,0.0,USD,CYE2022,TestedIncome,,,Kovacek and Sons
+28,TestedInterestIncome,-41672.0,USD,CYE2022,TestedIncome,,,Kovacek and Sons
+29,TestedIncomeTaxes,0.0,USD,CYE2022,TestedIncome,,,Kovacek and Sons
+0,Sales,0.0,USD,CYE2022,TBFC,nan,nan,"Collins, Gleason and Abshire"
 1,COGS,15208.0,USD,CYE2022,TBFC,nan,nan,"Collins, Gleason and Abshire"
-2,OtherIncomeThirdParty,-28793.0,USD,CYE2022,TBFC,nan,nan,"Collins, Gleason and Abshire"
-3,OtherIncomeIntercompany,-159056.0,USD,CYE2022,TBFC,nan,nan,"Collins, Gleason and Abshire"
-4,InterestIncomeThirdParty,-12214.0,USD,CYE2022,TBFC,nan,nan,"Collins, Gleason and Abshire"
-5,InterestIncomeIntercompany,-67473.0,USD,CYE2022,TBFC,nan,nan,"Collins, Gleason and Abshire"
+2,OtherIncomeThirdParty,0.0,USD,CYE2022,TBFC,nan,nan,"Collins, Gleason and Abshire"
+3,OtherIncomeIntercompany,0.0,USD,CYE2022,TBFC,nan,nan,"Collins, Gleason and Abshire"
+4,InterestIncomeThirdParty,-12259.0,USD,CYE2022,TBFC,nan,nan,"Collins, Gleason and Abshire"
+5,InterestIncomeIntercompany,0.0,USD,CYE2022,TBFC,nan,nan,"Collins, Gleason and Abshire"
 6,DividendIncome,0.0,USD,CYE2022,TBFC,nan,nan,"Collins, Gleason and Abshire"
-7,Depreciation,2106.0,USD,CYE2022,TBFC,nan,nan,"Collins, Gleason and Abshire"
-8,Amortization,5152.0,USD,CYE2022,TBFC,nan,nan,"Collins, Gleason and Abshire"
-9,InterestExpenseThirdParty,48.0,USD,CYE2022,TBFC,nan,nan,"Collins, Gleason and Abshire"
-10,InterestExpenseIntercompany,262.0,USD,CYE2022,TBFC,nan,nan,"Collins, Gleason and Abshire"
-11,IncomeTaxes,68812.0,USD,CYE2022,TBFC,nan,nan,"Collins, Gleason and Abshire"
-12,OtherDeductions,17945.0,USD,CYE2022,TBFC,nan,nan,"Collins, Gleason and Abshire"
+7,Depreciation,3737.0,USD,CYE2022,TBFC,nan,nan,"Collins, Gleason and Abshire"
+8,Amortization,2853.0,USD,CYE2022,TBFC,nan,nan,"Collins, Gleason and Abshire"
+9,InterestExpenseThirdParty,83.0,USD,CYE2022,TBFC,nan,nan,"Collins, Gleason and Abshire"
+10,InterestExpenseIntercompany,227.0,USD,CYE2022,TBFC,nan,nan,"Collins, Gleason and Abshire"
+11,IncomeTaxes,0.0,USD,CYE2022,TBFC,nan,nan,"Collins, Gleason and Abshire"
+12,OtherDeductions,8066.0,USD,CYE2022,TBFC,nan,nan,"Collins, Gleason and Abshire"
 13,QBAI,46978.0,USD,CYE2022,TBFC,nan,nan,"Collins, Gleason and Abshire"
-14,EBIT,-293833.0,USD,CYE2022,EBIT,,,"Collins, Gleason and Abshire"
-15,M1Adjustments,-2241.9507408686795,USD,CYE2022,ForeignSchM-1Adj,,,"Collins, Gleason and Abshire"
-16,TI_EBIT,-296074.9507408687,USD,CYE2022,TI_EBIT,,,"Collins, Gleason and Abshire"
-17,ATI,-303332.9507408687,USD,CYE2022,Sec163j,,,"Collins, Gleason and Abshire"
-18,Section163jLimitation,103213.88522226061,USD,CYE2022,Sec163j,,,"Collins, Gleason and Abshire"
-19,InterestExpenseUtilized,48.0,USD,CYE2022,Sec163j,,,"Collins, Gleason and Abshire"
+14,EBIT,30091.0,USD,CYE2022,EBIT,,,"Collins, Gleason and Abshire"
+15,M1Adjustments,-403.7767183791019,USD,CYE2022,ForeignSchM-1Adj,,,"Collins, Gleason and Abshire"
+16,TI_EBIT,29687.2232816209,USD,CYE2022,TI_EBIT,,,"Collins, Gleason and Abshire"
+17,ATI,23097.2232816209,USD,CYE2022,Sec163j,,,"Collins, Gleason and Abshire"
+18,Section163jLimitation,12259.0,USD,CYE2022,Sec163j,,,"Collins, Gleason and Abshire"
+19,InterestExpenseUtilized,83.0,USD,CYE2022,Sec163j,,,"Collins, Gleason and Abshire"
 20,Sec163DisallowedInterestExpense,0.0,USD,CYE2022,Sec163j,,,"Collins, Gleason and Abshire"
-21,TentativeTestedIncomeBeforeTaxes,-308240.9507408687,USD,CYE2022,TestedIncome,,,"Collins, Gleason and Abshire"
+21,TentativeTestedIncomeBeforeTaxes,17511.2232816209,USD,CYE2022,TestedIncome,,,"Collins, Gleason and Abshire"
 22,TestedIncome,0.0,USD,CYE2022,TestedIncome,,,"Collins, Gleason and Abshire"
-23,TestedLoss,0.0,USD,CYE2022,TestedIncome,,,"Collins, Gleason and Abshire"
-24,ProRataTestedIncome,0.0,USD,CYE2022,TestedIncome,,,"Collins, Gleason and Abshire"
-25,ProRataTestedLoss,0.0,USD,CYE2022,TestedIncome,,,"Collins, Gleason and Abshire"
-26,ProRataQBAI,0.0,USD,CYE2022,TestedIncome,,,"Collins, Gleason and Abshire"
-27,TestedLossQBAI,0.0,USD,CYE2022,TestedIncome,,,"Collins, Gleason and Abshire"
-28,TestedIncome_ETR,0.22324094133050063,USD,CYE2022,TestedIncome,,,"Collins, Gleason and Abshire"
-29,TestedInterestExpense,0.0,USD,CYE2022,TestedIncome,,,"Collins, Gleason and Abshire"
-30,TestedInterestIncome,0.0,USD,CYE2022,TestedIncome,,,"Collins, Gleason and Abshire"
-31,TestedIncomeTaxes,0.0,USD,CYE2022,TestedIncome,,,"Collins, Gleason and Abshire"
+23,TestedLoss,17511.2232816209,USD,CYE2022,TestedIncome,,,"Collins, Gleason and Abshire"
+24,TestedIncomeQBAI,0.0,USD,CYE2022,TestedIncome,,,"Collins, Gleason and Abshire"
+25,TestedLossQBAI,4697.8,USD,CYE2022,TestedIncome,,,"Collins, Gleason and Abshire"
+26,TestedIncome_ETR,-0.0,USD,CYE2022,TestedIncome,,,"Collins, Gleason and Abshire"
+27,TestedInterestExpense,0.0,USD,CYE2022,TestedIncome,,,"Collins, Gleason and Abshire"
+28,TestedInterestIncome,-12259.0,USD,CYE2022,TestedIncome,,,"Collins, Gleason and Abshire"
+29,TestedIncomeTaxes,0.0,USD,CYE2022,TestedIncome,,,"Collins, Gleason and Abshire"

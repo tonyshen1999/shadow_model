@@ -10,7 +10,7 @@ class Calculation:
         self.period = period
         self.entity = entity
         self.accounts_tbl = self.entity.get_accounts_table()
-        self.ownership = entity.percent_owned
+        
         self.atr_tb = atr_tb
 
         if self.atr_tb == None:
@@ -81,10 +81,9 @@ class Sec163j(Calculation):
             ati.account_collection = colct
             self.accounts_tbl.add_account(ati)
 
-            sec163_lim_amt = 0
-            if ati.getAmount() < 0:
-                sec163_lim_amt = ati.getAmount()*self.atr_tb["163jLimit_Perc"].get_value()+self.accounts_tbl["InterestIncomeThirdParty"].getAmount()
-                sec163_lim_amt *= -1
+            
+            
+            sec163_lim_amt = -1*(min(ati.getAmount()*self.atr_tb["163jLimit_Perc"].get_value(),0)+self.accounts_tbl["InterestIncomeThirdParty"].getAmount())
             sec163_limitation = self._create_account("Section163jLimitation", sec163_lim_amt)
             sec163_limitation.account_collection = colct
             self.accounts_tbl.add_account(sec163_limitation)
@@ -113,7 +112,7 @@ class CFCTestedIncome(Calculation):
         
         if self.atr_tb == None:
             self.atr_tb = AttributesTable(self.period)
-        self.ownership = self.entity.percent_owned
+        # self.ownership = self.entity.percent_owned
         self.calculate()
     def __validation(self):
         if self.entity.type == "CFC":
@@ -151,31 +150,32 @@ class CFCTestedIncome(Calculation):
             self.accounts_tbl.add_account(tested_income)
             self.accounts_tbl.add_account(tested_loss)
 
-            pro_rata_tested_income = self._create_account("ProRataTestedIncome",tested_income.getAmount() * self.ownership)
-            pro_rata_tested_loss = self._create_account("ProRataTestedLoss",tested_loss.getAmount() * self.ownership)
+            # pro_rata_tested_income = self._create_account("ProRataTestedIncome",tested_income.getAmount() * self.ownership)
+            # pro_rata_tested_loss = self._create_account("ProRataTestedLoss",tested_loss.getAmount() * self.ownership)
 
-            pro_rata_tested_income.account_collection=colct
-            pro_rata_tested_loss.account_collection=colct
+            # pro_rata_tested_income.account_collection=colct
+            # pro_rata_tested_loss.account_collection=colct
 
-            self.accounts_tbl.add_account(pro_rata_tested_income)
-            self.accounts_tbl.add_account(pro_rata_tested_loss)
+            # self.accounts_tbl.add_account(pro_rata_tested_income)
+            # self.accounts_tbl.add_account(pro_rata_tested_loss)
 
 
             qbai_amount = 0
             if tested_income.getAmount() <0 and hte_met == False:
                 qbai_amount = self.accounts_tbl["QBAI"].getAmount()
-            pro_rata_qbai = self._create_account("ProRataQBAI",qbai_amount*self.ownership)
-            pro_rata_qbai.account_collection=colct
-            self.accounts_tbl.add_account(pro_rata_qbai)
+            tested_income_qbai = self._create_account("TestedIncomeQBAI",qbai_amount)
+            tested_income_qbai.account_collection=colct
+            self.accounts_tbl.add_account(tested_income_qbai)
             
 
             tested_loss_qbai_amt = 0
             if tested_loss.getAmount()>0:
-                tested_loss_qbai_amt = self.accounts_tbl["QBAI"].getAmount()*self.ownership*self.atr_tb["TestedLossQBAIAmount"].get_value()
+                tested_loss_qbai_amt = self.accounts_tbl["QBAI"].getAmount()*self.atr_tb["TestedLossQBAIAmount"].get_value()
             tested_loss_qbai = self._create_account("TestedLossQBAI",tested_loss_qbai_amt)
             tested_loss_qbai.account_collection=colct
-
+            
             self.accounts_tbl.add_account(tested_loss_qbai)
+            
             
             etr = self._create_account("TestedIncome_ETR",tested_income_etr_amt*-1)
             etr.account_collection = colct
@@ -189,18 +189,19 @@ class CFCTestedIncome(Calculation):
                 tested_interest_expense_amt = 0
                 tested_interest_income_amt = 0
 
-            tested_interest_expense_amt = max(tested_interest_expense_amt-tested_loss_qbai_amt,0)*self.ownership
+            tested_interest_expense_amt = max(tested_interest_expense_amt-tested_loss_qbai_amt,0)
 
             tested_interest_income = self._create_account("TestedInterestIncome",tested_interest_income_amt)
             tested_interest_expense = self._create_account("TestedInterestExpense",tested_interest_expense_amt)
-
+            
             tested_interest_income.account_collection=colct
             tested_interest_expense.account_collection=colct
+            
 
             self.accounts_tbl.add_account(tested_interest_expense)
             self.accounts_tbl.add_account(tested_interest_income)
-
-            tested_income_taxes_amt = self.accounts_tbl["IncomeTaxes"].getAmount()*self.ownership
+            
+            tested_income_taxes_amt = self.accounts_tbl["IncomeTaxes"].getAmount()
             
             if hte_met:
                 tested_income_taxes_amt = 0
@@ -233,16 +234,16 @@ class USSH951AInclusion(Calculation):
             agg_tested_income_tax_amt = 0
             qbai_perc = cfc_atr["QBAIPerc"].get_value()
             colct = "USSH951A"
-            for x in cfcs:
+            for x in cfcs.keys():
                 CFCTestedIncome(self.period,x,cfc_atr)
                 cfc_acc_tbl = x.get_accounts_table()
-                agg_cfc_tested_income_amt += cfc_acc_tbl["ProRataTestedIncome"].getAmount()
-                agg_cfc_tested_loss_amt += cfc_acc_tbl["ProRataTestedLoss"].getAmount()
+                agg_cfc_tested_income_amt += cfc_acc_tbl["TestedIncome"].getAmount()*cfcs[x]
+                agg_cfc_tested_loss_amt += cfc_acc_tbl["TestedLoss"].getAmount()*cfcs[x]
                 net_cfc_tested_income_amt = agg_cfc_tested_income_amt+agg_cfc_tested_loss_amt
-                qbai_amt += cfc_acc_tbl["ProRataQBAI"].getAmount()
-                agg_tested_interest_inc_amt += cfc_acc_tbl["TestedInterestIncome"].getAmount()
-                agg_tested_interest_exp_amt += cfc_acc_tbl["TestedInterestExpense"].getAmount()
-                agg_tested_income_tax_amt += cfc_acc_tbl["TestedIncomeTaxes"].getAmount()
+                qbai_amt += cfc_acc_tbl["TestedIncomeQBAI"].getAmount()*cfcs[x]
+                agg_tested_interest_inc_amt += cfc_acc_tbl["TestedInterestIncome"].getAmount()*cfcs[x]
+                agg_tested_interest_exp_amt += cfc_acc_tbl["TestedInterestExpense"].getAmount()*cfcs[x]
+                agg_tested_income_tax_amt += cfc_acc_tbl["TestedIncomeTaxes"].getAmount()*cfcs[x]
             
 
             agg_cfc_tested_income = self._create_account("AggregateCFCTestedIncome",agg_cfc_tested_income_amt)
@@ -261,8 +262,8 @@ class USSH951AInclusion(Calculation):
             gilti = self._create_account("GILTI",gilti_amt)
             specified_interest_exp = self._create_account("SpecifiedInterestExpense",specified_interest_exp_amt)
 
-            inclusion_perc = self._create_account("GILTIInclusionPercentage",(gilti_amt/net_cfc_tested_income_amt))
-            sec78grossup = self._create_account("Sec78GrossUpOnGILTI",((gilti_amt/net_cfc_tested_income_amt)*agg_tested_income_tax_amt))
+            inclusion_perc = self._create_account("GILTIInclusionPercentage",(gilti_amt/agg_cfc_tested_income_amt))
+            sec78grossup = self._create_account("Sec78GrossUpOnGILTI",((gilti_amt/agg_cfc_tested_income_amt)*agg_tested_income_tax_amt))
 
 
             agg_cfc_tested_income.account_collection = colct
