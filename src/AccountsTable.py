@@ -73,6 +73,8 @@ class AccountsTable:
                 x.amount = 0
             elif x.account_name == "IncomeTaxes":
                 x.amount = 0
+            elif x.account_name == "InterestIncomeThirdParty":
+                x.amount *= .25
     
     # Update this to be able to identify third party and intercompany from TB. This is only done this way for TESTING PURPOSES
     def pull_tb(self, tb, split_party = True):

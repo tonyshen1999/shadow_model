@@ -2,7 +2,7 @@ from Account import Account,Adjustment,ShadowAccount
 from AccountsTable import AccountsTable
 from Trialbalance import TrialBalance
 from Period import Period
-from Entity import Entity
+from Entity import Entity, CFC, USSH
 import pandas as pd
 import random
 import os
@@ -16,7 +16,7 @@ def generate_csv(p,info_file_name,output_dir):
 
     # names = []
 
-    ussh = Entity(name="USSH",country="US",currency = "USD",period=p,entity_type="USSH")
+    ussh = USSH(name="USSH",country="US",currency = "USD",period=p,entity_type="USSH")
     # ownership_percs = []
     # tickers = []
 
@@ -64,7 +64,7 @@ def generate_csv(p,info_file_name,output_dir):
             a.force163j()
         a.generate_random_adjustments(["OtherDeductions"])
         a.print_adj()
-        e = Entity(name = row["Entity Names"], country = "Canada",currency = "CA",period = p,entity_type="CFC",accounts_table=a)
+        e = CFC(name = row["Entity Names"], country = "Canada",currency = "CA",period = p,entity_type="CFC",accounts_table=a)
         a.export_adjustments(output_dir+e.name+"_adjustments.csv")
         a.export(output_dir+e.name+"_accounts.csv")
         x_acc_df = a.get_accounts_df()
@@ -102,7 +102,7 @@ def import_data(save_file,comp_name_file,ticker_file,num_entities):
         entity_names.append(names[x])
         entity_tickers.append(tickers[x])
         
-        if bool(random.getrandbits(1)):
+        if random.randrange(0, 10)%2==0:
             entity_perc.append(round(random.uniform(.01,.99),4))
         else:
             entity_perc.append(1.0)
@@ -162,9 +162,9 @@ def read_csv(p,ussh,dir_path,ownership_dict):
         if "accounts" in x and "combined" not in x:
             print(x)
             a.import_accounts(dir_path+"//"+x)
-            e = Entity(name = e_name, country = "Canada",currency = "CA",period = p,entity_type="CFC",accounts_table=a)
+            e = CFC(name = e_name, country = "Canada",currency = "CA",period = p,entity_type="CFC",accounts_table=a)
             ussh.set_child(e,ownership_dict[e_name])
-            print(a)
+            print(e.get_accounts_table())
         # del x
     
     for x in res:
@@ -186,7 +186,7 @@ def import_ownership(info_file_name):
 print(import_data('tests//USSH_GILTI//EntityConfigFile.csv','files//Testing//CompanyNames.txt','files//Testing//StockTickers.txt',15))
 
 p = Period("CYE",2022, "01-01-2022", "12-31-2022")
-ussh = Entity(name="USSH",country="US",currency = "USD",period=p,entity_type="USSH")
+ussh = USSH(name="USSH",country="US",currency = "USD",period=p,entity_type="USSH")
 ownership_dict = import_ownership("tests//USSH_GILTI//EntityConfigFile.csv")
 generate_csv(p,"tests//USSH_GILTI//EntityConfigFile.csv","tests//USSH_GILTI//Entity_Files_v3//")
 read_csv(p,ussh,"tests//USSH_GILTI//Entity_Files_v3",ownership_dict)
@@ -194,9 +194,9 @@ read_csv(p,ussh,"tests//USSH_GILTI//Entity_Files_v3",ownership_dict)
 atr = AttributesTable(p,"CFCAttributes.csv")
 
 for x in ussh.children:
-    CFCTestedIncome(p,x,atr)
+    x.calculate()
 
-USSH951AInclusion(p,ussh)
+ussh.calculate()
 ctr = 1
 for x in ussh.children:
     print(str(ctr) + ":---------")
