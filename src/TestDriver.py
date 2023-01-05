@@ -199,7 +199,7 @@ for x in ussh.children:
 ussh.calculate()
 ctr = 1
 for x in ussh.children:
-    print(str(ctr) + ":---------")
+    print(str(ctr) + ":----------")
     print(x)
     print("----------ACCOUNTS-----------")
     print(x.get_accounts_table())
