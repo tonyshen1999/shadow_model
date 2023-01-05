@@ -1,16 +1,16 @@
 ,Entity Names,Tickers,Ownership Percentage,Income or Loss,163j
 0,"Braun, King and Barrows",AAPL,1.0,False,False
-1,"Pacocha, Kemmer and Orn",MSFT,1.0,True,False
-2,"Mueller, Dach and Hyatt",PFE,1.0,False,True
-3,Konopelski - Dare,ABBV,0.6785,False,False
-4,"Collins, Gleason and Abshire",META,0.5043,True,True
-5,Morissette - Steuber,PEP,0.8404,False,False
-6,Schroeder - Fritsch,KO,1.0,True,True
-7,"Reynolds, Kozey and Kerluke",EA,0.4012,True,False
-8,"Schoen, O'Conner and Senger",MRK,1.0,False,True
-9,Kovacek and Sons,TXN,1.0,True,False
-10,"Schiller, Huels and Moen",NKE,0.0366,True,False
-11,Torp LLC,RTX,0.637,True,False
-12,"Crona, Harris and Grimes",COP,1.0,True,False
-13,Mraz - Frami,NFLX,1.0,True,False
-14,Ferry Group,UNP,0.2987,False,True
+1,"Pacocha, Kemmer and Orn",MSFT,1.0,False,False
+2,"Mueller, Dach and Hyatt",PFE,0.9039,True,False
+3,Konopelski - Dare,ABBV,0.2914,False,True
+4,"Collins, Gleason and Abshire",META,0.6126,False,True
+5,Morissette - Steuber,PEP,0.4972,True,False
+6,Schroeder - Fritsch,KO,0.5497,False,False
+7,"Reynolds, Kozey and Kerluke",EA,0.3289,True,False
+8,"Schoen, O'Conner and Senger",MRK,0.9397,True,False
+9,Kovacek and Sons,TXN,1.0,False,False
+10,"Schiller, Huels and Moen",NKE,0.2686,False,False
+11,Torp LLC,RTX,0.8117,True,True
+12,"Crona, Harris and Grimes",COP,0.7729,True,True
+13,Mraz - Frami,NFLX,1.0,False,False
+14,Ferry Group,UNP,0.4485,False,False
