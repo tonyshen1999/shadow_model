@@ -33,13 +33,13 @@ class AccountsTable:
         df.to_csv(fName)
     
     def pull_accounts_by_period(self, period):
-
+        
         to_return = AccountsTable()
 
         for x in self.accounts:
             if x.account_period == period:
                 to_return.add_account(x)
-
+       
         return to_return
 
     def __len__(self):

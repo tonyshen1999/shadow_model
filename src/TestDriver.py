@@ -2,23 +2,29 @@ from Account import Account,Adjustment,ShadowAccount
 from AccountsTable import AccountsTable
 from Trialbalance import TrialBalance
 from Period import Period
-from Entity import Entity, CFC, USSH
+from Entity import Entity
 import pandas as pd
 import random
 import os
 from CalcScript import CFCTestedIncome,USSH951AInclusion
 from Attributes import AttributesTable,Attribute
+from CFC import CFC
+from USSH import USSH
+from OrgChart import OrgChart
 
-
-def generate_csv(p,info_file_name,output_dir):
+'''
+Function: generate_csv
+Purpose: Generates Accounts and Adjustments tables based on predefined seeded attributes. Used to create inputs for testing Tax Calcs
+Arguments: p-> period for accounts tables, info_file_name -> file name containing seed attributes to generate csvs containing dummy accounts and adjustments input data for testing, output_dir -> output file path
+Arguments: num_periods -> number of periods to generate for. 
+Outputs: dummy .csv files saved directly to output_dir folder. 
+'''
+def generate_csv(p,info_file_name,output_dir, num_periods=1):
 
     entity_info_df = pd.read_csv(info_file_name)
 
-    # names = []
-
     ussh = USSH(name="USSH",country="US",currency = "USD",period=p,entity_type="USSH")
-    # ownership_percs = []
-    # tickers = []
+
 
     acc_df = pd.DataFrame({
         'Account Name': pd.Series(dtype='str'),
@@ -37,18 +43,6 @@ def generate_csv(p,info_file_name,output_dir):
         'ISO Currency Code': pd.Series(dtype='str'),
         'Adjustment Period': pd.Series(dtype='float'),
         'Adjustment Percentage': pd.Series(dtype='str')})
-
-    # fileRead = open('files//Testing//CompanyNames.txt', "r")
-
-    # for line in fileRead:
-    #     names.append(line.strip())
-    # fileRead.close()
-
-
-    # fileRead = open('files//Testing//StockTickers.txt', "r")
-    # for line in fileRead:
-    #     tickers.append(line.strip())
-    # fileRead.close()
 
     print(ussh)
     for index, row in entity_info_df.iterrows():
@@ -124,6 +118,48 @@ def import_data(save_file,comp_name_file,ticker_file,num_entities):
     })
     print(entity_info_df)
     entity_info_df.to_csv(save_file)
+
+def generate_relationships_table(info_file_name,output_dir,ussh,period):
+    
+    parents = []
+    children = []
+    percentage = []
+    entity_info_df = pd.read_csv(info_file_name)
+    for index, row in entity_info_df.iterrows():
+         parents.append(ussh.name)
+         children.append(row['Entity Names'])
+         percentage.append(float(row['Ownership Percentage']))
+    rel_table_df = pd.DataFrame({
+        "Parent":parents,
+        "Child":children,
+        "Ownership Percentage":percentage
+    })
+    rel_table_df.to_csv(output_dir+"//relationships_table.csv")
+def generate_things_table(info_file_name,output_dir,period):
+    things = ["USSH"]
+    types = ["USSH"]
+    countries = ["US"]
+    currencies = ["USD"]
+    periods = [p.get_pd()]
+
+
+    entity_info_df = pd.read_csv(info_file_name)
+    for index, row in entity_info_df.iterrows():
+        things.append(row['Entity Names'])
+        types.append("CFC")
+        countries.append("Canada")
+        currencies.append("CAD")
+        periods.append(p.get_pd())
+    
+    things_table_df = pd.DataFrame({
+        "Thing":things,
+        "Type":types,
+        "Country":countries,
+        "ISO Currency Code":currencies,
+        "Period":periods
+    })
+    things_table_df.to_csv(output_dir+"things_table.csv")
+
 def pull_accounts(ussh, fName):
     acc_df = pd.DataFrame({
         'Account Name': pd.Series(dtype='str'),
@@ -183,28 +219,35 @@ def import_ownership(info_file_name):
     return ownership_dict
 
 
-print(import_data('tests//USSH_GILTI//EntityConfigFile.csv','files//Testing//CompanyNames.txt','files//Testing//StockTickers.txt',15))
+# print(import_data('tests//USSH_GILTI//EntityConfigFile.csv','files//Testing//CompanyNames.txt','files//Testing//StockTickers.txt',15))
 
 p = Period("CYE",2022, "01-01-2022", "12-31-2022")
 ussh = USSH(name="USSH",country="US",currency = "USD",period=p,entity_type="USSH")
 ownership_dict = import_ownership("tests//USSH_GILTI//EntityConfigFile.csv")
-generate_csv(p,"tests//USSH_GILTI//EntityConfigFile.csv","tests//USSH_GILTI//Entity_Files_v3//")
-read_csv(p,ussh,"tests//USSH_GILTI//Entity_Files_v3",ownership_dict)
+generate_things_table("tests//USSH_GILTI//EntityConfigFile.csv","tests//USSH_GILTI//",p)
+generate_relationships_table("tests//USSH_GILTI//EntityConfigFile.csv","tests//USSH_GILTI//",ussh,p)
+# generate_csv(p,"tests//USSH_GILTI//EntityConfigFile.csv","tests//USSH_GILTI//Entity_Files_v3//")
+# read_csv(p,ussh,"tests//USSH_GILTI//Entity_Files_v3",ownership_dict)
 
-atr = AttributesTable(p,"CFCAttributes.csv")
+# atr = AttributesTable(p,"CFCAttributes.csv")
+# orgChart = OrgChart(p)
+# orgChart.add_parent(ussh)
+# orgChart.calculate()
 
-for x in ussh.children:
-    x.calculate()
+test_oc = OrgChart(p)
+test_oc.import_relationships("tests/USSH_GILTI/things_table.csv","tests/USSH_GILTI/relationships_table.csv")
+print(test_oc)
 
-ussh.calculate()
-ctr = 1
-for x in ussh.children:
-    print(str(ctr) + ":-----------")
-    print(x)
-    print("----------ACCOUNTS-----------")
-    print(x.get_accounts_table())
-    print("----------ADJUSTMENTS-----------")
-    print(x.get_accounts_table().print_adj())
-    ctr +=1
+# all_entities = orgChart.get_all_entities()
+# ctr = 1
+# for x in all_entities:
+#     print(str(ctr) + ":-----------")
+#     print(x)
+#     print("----------ACCOUNTS-----------")
+#     print(x.get_accounts_table())
+#     print("----------ADJUSTMENTS-----------")
+#     print(x.get_accounts_table().print_adj())
+#     ctr +=1
 
-pull_accounts(ussh,"tests//USSH_GILTI//accounts_output.csv")
+# pull_accounts(ussh,"tests//USSH_GILTI//accounts_output.csv")
+

@@ -1,16 +1,16 @@
 ,Entity Names,Tickers,Ownership Percentage,Income or Loss,163j
-0,"Braun, King and Barrows",AAPL,0.3134,True,False
-1,"Pacocha, Kemmer and Orn",MSFT,0.2403,True,False
-2,"Mueller, Dach and Hyatt",PFE,0.9796,False,False
-3,Konopelski - Dare,ABBV,1.0,False,False
+0,"Braun, King and Barrows",AAPL,0.6859,False,True
+1,"Pacocha, Kemmer and Orn",MSFT,1.0,False,True
+2,"Mueller, Dach and Hyatt",PFE,1.0,False,True
+3,Konopelski - Dare,ABBV,0.1666,True,False
 4,"Collins, Gleason and Abshire",META,1.0,False,False
-5,Morissette - Steuber,PEP,0.037,False,False
-6,Schroeder - Fritsch,KO,0.2492,False,True
-7,"Reynolds, Kozey and Kerluke",EA,1.0,True,False
-8,"Schoen, O'Conner and Senger",MRK,1.0,False,False
-9,Kovacek and Sons,TXN,1.0,True,False
-10,"Schiller, Huels and Moen",NKE,0.6873,False,False
+5,Morissette - Steuber,PEP,0.0459,True,False
+6,Schroeder - Fritsch,KO,0.2906,False,True
+7,"Reynolds, Kozey and Kerluke",EA,1.0,False,True
+8,"Schoen, O'Conner and Senger",MRK,0.5442,False,False
+9,Kovacek and Sons,TXN,1.0,False,False
+10,"Schiller, Huels and Moen",NKE,0.2934,False,True
 11,Torp LLC,RTX,1.0,False,False
-12,"Crona, Harris and Grimes",COP,1.0,False,False
-13,Mraz - Frami,NFLX,0.2195,True,False
-14,Ferry Group,UNP,1.0,False,False
+12,"Crona, Harris and Grimes",COP,1.0,True,False
+13,Mraz - Frami,NFLX,1.0,False,True
+14,Ferry Group,UNP,0.6916,True,False
