@@ -123,7 +123,18 @@ class AccountsTable:
             to_return += x.__str__() + "\n"
 
         return to_return
-
+    def num_active_adjustments(self):
+        num_adj = 0;
+        for x in self.accounts:
+            num_adj += len(x.adjustments)
+        return num_adj
+    def num_active_accounts(self):
+        num = 0
+        for x in self.accounts:
+            if x.amount != 0:
+                num+=1
+            
+        return num
 
     def add_account(self, account):
        
@@ -265,15 +276,20 @@ class AccountsTable:
         
         adj_df = self.get_adjustments_df()
         adj_df.to_csv(fName)
-    def import_adjustments(self, fName):
-        
-        adj_df = pd.read_csv(fName)
-
-        for index, row in adj_df.iterrows():
+    
+    def import_adjustments_df(self,df):
+        for index, row in df.iterrows():
             acc = self.__getitem__(key=row["Account Name"])
             adj = Adjustment(adj_amount=float(row["Adjustment Amount"]),adj_class=str(row["Adjustment Class"]),adj_collection=str(row["Adjustment Collection"]), adj_period=acc.account_period,adj_type=str(row["Adjustment Type"]),adj_perc=float(row["Adjustment Percentage"]),currency=str(row["ISO Currency Code"]))
             # print(adj.adj_class)
             acc.adjustments.append(adj)
+
+    # modify this file for later
+    def import_adjustments(self, fName):
+        
+        adj_df = pd.read_csv(fName)
+
+        self.import_adjustments_df(adj_df)
     def import_accounts(self, fName):
         acc_df = pd.read_csv(fName)
 

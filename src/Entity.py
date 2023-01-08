@@ -93,7 +93,8 @@ class Entity:
         else:  
             for x in entity.children:
                 self.__search_all_children_helper(to_find,x,results)
-            
+    
+    # Duplicated?
     def pull_accounts_csv(self, fName):
         
         entity = []
@@ -128,6 +129,27 @@ class Entity:
 
         df = pd.DataFrame(accounts_dict)
         df.to_csv(fName)
+
+    def pull_consol_ouput_accounts_df(self):
+        acc_df = pd.DataFrame({
+            'Account Name': pd.Series(dtype='str'),
+            'Amount': pd.Series(dtype='float'),
+            'ISO Currency Code': pd.Series(dtype='str'),
+            'Period': pd.Series(dtype='str'),
+            'Collection': pd.Series(dtype='str'),
+            'Class': pd.Series(dtype='str'),
+            'Data Type': pd.Series(dtype='float')})
+
+        x_acc_df = self.get_accounts_table().get_accounts_df()
+        x_acc_df.insert(0,'Entity',self.name)
+        acc_df = pd.concat([acc_df,x_acc_df])
+
+        for x in self.children:
+            x_acc_df = x.get_accounts_table().get_accounts_df()
+            x_acc_df.insert(0,'Entity',x.name)
+            acc_df = pd.concat([acc_df,x_acc_df])
+        
+        return acc_df
 
     def contains_account(self,acc_name):
         for x in self._accounts_table:

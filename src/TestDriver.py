@@ -235,8 +235,28 @@ generate_relationships_table("tests//USSH_GILTI//EntityConfigFile.csv","tests//U
 # orgChart.calculate()
 
 test_oc = OrgChart(p)
-test_oc.import_relationships("tests/USSH_GILTI/things_table.csv","tests/USSH_GILTI/relationships_table.csv")
+test_oc.import_entities("tests/USSH_GILTI/things_table.csv")
+test_oc.import_relationships("tests/USSH_GILTI/relationships_table.csv")
+test_oc.import_accounts("tests/USSH_GILTI/combined_accounts_table.csv")
+test_oc.import_adjustments("tests/USSH_GILTI/combined_adjustments_table.csv")
+
+# ctr = 1
+# print(test_oc.parents)
+# for x in test_oc.parents[0].children:
+#     print(str(ctr) + ":-----------")
+#     print(x)
+#     print("----------ACCOUNTS-----------")
+#     print(x.get_accounts_table())
+#     print("----------ADJUSTMENTS-----------")
+#     print(x.get_accounts_table().print_adj())
+#     ctr+=1
+
+    
+
 print(test_oc)
+test_oc.calculate()
+print(test_oc)
+test_oc.pull_outputs_csv("tests//USSH_GILTI//accounts_output.csv")
 
 # all_entities = orgChart.get_all_entities()
 # ctr = 1
@@ -245,7 +265,7 @@ print(test_oc)
 #     print(x)
 #     print("----------ACCOUNTS-----------")
 #     print(x.get_accounts_table())
-#     print("----------ADJUSTMENTS-----------")
+#     print("----------ADJUSTMENTS-----------"
 #     print(x.get_accounts_table().print_adj())
 #     ctr +=1
 
