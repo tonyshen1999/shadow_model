@@ -40,9 +40,12 @@ class OrgChart:
     # VALIDATE PERIOD
     def import_entities(self,things_tbl_fName):
         things_df = pd.read_csv(things_tbl_fName)
+        self.import_entities_df(things_df)
         
-        for index, row in things_df.iterrows():
+    def import_entities_df(self,things_df):
 
+        for index, row in things_df.iterrows():
+    
             if row['Type'] == "USSH":
                 self.add_parent(USSH(row['Thing'],row['Country'],row['ISO Currency Code'],self.period,row['Type']))
             elif row['Type'] == "CFC":
@@ -50,8 +53,12 @@ class OrgChart:
             else:
                 raise Exception(row['Type'] + " is not a valid type!")
 
+
     def import_relationships(self,rel_tbl_fName):
         rel_df = pd.read_csv(rel_tbl_fName)
+        self.import_relationships_df(rel_df)
+    
+    def import_relationships_df(self, rel_df):
         
         if len(self.parents) == 0:
             raise Exception("Must import Things table first!")
@@ -75,6 +82,7 @@ class OrgChart:
             if len(x.parents) == 0:
                 new_parents.append(x)
         self.parents = new_parents
+
     def calculate(self):
         
         for x in self.parents:
@@ -108,6 +116,9 @@ class OrgChart:
     # PERIOD VALIDATION
     def import_accounts(self,acc_tbl_name):
         acc_df = pd.read_csv(acc_tbl_name)
+        self.import_accounts_df(acc_df)
+    
+    def import_accounts_df(self,acc_df):
         entities = []
         entities = set(entities)
         unmatched_entity = []
@@ -129,16 +140,10 @@ class OrgChart:
                 a.account_class = str(row['Class'])
                 a.account_data_type = str(row['Data Type'])
                 
-        
         if len(unmatched_entity) > 0:
             raise Exception(unmatched_entity.__str__() + " are not valid entities!")
     
-    # EXTREMELY INEFFICIENT
-    # PERIOD VALIDATION
-    def import_adjustments(self, adj_tbl_name):
-
-        unmatched_entity = []
-        adj_df = pd.read_csv(adj_tbl_name)
+    def import_adjustments_df(self,adj_df):
 
         for index, row in adj_df.iterrows():
             entity = self.find_entity(row['Entity'])
@@ -158,7 +163,23 @@ class OrgChart:
             adj = Adjustment(adj_amount=adj_amount,adj_class=adj_class,adj_collection=adj_col,adj_period=self.period,adj_type=adj_type,adj_perc=adj_perc,currency = adj_curr)
             # print(adj)
             a.adjustments.append(adj)
+
+    # EXTREMELY INEFFICIENT
+    # PERIOD VALIDATION
+    def import_adjustments(self, adj_tbl_name):
+
+        unmatched_entity = []
+        adj_df = pd.read_csv(adj_tbl_name)
+
+        self.import_adjustments_df(adj_df)
+    
     def pull_outputs_csv(self, fName):
+        acc_df = self.pull_outputs_df()
+        
+        acc_df.to_csv(fName)
+        print("file saved to " + fName)
+
+    def pull_outputs_df(self):
         acc_df = pd.DataFrame({
             'Account Name': pd.Series(dtype='str'),
             'Amount': pd.Series(dtype='float'),
@@ -169,6 +190,4 @@ class OrgChart:
             'Data Type': pd.Series(dtype='float')})
         for x in self.parents:
             acc_df = pd.concat([acc_df,x.pull_consol_ouput_accounts_df()])
-        
-        acc_df.to_csv(fName)
-        print("file saved to " + fName)
+        return acc_df
