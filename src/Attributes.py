@@ -32,6 +32,9 @@ class AttributesTable:
             for x in self.attributes:
                 if x == search:
                     return x
+    def clear_attributes(self):
+        self.attributes = []
+    
     def pull_account_atr(self):
         accounts = []
         for x in self.attributes:

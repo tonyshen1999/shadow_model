@@ -256,7 +256,12 @@ test_oc.import_adjustments("tests/USSH_GILTI/combined_adjustments_table.csv")
 print(test_oc)
 test_oc.calculate()
 print(test_oc)
-test_oc.pull_outputs_csv("tests//USSH_GILTI//accounts_output.csv")
+test_oc.pull_accounts_csv("tests//USSH_GILTI//accounts_output.csv")
+test_oc.pull_attributes_csv("tests//USSH_GILTI//attribute_table.csv")
+test_oc.pull_entities_csv("tests//USSH_GILTI//entities_table.csv")
+print(test_oc.pull_relationships_df())
+test_oc.pull_relationships_csv("tests//USSH_GILTI//relationships_table.csv")
+print(test_oc.pull_period_df())
 
 # all_entities = orgChart.get_all_entities()
 # ctr = 1

@@ -1,0 +1,109 @@
+,AttributeName,AttributeValue,AttributeStartDate,AttributeEndDate,Entity,Period
+0,163jLimit_Perc,.3,1/1/20,,USSH,CYE2022
+1,USTaxRate,0.21,12-31-2017,,USSH,CYE2022
+2,163JCalc,True,12-31-2017,,USSH,CYE2022
+3,163jLimit_Perc,.3,1/1/20,,"Braun, King and Barrows",CYE2022
+4,USTaxRate,0.21,12-31-2017,,"Braun, King and Barrows",CYE2022
+5,163JCalc,True,12-31-2017,,"Braun, King and Barrows",CYE2022
+6,Section951AHighTaxElection,True,12-31-2017,,"Braun, King and Barrows",CYE2022
+7,HTETaxPercentage,0.90,12-31-2017,,"Braun, King and Barrows",CYE2022
+8,TestedLossQBAIAmount,0.10,12-31-2017,,"Braun, King and Barrows",CYE2022
+9,QBAIPerc,.10,12-31-2017,,"Braun, King and Barrows",CYE2022
+10,163jLimit_Perc,.3,1/1/20,,"Pacocha, Kemmer and Orn",CYE2022
+11,USTaxRate,0.21,12-31-2017,,"Pacocha, Kemmer and Orn",CYE2022
+12,163JCalc,True,12-31-2017,,"Pacocha, Kemmer and Orn",CYE2022
+13,Section951AHighTaxElection,True,12-31-2017,,"Pacocha, Kemmer and Orn",CYE2022
+14,HTETaxPercentage,0.90,12-31-2017,,"Pacocha, Kemmer and Orn",CYE2022
+15,TestedLossQBAIAmount,0.10,12-31-2017,,"Pacocha, Kemmer and Orn",CYE2022
+16,QBAIPerc,.10,12-31-2017,,"Pacocha, Kemmer and Orn",CYE2022
+17,163jLimit_Perc,.3,1/1/20,,"Mueller, Dach and Hyatt",CYE2022
+18,USTaxRate,0.21,12-31-2017,,"Mueller, Dach and Hyatt",CYE2022
+19,163JCalc,True,12-31-2017,,"Mueller, Dach and Hyatt",CYE2022
+20,Section951AHighTaxElection,True,12-31-2017,,"Mueller, Dach and Hyatt",CYE2022
+21,HTETaxPercentage,0.90,12-31-2017,,"Mueller, Dach and Hyatt",CYE2022
+22,TestedLossQBAIAmount,0.10,12-31-2017,,"Mueller, Dach and Hyatt",CYE2022
+23,QBAIPerc,.10,12-31-2017,,"Mueller, Dach and Hyatt",CYE2022
+24,163jLimit_Perc,.3,1/1/20,,Konopelski - Dare,CYE2022
+25,USTaxRate,0.21,12-31-2017,,Konopelski - Dare,CYE2022
+26,163JCalc,True,12-31-2017,,Konopelski - Dare,CYE2022
+27,Section951AHighTaxElection,True,12-31-2017,,Konopelski - Dare,CYE2022
+28,HTETaxPercentage,0.90,12-31-2017,,Konopelski - Dare,CYE2022
+29,TestedLossQBAIAmount,0.10,12-31-2017,,Konopelski - Dare,CYE2022
+30,QBAIPerc,.10,12-31-2017,,Konopelski - Dare,CYE2022
+31,163jLimit_Perc,.3,1/1/20,,"Collins, Gleason and Abshire",CYE2022
+32,USTaxRate,0.21,12-31-2017,,"Collins, Gleason and Abshire",CYE2022
+33,163JCalc,True,12-31-2017,,"Collins, Gleason and Abshire",CYE2022
+34,Section951AHighTaxElection,True,12-31-2017,,"Collins, Gleason and Abshire",CYE2022
+35,HTETaxPercentage,0.90,12-31-2017,,"Collins, Gleason and Abshire",CYE2022
+36,TestedLossQBAIAmount,0.10,12-31-2017,,"Collins, Gleason and Abshire",CYE2022
+37,QBAIPerc,.10,12-31-2017,,"Collins, Gleason and Abshire",CYE2022
+38,163jLimit_Perc,.3,1/1/20,,Morissette - Steuber,CYE2022
+39,USTaxRate,0.21,12-31-2017,,Morissette - Steuber,CYE2022
+40,163JCalc,True,12-31-2017,,Morissette - Steuber,CYE2022
+41,Section951AHighTaxElection,True,12-31-2017,,Morissette - Steuber,CYE2022
+42,HTETaxPercentage,0.90,12-31-2017,,Morissette - Steuber,CYE2022
+43,TestedLossQBAIAmount,0.10,12-31-2017,,Morissette - Steuber,CYE2022
+44,QBAIPerc,.10,12-31-2017,,Morissette - Steuber,CYE2022
+45,163jLimit_Perc,.3,1/1/20,,Schroeder - Fritsch,CYE2022
+46,USTaxRate,0.21,12-31-2017,,Schroeder - Fritsch,CYE2022
+47,163JCalc,True,12-31-2017,,Schroeder - Fritsch,CYE2022
+48,Section951AHighTaxElection,True,12-31-2017,,Schroeder - Fritsch,CYE2022
+49,HTETaxPercentage,0.90,12-31-2017,,Schroeder - Fritsch,CYE2022
+50,TestedLossQBAIAmount,0.10,12-31-2017,,Schroeder - Fritsch,CYE2022
+51,QBAIPerc,.10,12-31-2017,,Schroeder - Fritsch,CYE2022
+52,163jLimit_Perc,.3,1/1/20,,"Reynolds, Kozey and Kerluke",CYE2022
+53,USTaxRate,0.21,12-31-2017,,"Reynolds, Kozey and Kerluke",CYE2022
+54,163JCalc,True,12-31-2017,,"Reynolds, Kozey and Kerluke",CYE2022
+55,Section951AHighTaxElection,True,12-31-2017,,"Reynolds, Kozey and Kerluke",CYE2022
+56,HTETaxPercentage,0.90,12-31-2017,,"Reynolds, Kozey and Kerluke",CYE2022
+57,TestedLossQBAIAmount,0.10,12-31-2017,,"Reynolds, Kozey and Kerluke",CYE2022
+58,QBAIPerc,.10,12-31-2017,,"Reynolds, Kozey and Kerluke",CYE2022
+59,163jLimit_Perc,.3,1/1/20,,"Schoen, O'Conner and Senger",CYE2022
+60,USTaxRate,0.21,12-31-2017,,"Schoen, O'Conner and Senger",CYE2022
+61,163JCalc,True,12-31-2017,,"Schoen, O'Conner and Senger",CYE2022
+62,Section951AHighTaxElection,True,12-31-2017,,"Schoen, O'Conner and Senger",CYE2022
+63,HTETaxPercentage,0.90,12-31-2017,,"Schoen, O'Conner and Senger",CYE2022
+64,TestedLossQBAIAmount,0.10,12-31-2017,,"Schoen, O'Conner and Senger",CYE2022
+65,QBAIPerc,.10,12-31-2017,,"Schoen, O'Conner and Senger",CYE2022
+66,163jLimit_Perc,.3,1/1/20,,Kovacek and Sons,CYE2022
+67,USTaxRate,0.21,12-31-2017,,Kovacek and Sons,CYE2022
+68,163JCalc,True,12-31-2017,,Kovacek and Sons,CYE2022
+69,Section951AHighTaxElection,True,12-31-2017,,Kovacek and Sons,CYE2022
+70,HTETaxPercentage,0.90,12-31-2017,,Kovacek and Sons,CYE2022
+71,TestedLossQBAIAmount,0.10,12-31-2017,,Kovacek and Sons,CYE2022
+72,QBAIPerc,.10,12-31-2017,,Kovacek and Sons,CYE2022
+73,163jLimit_Perc,.3,1/1/20,,"Schiller, Huels and Moen",CYE2022
+74,USTaxRate,0.21,12-31-2017,,"Schiller, Huels and Moen",CYE2022
+75,163JCalc,True,12-31-2017,,"Schiller, Huels and Moen",CYE2022
+76,Section951AHighTaxElection,True,12-31-2017,,"Schiller, Huels and Moen",CYE2022
+77,HTETaxPercentage,0.90,12-31-2017,,"Schiller, Huels and Moen",CYE2022
+78,TestedLossQBAIAmount,0.10,12-31-2017,,"Schiller, Huels and Moen",CYE2022
+79,QBAIPerc,.10,12-31-2017,,"Schiller, Huels and Moen",CYE2022
+80,163jLimit_Perc,.3,1/1/20,,Torp LLC,CYE2022
+81,USTaxRate,0.21,12-31-2017,,Torp LLC,CYE2022
+82,163JCalc,True,12-31-2017,,Torp LLC,CYE2022
+83,Section951AHighTaxElection,True,12-31-2017,,Torp LLC,CYE2022
+84,HTETaxPercentage,0.90,12-31-2017,,Torp LLC,CYE2022
+85,TestedLossQBAIAmount,0.10,12-31-2017,,Torp LLC,CYE2022
+86,QBAIPerc,.10,12-31-2017,,Torp LLC,CYE2022
+87,163jLimit_Perc,.3,1/1/20,,"Crona, Harris and Grimes",CYE2022
+88,USTaxRate,0.21,12-31-2017,,"Crona, Harris and Grimes",CYE2022
+89,163JCalc,True,12-31-2017,,"Crona, Harris and Grimes",CYE2022
+90,Section951AHighTaxElection,True,12-31-2017,,"Crona, Harris and Grimes",CYE2022
+91,HTETaxPercentage,0.90,12-31-2017,,"Crona, Harris and Grimes",CYE2022
+92,TestedLossQBAIAmount,0.10,12-31-2017,,"Crona, Harris and Grimes",CYE2022
+93,QBAIPerc,.10,12-31-2017,,"Crona, Harris and Grimes",CYE2022
+94,163jLimit_Perc,.3,1/1/20,,Mraz - Frami,CYE2022
+95,USTaxRate,0.21,12-31-2017,,Mraz - Frami,CYE2022
+96,163JCalc,True,12-31-2017,,Mraz - Frami,CYE2022
+97,Section951AHighTaxElection,True,12-31-2017,,Mraz - Frami,CYE2022
+98,HTETaxPercentage,0.90,12-31-2017,,Mraz - Frami,CYE2022
+99,TestedLossQBAIAmount,0.10,12-31-2017,,Mraz - Frami,CYE2022
+100,QBAIPerc,.10,12-31-2017,,Mraz - Frami,CYE2022
+101,163jLimit_Perc,.3,1/1/20,,Ferry Group,CYE2022
+102,USTaxRate,0.21,12-31-2017,,Ferry Group,CYE2022
+103,163JCalc,True,12-31-2017,,Ferry Group,CYE2022
+104,Section951AHighTaxElection,True,12-31-2017,,Ferry Group,CYE2022
+105,HTETaxPercentage,0.90,12-31-2017,,Ferry Group,CYE2022
+106,TestedLossQBAIAmount,0.10,12-31-2017,,Ferry Group,CYE2022
+107,QBAIPerc,.10,12-31-2017,,Ferry Group,CYE2022

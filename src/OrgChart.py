@@ -5,6 +5,7 @@ import copy
 import pandas as pd
 from Account import ShadowAccount
 from Adjustment import Adjustment
+from Attributes import AttributesTable,Attribute
 
 class OrgChart:
     # 
@@ -37,6 +38,15 @@ class OrgChart:
             for x in entity.children:
                 self.__get_all_children_helper(x, results)
 
+    def load_attributes_df(self, attr_df):
+        for index, row in attr_df.iterrows():
+            e = self.find_entity(row['Entity'])
+            attr = Attribute(atr_name = row['AttributeName'], atr_value=['AttributeValue'],atr_begin=['AttributeStartDate'],atr_end=['AttributeEndDate'])
+            e.atr_tb.append(attr)
+
+    def load_attributes_csv(self,fName):
+        df = pd.read_csv(fName)
+        self.load_attributes_df(df)
     # VALIDATE PERIOD
     def import_entities(self,things_tbl_fName):
         things_df = pd.read_csv(things_tbl_fName)
@@ -173,13 +183,13 @@ class OrgChart:
 
         self.import_adjustments_df(adj_df)
     
-    def pull_outputs_csv(self, fName):
-        acc_df = self.pull_outputs_df()
+    def pull_accounts_csv(self, fName):
+        acc_df = self.pull_accounts_df()
         
         acc_df.to_csv(fName)
-        print("file saved to " + fName)
+        print("file saved to: " + fName)
 
-    def pull_outputs_df(self):
+    def pull_accounts_df(self):
         acc_df = pd.DataFrame({
             'Account Name': pd.Series(dtype='str'),
             'Amount': pd.Series(dtype='float'),
@@ -191,3 +201,74 @@ class OrgChart:
         for x in self.parents:
             acc_df = pd.concat([acc_df,x.pull_consol_ouput_accounts_df()])
         return acc_df
+
+    def pull_attributes_df(self):
+        atr_df = pd.DataFrame({
+            'AttributeName': pd.Series(dtype='str'),
+            'AttributeValue': pd.Series(dtype='str'),
+            'AttributeStartDate': pd.Series(dtype='str'),
+            'AttributeEndDate': pd.Series(dtype='str'),
+            'Entity':pd.Series(dtype="str"),
+            'Period':pd.Series(dtype="str"),
+        })
+        entities = self.get_all_entities()
+        for x in entities:
+            atr_tbl = x.atr_tb
+            for y in atr_tbl.attributes:
+                atr_df.loc[len(atr_df.index)] = [y.atr_name, y.atr_value, y.atr_beg,y.atr_end, x.name,self.period.get_pd()] 
+        return atr_df
+    
+    def pull_attributes_csv(self, fName):
+        atr_df = self.pull_attributes_df()
+        atr_df.to_csv(fName)
+
+        print("file saved to: " + fName)
+        
+    def pull_entities_df(self):
+        entity_df = pd.DataFrame({
+            'Thing': pd.Series(dtype='str'),
+            'Type': pd.Series(dtype='str'),
+            'Country': pd.Series(dtype='str'),
+            'ISO Currency Code': pd.Series(dtype='str'),
+            'Period':pd.Series(dtype="str"),
+        })
+
+        entities = self.get_all_entities()
+
+        for x in entities:
+            entity_df.loc[len(entity_df.index)] = [x.name, x.type, x.country,x.currency, self.period.get_pd()] 
+        
+        return entity_df
+    
+    def pull_entities_csv(self, fName):
+        entity_df = self.pull_entities_df()
+        entity_df.to_csv(fName)
+        print("file saved to: " + fName)
+
+    def pull_relationships_df(self):
+        entities = self.get_all_entities()
+        rel_df = pd.DataFrame({
+            'Parent': pd.Series(dtype='str'),
+            'Child': pd.Series(dtype='str'),
+            'Ownership Percentage': pd.Series(dtype='float'),
+        })
+
+        for x in entities:
+            for y in x.parents.keys():
+                rel_df.loc[len(rel_df.index)] = [y.name, x.name, y.children[x]]
+        return rel_df
+    def pull_relationships_csv(self,fName):
+        rel_df = self.pull_relationships_df()
+        rel_df.to_csv(fName)
+
+        print("file saved to: " + fName) 
+    
+    def pull_period_df(self):
+        period_df = pd.DataFrame({
+            "Period" : [self.period.get_pd()],
+            "Begin Date" : [self.period.begin_date],
+            "End Date" : [self.period.end_date],
+        })
+
+        return period_df
+
