@@ -11,7 +11,13 @@ class AccountsTable:
 
     def __init__(self,period):
         self.accounts = []
-        self.period  = period
+
+        if isinstance(period,Period):
+            self.period = period
+        else:
+            raise Exception(period.__str__() + " must be type Period")
+        
+
     def __iter__(self):
         self.n = 0
         return self
@@ -32,36 +38,39 @@ class AccountsTable:
     def export(self, fName):
         df = self.get_accounts_df()
         df.to_csv(fName)
-    
-    def pull_accounts_by_period(self, period):
-        
-        to_return = AccountsTable(period)
-
-        for x in self.accounts:
-            if x.account_period == period:
-                to_return.add_account(x)
-       
-        return to_return
 
     def __len__(self):
         return len(self.accounts)
 
     def __getitem__(self,key):
 
-        acc_tbl = AccountsTable(self.period)
+        if isinstance(key,Account):
+            key = key.account_name
+        elif isinstance(key,str):
+            acc_tbl = AccountsTable(self.period)
 
-        for x in self.accounts:
-            if x.account_name == key:
-                acc_tbl.add_account(x)
-        if len(acc_tbl) == 1:
-            return acc_tbl.accounts[0]
-        elif len(acc_tbl) == 0:
-            print("*****WARNING*****: " + key + " wasn't found!")
-            return Account(account_name=key,amount=0,account_period=self.period)
-        return acc_tbl
+            for x in self.accounts:
+                if x.account_name == key:
+                    acc_tbl.add_account(x)
+            if len(acc_tbl) == 1:
+                return acc_tbl.accounts[0]
+            elif len(acc_tbl) == 0:
+                print("*****WARNING*****: " + key + " wasn't found!")
+                return Account(account_name=key,amount=0,account_period=self.period)
+            return acc_tbl
+        else:
+            raise Exception(key.__str__() + "must be either Account or string type")
+            return AccountsTable(self.period)
+    
+    '''
+    Only used for testing purposes, remove in production
+    '''
     def force163j(self):
         self.__getitem__("InterestExpenseThirdParty").amount *= 100
-    # Used mainly for testing
+       
+    '''
+    Only used for testing purposes, remove in production
+    '''
     def convert_loss(self):
         for x in self.accounts:
             if x.account_name == "Sales":
@@ -77,7 +86,9 @@ class AccountsTable:
             elif x.account_name == "InterestIncomeThirdParty":
                 x.amount *= .25
     
-    # Update this to be able to identify third party and intercompany from TB. This is only done this way for TESTING PURPOSES
+    '''
+    Only used for testing purposes, remove in production
+    '''    
     def pull_tb(self, tb, split_party = True):
 
         if isinstance(tb, TrialBalance) == False:
@@ -124,11 +135,19 @@ class AccountsTable:
             to_return += x.__str__() + "\n"
 
         return to_return
+    
+    '''
+    Returns number of adjustments with amounts greater than 0
+    '''
     def num_active_adjustments(self):
         num_adj = 0;
         for x in self.accounts:
             num_adj += len(x.adjustments)
         return num_adj
+        
+    '''
+    Returns number of accounts
+    '''
     def num_active_accounts(self):
         num = 0
         for x in self.accounts:
@@ -138,8 +157,10 @@ class AccountsTable:
         return num
 
     def add_account(self, account):
-       
-        self.accounts.append(account)
+        if isinstance(account,Account):
+            self.accounts.append(account)
+        else:
+            raise Exception(account.__str__() + " must be Account type object")
        
     def get_accounts(self):
         return self.accounts
@@ -291,8 +312,8 @@ class AccountsTable:
         
         adj_df = pd.read_csv(fName)
         
-
         self.import_adjustments_df(adj_df)
+
     def import_accounts(self, fName):
         acc_df = pd.read_csv(fName)
         print(acc_df)

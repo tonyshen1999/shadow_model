@@ -38,9 +38,10 @@ class Account:
             raise Exception(self.account_name + ", " +account_period.__str__() + " must be type Period")
         
 
+
         self.currency = currency
-        self.children = []
-        self.parent = None
+        self.children = [] # not used in current implementation of tax calculations
+        self.parent = None # not used in current implementation of tax calculations
         self.sign = sign
 
         self.adjustments = adjustments
@@ -54,11 +55,11 @@ class Account:
     '''
     def set_child(self,child):
 
-        self.children.append(child)
-        child.parent = self
-    
- 
-
+        if isinstance(child,Account):
+            self.children.append(child)
+            child.parent = self
+        else:
+            raise Exception(child.__str__() + " must be Account type")
 
 
     '''
@@ -258,17 +259,25 @@ class ShadowAccount(Account):
         to_return = self.account_name + ",\t" + self.account_collection +",\t" + self.currency + ",\t" + self.account_class +",\t" + str(self.amount) + ",\t" + self.account_period.period_type+str(self.account_period.period_year)
 
         return to_return
-    def set_child(self,child):
-    
-        self.children.append(child)
-        if isinstance(child, Account):
-            child.parent = self
+
+    '''
+    Not used in current implementation of calculation
+    '''
     
     def has_children(self):
         if len(self.children)>0:
             return True
         else:
             return False
+    
+    '''
+    Not used in current implementation of calculation
+    '''
+    def set_child(self,child):
+    
+        self.children.append(child)
+        if isinstance(child, Account):
+            child.parent = self
 
 
     '''
