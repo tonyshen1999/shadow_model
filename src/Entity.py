@@ -38,7 +38,7 @@ class Entity:
         
         if self._accounts_table == None:
             self.__tb = TrialBalance(self.period,currency=self.currency)
-            self._accounts_table = AccountsTable()
+            self._accounts_table = AccountsTable(self.period)
             self._accounts_table.pull_tb(self.__tb)
     def __str__(self):
         # parent = self.parent

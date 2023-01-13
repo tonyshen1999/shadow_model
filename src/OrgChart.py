@@ -106,6 +106,7 @@ class OrgChart:
             for x in next_year_org_chart.entities:
                 x.clear_accounts()
 
+        next_year_org_chart.period += 1
         return next_year_org_chart
     
     def __str__(self):
@@ -126,6 +127,7 @@ class OrgChart:
     # PERIOD VALIDATION
     def import_accounts(self,acc_tbl_name):
         acc_df = pd.read_csv(acc_tbl_name)
+
         self.import_accounts_df(acc_df)
     
     def import_accounts_df(self,acc_df):
@@ -149,7 +151,7 @@ class OrgChart:
                 a.account_collection = str(row['Collection'])
                 a.account_class = str(row['Class'])
                 a.account_data_type = str(row['Data Type'])
-                
+        
         if len(unmatched_entity) > 0:
             raise Exception(unmatched_entity.__str__() + " are not valid entities!")
     

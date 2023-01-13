@@ -8,7 +8,8 @@ import random as random
 from Adjustment import Adjustment
 
 class AccountsTable:
-    def __init__(self,period = None):
+
+    def __init__(self,period):
         self.accounts = []
         self.period  = period
     def __iter__(self):
@@ -34,7 +35,7 @@ class AccountsTable:
     
     def pull_accounts_by_period(self, period):
         
-        to_return = AccountsTable()
+        to_return = AccountsTable(period)
 
         for x in self.accounts:
             if x.account_period == period:
@@ -47,7 +48,7 @@ class AccountsTable:
 
     def __getitem__(self,key):
 
-        acc_tbl = AccountsTable()
+        acc_tbl = AccountsTable(self.period)
 
         for x in self.accounts:
             if x.account_name == key:
@@ -153,7 +154,7 @@ class AccountsTable:
     
     def search_collection(self, colct):
 
-        acc_tbl = AccountsTable()
+        acc_tbl = AccountsTable(self.period)
         for x in self.accounts:
             if x.account_collection == colct:
                 acc_tbl.add_account(x)
@@ -161,7 +162,7 @@ class AccountsTable:
     
     ## THIS IS DOING THE SAME THING AS PULL ACCOUNTS BY PERIOD
     def search_period(self, pd):
-        acc_tbl = AccountsTable()
+        acc_tbl = AccountsTable(self.period)
         for x in self.accounts:
             if x.account_period == pd:
                 acc_tbl.add_account(x)
@@ -286,20 +287,15 @@ class AccountsTable:
 
     # modify this file for later
     def import_adjustments(self, fName):
+
         
         adj_df = pd.read_csv(fName)
+        
 
         self.import_adjustments_df(adj_df)
     def import_accounts(self, fName):
         acc_df = pd.read_csv(fName)
-
+        print(acc_df)
         for index, row in acc_df.iterrows():
             acc = ShadowAccount(account_name=row["Account Name"],amount=float(row["Amount"]),account_period=Period(period_type="",period_year=row["Period"]),currency=str(row["ISO Currency Code"]),account_collection=str(row["Collection"]),account_class=str(row["Class"]),account_data_type=str(row["Data Type"]))
             self.accounts.append(acc)
-# p = Period("CYE","2022", "01-01-2022", "12-31-2022")
-# tb = TrialBalance(p)
-# tb.generate_random_tb()
-
-# at = AccountsTable()
-# at.pull_tb(tb)
-# print(at)
